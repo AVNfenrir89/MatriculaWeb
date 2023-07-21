@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33403.182
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "MatriculaWeb", "MatriculaWeb\MatriculaWeb.vbproj", "{742F279B-FFAF-4318-A5A6-D8204D7ABC7C}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Datos", "Datos\Datos.vbproj", "{A119C1FD-140D-45B1-BF7E-F5CDAEBC57EC}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Negocios", "Negocios\Negocios.vbproj", "{9309115A-7E06-4D29-ACD8-797DD2F71A0B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{742F279B-FFAF-4318-A5A6-D8204D7ABC7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{742F279B-FFAF-4318-A5A6-D8204D7ABC7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{742F279B-FFAF-4318-A5A6-D8204D7ABC7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{742F279B-FFAF-4318-A5A6-D8204D7ABC7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A119C1FD-140D-45B1-BF7E-F5CDAEBC57EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A119C1FD-140D-45B1-BF7E-F5CDAEBC57EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A119C1FD-140D-45B1-BF7E-F5CDAEBC57EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A119C1FD-140D-45B1-BF7E-F5CDAEBC57EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9309115A-7E06-4D29-ACD8-797DD2F71A0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9309115A-7E06-4D29-ACD8-797DD2F71A0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9309115A-7E06-4D29-ACD8-797DD2F71A0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9309115A-7E06-4D29-ACD8-797DD2F71A0B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {03AC2FCE-7890-4139-925C-7BAECE220DA0}
+	EndGlobalSection
+EndGlobal
