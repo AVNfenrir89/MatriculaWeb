@@ -23,22 +23,22 @@ Partial Public Class matricula_estudiante
     Protected WithEvents form_estudiantes As Global.System.Web.UI.HtmlControls.HtmlForm
 
     '''<summary>
-    '''Control input_id.
+    '''Control input_id_estudiante.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents input_id As Global.System.Web.UI.HtmlControls.HtmlInputText
+    Protected WithEvents input_id_estudiante As Global.System.Web.UI.HtmlControls.HtmlInputText
 
     '''<summary>
-    '''Control input_nombre.
+    '''Control input_nombre_est.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents input_nombre As Global.System.Web.UI.HtmlControls.HtmlInputText
+    Protected WithEvents input_nombre_est As Global.System.Web.UI.HtmlControls.HtmlInputText
 
     '''<summary>
     '''Control input_apellidos.

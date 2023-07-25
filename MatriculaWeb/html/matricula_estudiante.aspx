@@ -31,12 +31,12 @@
 
              <section id ="datos_estudiante_uno">  
                  <div>
-                     <label for="input_id">ID del estudiante</label>
-                     <input type="text" id="input_id" runat="server" />
+                     <label class ="lb_id_estudiante" for ="input_id_estudiante">ID del estudiante</label>
+                     <input type="text" id="input_id_estudiante" runat="server" />
                  </div>
                 <div>
-                    <label for ="input_nombre">Nombre</label>
-                    <input  type="text" id="input_nombre" runat="server"/>
+                    <label for ="input_nombre_est">Nombre</label>
+                    <input  type="text" id="input_nombre_est" runat="server"/>
                 </div>
                 <div>
                     <label for ="input_apellidos">Apellidos</label>
@@ -77,8 +77,8 @@
              </section>
 
              <section id ="datos_estudiante_cuatro">
-                 </p>
-                 <label for="beca_si">Beca Sí</label>
+                 <p>Beca</p>
+                 <label for="beca_si">Sí</label>
                  <input id="beca_si" runat="server" name="beca" type="radio" value="si" />
 
                  <label for="select_beca"></label>
