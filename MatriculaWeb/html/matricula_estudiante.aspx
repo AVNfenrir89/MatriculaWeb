@@ -87,7 +87,6 @@
                      <option value="50">50</option>
                      <option value="75">75</option>
                  </select>
-
                  <label for="beca_no">No</label>
                  <input id="beca_no" runat="server" name="beca" type="radio" value="no" />
              </section>
