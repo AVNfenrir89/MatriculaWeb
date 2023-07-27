@@ -53,6 +53,11 @@ Public Class SQL
     End Property
 #End Region
 #Region "Metodos"
+    Sub leeeer()
+
+
+
+    End Sub
     Sub AbrirConexion()
 
         'definir el string de conexion   'localhost
