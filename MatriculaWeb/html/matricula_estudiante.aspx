@@ -91,6 +91,7 @@
                  <input id="beca_no" runat="server" name="beca" type="radio" value="no" />
              </section>
 
+
          </section>
     </form>
 

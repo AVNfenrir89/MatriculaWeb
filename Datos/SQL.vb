@@ -4,6 +4,55 @@ Imports System.Data.SqlClient
 Public Class SQL
     Dim conexion As SqlConnection
     Dim _string_conexion As String
+    Dim dsEstudiantes As New DataSet
+    Dim dsFuncionarios As New DataSet
+    Dim dsCarreras As New DataSet
+    Dim dsMatricula As New DataSet
+    Dim dsCursos As New DataSet
+
+#Region "Propiedades"
+    Public Property TablaEstudiantes As DataTable
+        Get
+            Return dsEstudiantes.Tables(0)
+        End Get
+        Set(value As DataTable)
+        End Set
+    End Property
+
+    Public Property TablaFuncionarios As DataTable
+        Get
+            Return dsFuncionarios.Tables(0)
+        End Get
+        Set(value As DataTable)
+
+        End Set
+    End Property
+    Public Property TablaCarreras As DataTable
+        Get
+            Return dsCarreras.Tables(0)
+        End Get
+        Set(value As DataTable)
+
+        End Set
+    End Property
+    Public Property TablaCursos As DataTable
+        Get
+            Return dsCursos.Tables(0)
+        End Get
+        Set(value As DataTable)
+
+        End Set
+    End Property
+    Public Property TablaMatricula As DataTable
+        Get
+            Return dsMatricula.Tables(0)
+        End Get
+        Set(value As DataTable)
+
+        End Set
+    End Property
+#End Region
+#Region "Metodos"
     Sub AbrirConexion()
 
         'definir el string de conexion   'localhost
@@ -22,5 +71,27 @@ Public Class SQL
         End Try
 
     End Sub
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#End Region
 
 End Class
