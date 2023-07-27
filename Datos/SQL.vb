@@ -53,7 +53,12 @@ Public Class SQL
     End Property
 #End Region
 #Region "Metodos"
-    Sub leeeer()
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
 
 
 
