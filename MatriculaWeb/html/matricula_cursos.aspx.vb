@@ -1,23 +1,41 @@
-﻿Public Class Formulario_web1
+﻿Imports Negocios
+Public Class Formulario_web1
     Inherits System.Web.UI.Page
-
+    Dim obj_Cursos As New Negocios.ClaseCursos
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-
+        'cargar el dgv cuando se levante la pantalla
+        cargarInfo()
     End Sub
 
     Protected Sub agrega_curso_Click(sender As Object, e As EventArgs) Handles agrega_curso.Click
-        Dim dt As New DataTable()
-        dt.Columns.Add("ID Curso", GetType(String))
-        dt.Columns.Add("Nombre", GetType(String))
-        dt.Columns.Add("Créditos", GetType(String))
-        dt.Columns.Add("Nota Minima", GetType(String))
-        dt.Columns.Add("Cantidad Maxima", GetType(String))
-        dt.Columns.Add("Costos", GetType(String))
-        dt.Columns.Add("Grado", GetType(String))
-        dt.Columns.Add("Carrera", GetType(String))
-        dt.Columns.Add("Estado", GetType(String))
-        dt.Rows.Add(input_id_curso.Value, input_nombre.Value, input_creditos.Value, input_nota.Value, input_cant_min.Value, input_cant_max.Value, select_grado.Value, select_carrera.Value, select_estado.Value)
-        gv_matricula_cursos.DataSource = dt
-        gv_matricula_cursos.DataBind()
+        'cargar los valores respectivos
+        Try
+            obj_Cursos.IdCurso = input_id_curso.Value
+            obj_Cursos.IdCarrera = select_carrera.Value
+            obj_Cursos.Nombre = input_nombre.Value
+            obj_Cursos.Creditos = input_creditos.Value
+            obj_Cursos.NotaMinima = input_nota.Value
+            obj_Cursos.CantMax = input_cant_max.Value
+            obj_Cursos.CantMin = input_cant_min.Value
+            obj_Cursos.Costo = input_costo.Value
+            obj_Cursos.Grado = select_grado.Value
+            obj_Cursos.Estado = select_estado.Value
+            'agregar y cargar en tiempo real
+            obj_Cursos.AgregarDatosCursos()
+            cargarInfo()
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+    Sub cargarInfo()
+        Try
+            obj_Cursos.LeeDatosCursos()
+            gv_matricula_cursos.DataSource = obj_Cursos.TablaCursos
+            gv_matricula_cursos.DataBind()
+        Catch ex As Exception
+            Throw ex
+        End Try
+
+
     End Sub
 End Class

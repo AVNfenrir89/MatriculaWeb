@@ -1,4 +1,6 @@
-﻿Public Class ClaseCursos
+﻿
+Imports Datos 'importe datos
+Public Class ClaseCursos
     Dim _idCurso As String
     Dim _idCarrera As String
     Dim _nombre As String
@@ -9,6 +11,8 @@
     Dim _grado As String
     Dim _estado As String
     Dim _costo As Integer
+    'obj para referenciar de que tipo es el objeto
+    Dim obj_Cursos As New SQL
 
 #Region "Propiedades"
     Public Property IdCurso As String
@@ -91,5 +95,42 @@
             _idCarrera = value
         End Set
     End Property
+
+    Public Property NotaMinima As Integer
+        Get
+            Return _notaMinima
+        End Get
+        Set(value As Integer)
+            _notaMinima = value
+        End Set
+    End Property
+    'agregue tabla
+    Public Property TablaCursos As DataTable
+        Get
+            Return obj_Cursos.TablaCursos
+        End Get
+        Set(value As DataTable)
+
+        End Set
+    End Property
+#End Region
+
+#Region "Métodos"
+    Sub validar()
+        'validar cantidad de estudiantes minima y maxima ?
+
+    End Sub
+
+    'agruegue metodo para leer la info de la tabla BD al dgv
+    Sub LeeDatosCursos()
+        obj_Cursos.leerTablaCursos()
+    End Sub
+    Sub AgregarDatosCursos()
+
+        obj_Cursos.InsertarCursosBD(_idCurso, _idCarrera, _nombre, _creditos, _notaMinima, _cantMin, _cantMax, _grado, _estado, _costo)
+
+
+    End Sub
 #End Region
 End Class
+
