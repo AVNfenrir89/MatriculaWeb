@@ -70,9 +70,31 @@
 
 
 
-
+        <asp:Button ID="btn_Agregar_estudiante" runat="server" Text="Agregar" />
 
 
 
     </section>
+
+            <section id="taba_cursos">
+
+<%--            <asp:Literal ID="LiteralTabla" runat="server"></asp:Literal>--%>
+<%--             <table id ="datos_tabla_cursos" runat="server">       
+                    <tr>
+                        <th>ID del curso</th>
+                        <th>Nombre</th>
+                        <th>Créditos</th>
+                        <th>Nota mínima</th>
+                        <th>Cantidad mínima</th>
+                        <th>Cantidad máxima</th>
+                        <th>Costo</th>
+                        <th>Grado</th>
+                        <th>Carrera</th>
+                        <th>Estado</th>
+                    </tr>
+            </table>--%>
+              <asp:GridView ID="gv_matricula_cursos"  class="gvtab" runat="server" AutoGenerateColumns="True" Enabled="True" AutoGenerateEditButton="True" AutoGenerateSelectButton="True">
+             </asp:GridView>
+        </section>
+
 </asp:Content>
