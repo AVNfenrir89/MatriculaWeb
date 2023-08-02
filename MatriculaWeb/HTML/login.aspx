@@ -52,10 +52,10 @@
 
             <div class="data-form">
                 <label for="contrasena" class="labelLogin">Contraseña</label>
-                <input type="password"  runat="server" id="contrasena" />
+                <input type="password"  runat="server" id="contrasena" class="usuario-form form-login" />
             </div>
 
-            <button type="submit" runat="server" id="btn_IniciarSesion">Iniciar Sesión</button>
+            <button type="submit" runat="server" id="btn_IniciarSesion" class ="btn_login">Iniciar Sesión</button>
         </main>
         
     </form>

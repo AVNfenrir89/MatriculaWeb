@@ -218,6 +218,7 @@ h1 {
     align-items: center;
     align-content: center;
     flex-direction: column;
+    padding:35px;
 }
 #formlogin {
     display: flex;
@@ -226,4 +227,36 @@ h1 {
     margin: auto;
     height: 95vh;
     background: #eeeeee;
+}
+.data-form{
+    display:flex;
+    flex-direction:column;
+    margin-top:15px;
+}
+
+.labelLogin {
+    margin-bottom: 10px;
+    color: #8db594;
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    font: bold;
+}
+
+.btn_login {
+    margin-top: 15px;
+    height: 30px;
+    width: 100px;
+    background: #8db594;
+    border: none;
+    border-radius: 6px;
+    color: white;
+}
+
+.form-login {
+    outline: none;
+    border: none;
+    width: 200px;
+    border-radius: 5px;
+    height: 23px;
+    border: 1px;
 }
