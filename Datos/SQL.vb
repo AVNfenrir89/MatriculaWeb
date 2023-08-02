@@ -53,27 +53,7 @@ Public Class SQL
     End Property
 #End Region
 #Region "Metodos"
-    Sub leerEstudiantes()
-        Dim instruccionSQL As SqlCommand
-        Dim DataAdapter As SqlDataAdapter
-        AbrirConexion()
-        'instrucción select
-        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
-        If dsEstudiantes.Tables.Count > 0 Then
-            If dsEstudiantes.Tables(0).Rows.Count Then
-                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
-            End If
 
-
-
-        End If
-
-
-
-
-
-
-    End Sub
     Sub AbrirConexion()
 
         'definir el string de conexion   'localhost
@@ -93,7 +73,29 @@ Public Class SQL
 
     End Sub
 
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear()
+            End If
+        End If
 
+        Try
+            DataAdapter = New SqlDataAdapter(instruccionSQL)
+            DataAdapter.Fill(dsEstudiantes)
+        Catch ex As Exception
+            Throw New System.Exception(ex.Message)
+        End Try
+
+        conexion.Close()
+
+
+    End Sub
 
 
 
