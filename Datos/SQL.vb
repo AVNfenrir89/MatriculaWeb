@@ -11,22 +11,6 @@ Public Class SQL
     Dim dsCursos As New DataSet
 
 #Region "Propiedades"
-    Public Property TablaEstudiantes As DataTable
-        Get
-            Return dsEstudiantes.Tables(0)
-        End Get
-        Set(value As DataTable)
-        End Set
-    End Property
-
-    Public Property TablaFuncionarios As DataTable
-        Get
-            Return dsFuncionarios.Tables(0)
-        End Get
-        Set(value As DataTable)
-
-        End Set
-    End Property
     Public Property TablaCarreras As DataTable
         Get
             Return dsCarreras.Tables(0)
@@ -37,23 +21,1884 @@ Public Class SQL
     End Property
     Public Property TablaCursos As DataTable
         Get
-            Return dsCursos.Tables(0)
+            Return dsCursos.Tables(1)
         End Get
         Set(value As DataTable)
 
         End Set
     End Property
+    Public Property TablaEstudiantes As DataTable
+        Get
+            Return dsEstudiantes.Tables(2)
+        End Get
+        Set(value As DataTable)
+        End Set
+    End Property
+
+    Public Property TablaFuncionarios As DataTable
+        Get
+            Return dsFuncionarios.Tables(3)
+        End Get
+        Set(value As DataTable)
+
+        End Set
+    End Property
+
+
     Public Property TablaMatricula As DataTable
         Get
-            Return dsMatricula.Tables(0)
+            Return dsMatricula.Tables(4)
         End Get
         Set(value As DataTable)
 
         End Set
     End Property
 #End Region
-#Region "Metodos"
 
+#Region "Metodos"
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+
+
+
+
+    End Sub
+    Dim instruccionSQL As SqlCommand
+    Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+    Sub leerEstudiantes()
+        Dim instruccionSQL As SqlCommand
+        Dim DataAdapter As SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
+        If dsEstudiantes.Tables.Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count Then
+                dsEstudiantes.Tables(0).Clear() 'I dont know really what does that means
+            End If
+
+
+
+        End If
+
+
+
+
+
+
+    End Sub
     Sub AbrirConexion()
 
         'definir el string de conexion   'localhost
