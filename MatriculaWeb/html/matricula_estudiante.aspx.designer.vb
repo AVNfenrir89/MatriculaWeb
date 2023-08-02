@@ -111,4 +111,13 @@ Partial Public Class Formulario_web11
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents beca_no As Global.System.Web.UI.HtmlControls.HtmlInputRadioButton
+
+    '''<summary>
+    '''Control gv_matricula_cursos.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents gv_matricula_cursos As Global.System.Web.UI.WebControls.GridView
 End Class
