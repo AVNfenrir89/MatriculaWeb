@@ -5,7 +5,6 @@ Public Class ClaseCarreras
     Dim _nombre As String
     Dim _estado As String
     Dim _grados As String
-
 #Region "propiedades"
     Public Property TablaCarreras As DataTable
         Get
