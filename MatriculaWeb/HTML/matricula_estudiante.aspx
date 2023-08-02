@@ -70,7 +70,7 @@
 
 
 
-
+        <asp:Button ID="btn_Agregar_estudiante" runat="server" Text="Agregar" />
 
 
 
@@ -93,7 +93,7 @@
                         <th>Estado</th>
                     </tr>
             </table>--%>
-              <asp:GridView ID="gv_matricula_cursos"  class="gvtab" runat="server" AutoGenerateColumns="True" Enabled="True" AutoGenerateEditButton="True" AutoGenerateSelectButton="True">
+              <asp:GridView ID="gv_matricula_estudiantes"  class="gvtab" runat="server" AutoGenerateColumns="True" Enabled="True" AutoGenerateEditButton="True" AutoGenerateSelectButton="True">
              </asp:GridView>
         </section>
 
