@@ -93,73 +93,80 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CSS\styles.css" />
-    <Content Include="html\acerca_de.aspx" />
-    <Content Include="html\Carreras.aspx" />
-    <Content Include="html\consulta_cursos.aspx" />
-    <Content Include="html\consulta_matricula.aspx" />
-    <Content Include="html\funcionarios.aspx" />
-    <Content Include="html\matricula.aspx" />
-    <Content Include="html\matricula_cursos.aspx" />
-    <Content Include="html\matricula_estudiante.aspx" />
+    <Content Include="HTML\acerca_de.aspx" />
+    <Content Include="HTML\Carreras.aspx" />
+    <Content Include="HTML\consulta_cursos.aspx" />
+    <Content Include="HTML\consulta_matricula.aspx" />
+    <Content Include="HTML\funcionarios.aspx" />
+    <Content Include="HTML\login.aspx" />
+    <Content Include="HTML\matricula.aspx" />
+    <Content Include="HTML\matricula_cursos.aspx" />
+    <Content Include="HTML\matricula_estudiante.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="html\acerca_de.aspx.designer.vb">
+    <Compile Include="HTML\acerca_de.aspx.designer.vb">
       <DependentUpon>acerca_de.aspx</DependentUpon>
     </Compile>
-    <Compile Include="html\acerca_de.aspx.vb">
+    <Compile Include="HTML\acerca_de.aspx.vb">
       <DependentUpon>acerca_de.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="html\Carreras.aspx.designer.vb">
+    <Compile Include="HTML\Carreras.aspx.designer.vb">
       <DependentUpon>Carreras.aspx</DependentUpon>
     </Compile>
-    <Compile Include="html\Carreras.aspx.vb">
+    <Compile Include="HTML\Carreras.aspx.vb">
       <DependentUpon>Carreras.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="html\consulta_cursos.aspx.designer.vb">
+    <Compile Include="HTML\consulta_cursos.aspx.designer.vb">
       <DependentUpon>consulta_cursos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="html\consulta_cursos.aspx.vb">
+    <Compile Include="HTML\consulta_cursos.aspx.vb">
       <DependentUpon>consulta_cursos.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="html\consulta_matricula.aspx.designer.vb">
+    <Compile Include="HTML\consulta_matricula.aspx.designer.vb">
       <DependentUpon>consulta_matricula.aspx</DependentUpon>
     </Compile>
-    <Compile Include="html\consulta_matricula.aspx.vb">
+    <Compile Include="HTML\consulta_matricula.aspx.vb">
       <DependentUpon>consulta_matricula.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="html\funcionarios.aspx.designer.vb">
+    <Compile Include="HTML\funcionarios.aspx.designer.vb">
       <DependentUpon>funcionarios.aspx</DependentUpon>
     </Compile>
-    <Compile Include="html\funcionarios.aspx.vb">
+    <Compile Include="HTML\funcionarios.aspx.vb">
       <DependentUpon>funcionarios.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="html\matricula.aspx.designer.vb">
+    <Compile Include="HTML\login.aspx.designer.vb">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HTML\login.aspx.vb">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HTML\matricula.aspx.designer.vb">
       <DependentUpon>matricula.aspx</DependentUpon>
     </Compile>
-    <Compile Include="html\matricula.aspx.vb">
+    <Compile Include="HTML\matricula.aspx.vb">
       <DependentUpon>matricula.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="html\matricula_cursos.aspx.designer.vb">
+    <Compile Include="HTML\matricula_cursos.aspx.designer.vb">
       <DependentUpon>matricula_cursos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="html\matricula_cursos.aspx.vb">
+    <Compile Include="HTML\matricula_cursos.aspx.vb">
       <DependentUpon>matricula_cursos.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="clases\matricula_cursos.vb" />
-    <Compile Include="html\matricula_estudiante.aspx.designer.vb">
+    <Compile Include="HTML\matricula_estudiante.aspx.designer.vb">
       <DependentUpon>matricula_estudiante.aspx</DependentUpon>
     </Compile>
-    <Compile Include="html\matricula_estudiante.aspx.vb">
+    <Compile Include="HTML\matricula_estudiante.aspx.vb">
       <DependentUpon>matricula_estudiante.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -179,6 +186,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="PaginaMaestra.Master.designer.vb">
+      <DependentUpon>PaginaMaestra.Master</DependentUpon>
+    </Compile>
+    <Compile Include="PaginaMaestra.Master.vb">
+      <DependentUpon>PaginaMaestra.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -200,6 +214,7 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="packages.config" />
+    <Content Include="PaginaMaestra.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

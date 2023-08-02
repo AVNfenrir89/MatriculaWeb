@@ -60,11 +60,6 @@ Public Class SQL
         'instrucción select
         instruccionSQL = New SqlCommand("Select from Estudiantes", conexion)
 
-
-
-
-
-
     End Sub
     Sub AbrirConexion()
 

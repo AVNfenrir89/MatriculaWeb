@@ -1,4 +1,6 @@
-﻿Public Class ClaseMatrticula
+﻿
+Imports HtmlAgilityPack
+Public Class ClaseMatrticula
     Dim _idMatricula As Integer
     Dim _idEstudiante As Integer
     Dim _idCarrera As String
@@ -70,5 +72,8 @@
         End Set
     End Property
 #End Region
+
+
+
 
 End Class

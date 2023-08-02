@@ -11,16 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class matricula
-
-    '''<summary>
-    '''Control form_cursos.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents form_cursos As Global.System.Web.UI.HtmlControls.HtmlForm
+Partial Public Class Formulario_web1
 
     '''<summary>
     '''Control input_id_curso.
@@ -113,20 +104,20 @@ Partial Public Class matricula
     Protected WithEvents select_estado As Global.System.Web.UI.HtmlControls.HtmlSelect
 
     '''<summary>
-    '''Control agregar_curso.
+    '''Control agrega_curso.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents agregar_curso As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents agrega_curso As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''Control LiteralTabla.
+    '''Control gv_matricula_cursos.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents LiteralTabla As Global.System.Web.UI.WebControls.Literal
+    Protected WithEvents gv_matricula_cursos As Global.System.Web.UI.WebControls.GridView
 End Class

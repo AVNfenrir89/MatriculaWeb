@@ -11,16 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class matricula_estudiante
-
-    '''<summary>
-    '''Control form_estudiantes.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents form_estudiantes As Global.System.Web.UI.HtmlControls.HtmlForm
+Partial Public Class Formulario_web11
 
     '''<summary>
     '''Control input_id_estudiante.

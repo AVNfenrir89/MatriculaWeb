@@ -11,5 +11,5 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class matricula1
+Partial Public Class Formulario_web12
 End Class
