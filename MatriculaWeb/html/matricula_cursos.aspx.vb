@@ -17,7 +17,7 @@ Public Class Formulario_web1
             obj_Cursos.NotaMinima = input_nota.Value
             obj_Cursos.CantMax = input_cant_max.Value
             obj_Cursos.CantMin = input_cant_min.Value
-            obj_Cursos.Costo = input_costo.Value
+            obj_Cursos.Costo = obj_Cursos.Costo_curso(input_creditos.Value)
             obj_Cursos.Grado = select_grado.Value
             obj_Cursos.Estado = select_estado.Value
             'agregar y cargar en tiempo real

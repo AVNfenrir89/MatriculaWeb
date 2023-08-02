@@ -116,6 +116,12 @@ Public Class ClaseCursos
 #End Region
 
 #Region "Métodos"
+    Function Costo_curso(creditos)
+        Dim Resultado As Integer
+        _creditos = Int(creditos)
+        Resultado = 10000 * _creditos
+        Return Str(Resultado)
+    End Function
     Sub validar()
         'validar cantidad de estudiantes minima y maxima ?
 

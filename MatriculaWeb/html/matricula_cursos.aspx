@@ -9,37 +9,37 @@
         <section id="datos_estudiante_uno">
             <div>
                 <label class="lb_id_curso" for="input_id_curso">ID Curso</label>
-                <input type="text" id="input_id_curso" runat="server" />
+                <input type="text" id="input_id_curso" runat="server" required="required" />
             </div>
             <div>
                 <label for="input_nombre">Nombre</label>
-                <input type="text" id="input_nombre" runat="server" />
+                <input type="text" id="input_nombre" runat="server" required="required" />
             </div>
             <div>
                 <label for="input_creditos">Créditos</label>
-                <input type="text" id="input_creditos" runat="server" />
+                <input type="text" id="input_creditos" runat="server" required="required" />
             </div>
         </section>
 
-        <section id="cursos_dos">
+        <section id="cursos_dos" contenteditable="false" draggable="false">
             <div>
                 <label for="input_nota">Nota mínima</label>
-                <input type="text" id="input_nota" runat="server" />
+                <input type="text" id="input_nota" runat="server" required="required" />
             </div>
 
             <div>
                 <label for="input_cant_min">Cantidad mínima</label>
-                <input type="text" id="input_cant_min" runat="server" />
+                <input type="text" id="input_cant_min" runat="server" required="required" />
             </div>
 
             <div>
                 <label for="input_cant_max">Cantidad máxima</label>
-                <input type="text" runat="server" id="input_cant_max" />
+                <input type="text" runat="server" id="input_cant_max" required="required" />
             </div>
 
             <div>
                 <label for="input_costo">Costo</label>
-                <input type="text" runat="server" id="input_costo" />
+                <input type="text" runat="server" placeholder ="10000 colones por curso" id="input_costo" enableviewstate="False"  />
             </div>
         </section>
 
