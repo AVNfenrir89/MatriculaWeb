@@ -92,5 +92,5 @@ Partial Public Class login
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btn_IniciarSesion As Global.System.Web.UI.HtmlControls.HtmlButton
+    Protected WithEvents btn_IniciarSesion As Global.System.Web.UI.WebControls.Button
 End Class

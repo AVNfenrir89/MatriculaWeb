@@ -55,7 +55,8 @@
                 <input type="password"  runat="server" id="contrasena" class="usuario-form form-login" />
             </div>
 
-            <button type="submit" runat="server" id="btn_IniciarSesion" class ="btn_login">Iniciar Sesión</button>
+            <asp:Button ID="btn_IniciarSesion" class="btn_login" runat="server" Text="Iniciar Sesión" OnClick="btn_IniciarSesion_Click" />
+            
         </main>
         
     </form>
