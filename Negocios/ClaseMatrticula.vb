@@ -1,5 +1,4 @@
 ﻿
-Imports HtmlAgilityPack
 Public Class ClaseMatrticula
     Dim _idMatricula As Integer
     Dim _idEstudiante As Integer

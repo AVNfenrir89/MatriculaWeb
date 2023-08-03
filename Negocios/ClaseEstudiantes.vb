@@ -116,7 +116,7 @@ Public Class ClaseEstudiantes
     'aguegué metodo para ag
     Sub AgregarDatosEstudiantes()
 
-        obj_EstudiantesBD.InsertarEstudianteBD(_idEstudiantes, _idCarrera, _nombre, _apellidos, _beca, _telefono, _fechaNacimiento, _correo)
+        obj_EstudiantesBD.InsertarEstudianteBD(_idEstudiantes, _idCarrera, _nombre, _apellidos, _beca, _telefono, _fechaNacimiento, _correo, _direccion)
 
     End Sub
 #End Region
