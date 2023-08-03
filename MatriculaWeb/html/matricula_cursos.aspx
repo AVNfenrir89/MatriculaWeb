@@ -39,7 +39,7 @@
 
             <div>
                 <label for="input_costo">Costo</label>
-                <input type="text" runat="server" placeholder ="10000 colones por curso" id="input_costo" enableviewstate="False"  />
+                <input type="text" runat="server" placeholder ="10000 colones por crédito" id="input_costo" enableviewstate="False"  />
             </div>
         </section>
 

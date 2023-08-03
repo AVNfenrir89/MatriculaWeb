@@ -39,6 +39,7 @@
             </div>
 
         </section>
+
         <section id="datos_estudiante_tres">
             <div>
                 <label for="input_correo" runat="server">Correo electronico</label>
@@ -57,29 +58,26 @@
             <p>Beca</p>
             <label for="beca_si">Sí</label>
             <input id="beca_si" runat="server" name="beca" type="radio" value="si" />
-
             <label for="select_beca"></label>
+
             <select id="select_beca" runat="server" enable="false" disabled="disabled">
                 <option value="25">25</option>
                 <option value="50">50</option>
                 <option value="75">75</option>
             </select>
+
             <label for="beca_no">No</label>
             <input id="beca_no" runat="server" name="beca" type="radio" value="no" />
         </section>
 
-
-
         <asp:Button ID="btn_Agregar_estudiante" runat="server" Text="Agregar" />
-
-
 
     </section>
 
-            <section id="taba_cursos">
+    <section id="taba_cursos">
 
-<%--            <asp:Literal ID="LiteralTabla" runat="server"></asp:Literal>--%>
-<%--             <table id ="datos_tabla_cursos" runat="server">       
+        <%--            <asp:Literal ID="LiteralTabla" runat="server"></asp:Literal>--%>
+        <%--             <table id ="datos_tabla_cursos" runat="server">       
                     <tr>
                         <th>ID del curso</th>
                         <th>Nombre</th>
@@ -93,8 +91,8 @@
                         <th>Estado</th>
                     </tr>
             </table>--%>
-              <asp:GridView ID="gv_matricula_estudiantes"  class="gvtab" runat="server" AutoGenerateColumns="True" Enabled="True" AutoGenerateEditButton="True" AutoGenerateSelectButton="True">
-             </asp:GridView>
-        </section>
+        <asp:GridView ID="gv_matricula_estudiantes" class="gvtab" runat="server" AutoGenerateColumns="True" Enabled="True" AutoGenerateEditButton="True" AutoGenerateSelectButton="True">
+        </asp:GridView>
+    </section>
 
 </asp:Content>
