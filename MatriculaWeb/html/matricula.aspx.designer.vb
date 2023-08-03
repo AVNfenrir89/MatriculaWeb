@@ -158,6 +158,15 @@ Partial Public Class Formulario_web12
     Protected WithEvents lb_curso_seis As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
+    '''Control btn_total.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btn_total As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
     '''Control lb_total.
     '''</summary>
     '''<remarks>
