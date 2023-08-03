@@ -152,7 +152,7 @@ Public Class SQL
         CerrarConexion()
     End Sub
 
-    Sub InsertarEstudianteBD(idCurso As Integer, idCarrera As String, nombre As String, apellidos As String, beca As Integer, telefono As String, creditos As Integer, notaMinima As Integer, cantMin As Integer, cantMax As Integer, grado As String, estado As String, costo As Integer)
+    Sub InsertarEstudianteBD(idEstudiante As Integer, idCarrera As String, nombre As String, apellidos As String, beca As Integer, telefono As String, cantMax As Integer, grado As String, estado As String, costo As Integer)
         'variable para la instruccion
         Dim sqlInstruccion As SqlClient.SqlCommand
 
