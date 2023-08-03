@@ -19,4 +19,8 @@
     Protected Sub btn_matricular_Click(sender As Object, e As EventArgs)
 
     End Sub
+
+    Protected Sub btn_total_Click(sender As Object, e As EventArgs)
+
+    End Sub
 End Class
