@@ -12,7 +12,7 @@ Public Class ClaseCursos
     Dim _estado As String
     Dim _costo As Integer
     'obj para referenciar de que tipo es el objeto
-    Dim obj_Cursos As New SQL
+    Dim obj_CursosBD As New SQL
 
 #Region "Propiedades"
     Public Property IdCurso As String
@@ -107,7 +107,7 @@ Public Class ClaseCursos
     'agregue tabla
     Public Property TablaCursos As DataTable
         Get
-            Return obj_Cursos.TablaCursos
+            Return obj_CursosBD.TablaCursos
         End Get
         Set(value As DataTable)
 
@@ -129,11 +129,11 @@ Public Class ClaseCursos
 
     'agruegue metodo para leer la info de la tabla BD al dgv
     Sub LeeDatosCursos()
-        obj_Cursos.leerTablaCursos()
+        obj_CursosBD.leerTablaCursos()
     End Sub
     Sub AgregarDatosCursos()
 
-        obj_Cursos.InsertarCursosBD(_idCurso, _idCarrera, _nombre, _creditos, _notaMinima, _cantMin, _cantMax, _grado, _estado, _costo)
+        obj_CursosBD.InsertarCursosBD(_idCurso, _idCarrera, _nombre, _creditos, _notaMinima, _cantMin, _cantMax, _grado, _estado, _costo)
 
 
     End Sub

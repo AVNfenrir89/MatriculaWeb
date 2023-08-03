@@ -1,6 +1,6 @@
-﻿Imports Datos
+﻿Imports Datos 'mportar
 Public Class ClaseEstudiantes
-    Dim obj_EstudiantesBD As New SQL
+
     Dim _idEstudiantes As Integer
     Dim _idCarrera As String
     Dim _nombre As String
@@ -9,7 +9,9 @@ Public Class ClaseEstudiantes
     Dim _telefono As String
     Dim _fechaNacimiento As Date
     Dim _correo As String
-
+    Dim _direccion As String
+    'objeto
+    Dim obj_EstudiantesBD As New SQL
 #Region "propiedades"
     Public Property TablaEstudiantes As DataTable
         Get
@@ -91,6 +93,31 @@ Public Class ClaseEstudiantes
             _correo = value
         End Set
     End Property
+
+    Public Property Direccion As String
+        Get
+            Return _direccion
+        End Get
+        Set(value As String)
+            _direccion = value
+        End Set
+    End Property
 #End Region
 
+#Region "Metodos"
+    Sub validar()
+
+    End Sub
+
+    'agruegue metodo para leer la info de la tabla BD al dgv
+    Sub LeeDatosEstudiantes()
+        obj_EstudiantesBD.leerTablaEstudiantes()
+    End Sub
+    'aguegué metodo para ag
+    Sub AgregarDatosEstudiantes()
+
+        obj_EstudiantesBD.InsertarEstudianteBD(_idEstudiantes, _idCarrera, _nombre, _apellidos, _beca, _telefono, _fechaNacimiento, _correo)
+
+    End Sub
+#End Region
 End Class

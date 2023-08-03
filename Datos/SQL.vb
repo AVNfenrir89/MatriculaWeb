@@ -151,38 +151,27 @@ Public Class SQL
         End Try
         CerrarConexion()
     End Sub
-
-    Sub InsertarEstudianteBD(idEstudiante As Integer, idCarrera As String, nombre As String, apellidos As String, beca As Integer, telefono As String, cantMax As Integer, grado As String, estado As String, costo As Integer)
-        'variable para la instruccion
+    'método insertar
+    Sub InsertarEstudianteBD(idEstudiante As Integer, idCarrera As String, nombre As String, apellidos As String, beca As Integer, telefono As String, fecha As Date, correo As String, direccion As String)
         Dim sqlInstruccion As SqlClient.SqlCommand
 
-        'Abra la conexion
         AbrirConexion()
 
-        'Se prepara la instruccion SQL 
-        sqlInstruccion = New SqlClient.SqlCommand("insert into Cursos(ID_Cursos, ID_Carrera, Nombre, Creditos, Nota_Min, Min_Estudiantes, Max_Estudiantes, Grado, Estado, Costo) values (@ID_Cursos, @ID_Carrera, @Nombre, @Creditos, @Nota_Min, @Min_Estudiantes, @Max_Estudiantes, @Grado, @Estado, @Costo)", conexion)
-
-        'envio de parametros y sus respectivos valores
-        sqlInstruccion.Parameters.AddWithValue("@ID_Cursos", idCurso)
+        sqlInstruccion = New SqlClient.SqlCommand("insert into Estudiantes(ID_Estudiantes, ID_Carrera, Nombre, Apellidos, Beca, Telefono, Fecha_Nacimiento, Correo_Electronico, Direccion) values (@ID_Estudiantes, @ID_Carrera, @Nombre, @Apellidos, @Beca, @Telefono, @Fecha_Nacimiento, @Correo_Electronico, @Direccion)", conexion)
+        sqlInstruccion.Parameters.AddWithValue("@ID_Estudiantes", idEstudiante)
         sqlInstruccion.Parameters.AddWithValue("@ID_Carrera", idCarrera)
         sqlInstruccion.Parameters.AddWithValue("@Nombre", nombre)
-        sqlInstruccion.Parameters.AddWithValue("@Creditos", creditos)
-        sqlInstruccion.Parameters.AddWithValue("@Nota_Min", notaMinima)
-        sqlInstruccion.Parameters.AddWithValue("@Min_Estudiantes", cantMin)
-        sqlInstruccion.Parameters.AddWithValue("@Max_Estudiantes", cantMax)
-        sqlInstruccion.Parameters.AddWithValue("@Grado", grado)
-        sqlInstruccion.Parameters.AddWithValue("@Estado", estado)
-        sqlInstruccion.Parameters.AddWithValue("@Costo", costo)
-
+        sqlInstruccion.Parameters.AddWithValue("@Apellidos", apellidos)
+        sqlInstruccion.Parameters.AddWithValue("@Beca", beca)
+        sqlInstruccion.Parameters.AddWithValue("@Telefono", telefono)
+        sqlInstruccion.Parameters.AddWithValue("@Fecha_Nacimiento", fecha)
+        sqlInstruccion.Parameters.AddWithValue("@Correo_Electronico", correo)
+        sqlInstruccion.Parameters.AddWithValue("@Direccion", direccion)
         Try
-            'ejecucion de la instruccion
             sqlInstruccion.ExecuteNonQuery()
-
         Catch ex As Exception
             Throw New System.Exception("Error al ejecutar el insert:" + ex.Message)
         End Try
-
-        'cerramos la conexion
         CerrarConexion()
     End Sub
 
