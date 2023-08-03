@@ -77,7 +77,7 @@
         </section>
 
         <section class ="matricula-tres">
-            <asp:Button ID="btn_total" class="btn_matricular"  runat="server" Text="Total" OnClick="btn_total_Click" />
+            <asp:Button ID="btn_total" class="btn_matricular" runat="server" Text="Total" OnClick="btn_total_Click" />
             <label id="lb_total" runat="server">____________</label>
             <asp:Button ID="btn_matricular" class="btn_matricular"  runat="server" Text="Matricular" OnClick="btn_matricular_Click" />
         </section>
