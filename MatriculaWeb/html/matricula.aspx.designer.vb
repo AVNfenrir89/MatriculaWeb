@@ -176,11 +176,11 @@ Partial Public Class Formulario_web12
     Protected WithEvents btn_matricular As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''Control gv_matricula_estudiantes.
+    '''Control gv_matricular.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents gv_matricula_estudiantes As Global.System.Web.UI.WebControls.GridView
+    Protected WithEvents gv_matricular As Global.System.Web.UI.WebControls.GridView
 End Class
