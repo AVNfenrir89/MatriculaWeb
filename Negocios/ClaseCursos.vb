@@ -137,6 +137,9 @@ Public Class ClaseCursos
 
 
     End Sub
+    Sub borrarCurso()
+        obj_CursosBD.BorrarCursoBD(_idCurso)
+    End Sub
 #End Region
 End Class
 

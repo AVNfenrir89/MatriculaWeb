@@ -127,6 +127,22 @@ Public Class SQL
         'cerramos la conexion
         CerrarConexion()
     End Sub
+
+    Sub BorrarCursoBD(idCurso As String)
+        Dim sqlInstruccion As SqlClient.SqlCommand
+
+        AbrirConexion()
+        sqlInstruccion = New SqlClient.SqlCommand("DELETE FROM Cursos WHERE ID_Cursos = @ID_Cursos", conexion)
+        sqlInstruccion.Parameters.AddWithValue("@ID_Cursos", idCurso)
+        Try
+            sqlInstruccion.ExecuteNonQuery()
+        Catch ex As Exception
+            Throw New System.Exception("Error al ejecutar el DELETE: " + ex.Message)
+        End Try
+
+        ' Cerramos la conexión
+        CerrarConexion()
+    End Sub
 #End Region
 
 #Region "Procedimientos Estudiantes"
@@ -157,7 +173,7 @@ Public Class SQL
 
         AbrirConexion()
 
-        sqlInstruccion = New SqlClient.SqlCommand("insert into Estudiantes(ID_Estudiantes, ID_Carrera, Nombre, Apellidos, Beca, Telefono, Fecha_Nacimiento, Correo_Electronico, Direccion) values (@ID_Estudiantes, @ID_Carrera, @Nombre, @Apellidos, @Beca, @Telefono, @Fecha_Nacimiento, @Correo_Electronico, @Direccion)", conexion)
+        sqlInstruccion = New SqlClient.SqlCommand("insert into Estudiantes(ID_Estudiantes, ID_Carrera, Nombre, Apellidos, Beca, Telefono, Fecha_Nacimiento, Correo, Direccion) values (@ID_Estudiantes, @ID_Carrera, @Nombre, @Apellidos, @Beca, @Telefono, @Fecha_Nacimiento, @Correo, @Direccion)", conexion)
         sqlInstruccion.Parameters.AddWithValue("@ID_Estudiantes", idEstudiante)
         sqlInstruccion.Parameters.AddWithValue("@ID_Carrera", idCarrera)
         sqlInstruccion.Parameters.AddWithValue("@Nombre", nombre)
@@ -165,7 +181,7 @@ Public Class SQL
         sqlInstruccion.Parameters.AddWithValue("@Beca", beca)
         sqlInstruccion.Parameters.AddWithValue("@Telefono", telefono)
         sqlInstruccion.Parameters.AddWithValue("@Fecha_Nacimiento", fecha)
-        sqlInstruccion.Parameters.AddWithValue("@Correo_Electronico", correo)
+        sqlInstruccion.Parameters.AddWithValue("@Correo", correo)
         sqlInstruccion.Parameters.AddWithValue("@Direccion", direccion)
         Try
             sqlInstruccion.ExecuteNonQuery()
@@ -177,6 +193,74 @@ Public Class SQL
 
 #End Region
 
+#Region "Procedimientos carreras"
+
+
+    Sub leerTablaCarreras()
+        Dim instruccionSQL As SqlClient.SqlCommand
+        Dim DataAdapter As SqlClient.SqlDataAdapter
+        AbrirConexion()
+
+        instruccionSQL = New SqlClient.SqlCommand("Select * from Carrera", conexion)
+        If dsCarreras.Tables().Count > 0 Then
+            If dsCarreras.Tables(0).Rows.Count > 1 Then
+                dsCarreras.Tables(0).Clear()
+            End If
+        End If
+
+        Try
+            DataAdapter = New SqlClient.SqlDataAdapter(instruccionSQL)
+            DataAdapter.Fill(dsCursos)
+        Catch ex As Exception
+            Throw New System.Exception(ex.Message)
+        End Try
+        CerrarConexion()
+    End Sub
+    'metodo de insertar
+    Sub InsertarCarrerasBD(idCarrera As String, Nombre As String, Grado As String, Estado As String)
+
+        Dim sqlInstruccion As SqlClient.SqlCommand
+
+        AbrirConexion()
+
+        sqlInstruccion = New SqlClient.SqlCommand("insert into Carrra(ID_Carrera, Nombre, Grado, Estado) values (@ID_Carrera, @Nombre, @Grado, @Estado)", conexion)
+        sqlInstruccion.Parameters.AddWithValue("@ID_Carrera", idCarrera)
+        sqlInstruccion.Parameters.AddWithValue("@Nombre", Nombre)
+        sqlInstruccion.Parameters.AddWithValue("@Grado", Grado)
+        sqlInstruccion.Parameters.AddWithValue("@Estado", Estado)
+
+        Try
+            'ejecucion de la instruccion
+            sqlInstruccion.ExecuteNonQuery()
+
+        Catch ex As Exception
+            Throw New System.Exception("Error al ejecutar el insert:" + ex.Message)
+        End Try
+
+        'cerramos la conexion
+        CerrarConexion()
+    End Sub
+
+    ' Método para borrar una carrera de la base de datos
+    Sub BorrarCarreraBD(idCarrera As String)
+        Dim sqlInstruccion As SqlClient.SqlCommand
+
+        AbrirConexion()
+        sqlInstruccion = New SqlClient.SqlCommand("DELETE FROM Carrera WHERE ID_Carrera = @ID_Carrera", conexion)
+        sqlInstruccion.Parameters.AddWithValue("@ID_Carrera", idCarrera)
+
+        Try
+            sqlInstruccion.ExecuteNonQuery()
+        Catch ex As Exception
+            Throw New System.Exception("Error al ejecutar el DELETE: " + ex.Message)
+        End Try
+
+        ' Cerramos la conexión
+        CerrarConexion()
+    End Sub
+
+
+#End Region
 
 #End Region
 End Class

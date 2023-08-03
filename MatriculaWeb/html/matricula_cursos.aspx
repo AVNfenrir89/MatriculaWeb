@@ -65,11 +65,19 @@
                     <option value="activo">Activo</option>
                     <option value="inactivo">Inactivo</option>
                 </select>
+
             </div>
             <asp:Button ID="agrega_curso" runat="server" Text="Agregar" />
+              <div>
+                      <!--Cambios realizados-->
+             <label for="input_Id_Modificar">Boton para eliminar fila </label>
+ 
+                 <asp:Button ID="btn_Borrar" runat="server" Text="Borrar" />
+                </div>
         </section>
 
     </section>
+
         <section id="taba_cursos">
 
 <%--            <asp:Literal ID="LiteralTabla" runat="server"></asp:Literal>--%>
@@ -92,6 +100,5 @@
         </section>
       
 
-    
 
 </asp:Content>

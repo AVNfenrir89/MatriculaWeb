@@ -38,4 +38,23 @@ Public Class Formulario_web1
 
 
     End Sub
+
+    Protected Sub btn_Borrar_Click(sender As Object, e As EventArgs) Handles btn_Borrar.Click
+        obj_Cursos.IdCurso = input_id_curso.Value
+        obj_Cursos.borrarCurso()
+        cargarInfo()
+        'limpiar()
+    End Sub
+    'Sub limpiar()
+    '    obj_Cursos.IdCurso = ""
+    '    obj_Cursos.IdCarrera = ""
+    '    obj_Cursos.Nombre = ""
+    '    obj_Cursos.Creditos = ""
+    '    obj_Cursos.NotaMinima =
+    '    obj_Cursos.CantMax =
+    '    obj_Cursos.CantMin =
+    '    obj_Cursos.Costo =
+    '    obj_Cursos.Grado = ""
+    '    obj_Cursos.Estado = ""
+    'End Sub
 End Class
