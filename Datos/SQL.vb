@@ -210,7 +210,7 @@ Public Class SQL
 
         Try
             DataAdapter = New SqlClient.SqlDataAdapter(instruccionSQL)
-            DataAdapter.Fill(dsCursos)
+            DataAdapter.Fill(dsCarreras)
         Catch ex As Exception
             Throw New System.Exception(ex.Message)
         End Try
@@ -258,6 +258,8 @@ Public Class SQL
         ' Cerramos la conexión
         CerrarConexion()
     End Sub
+    'función para obtener el nombre y los id de las carreras
+
 
 
 #End Region

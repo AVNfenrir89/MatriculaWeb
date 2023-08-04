@@ -52,6 +52,8 @@ Public Class ClaseCarreras
     End Property
 #End Region
 
-
+    Sub LeeDatosCarrera()
+        obj_CarrerasBD.leerTablaCarreras()
+    End Sub
 
 End Class

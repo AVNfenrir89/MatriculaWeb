@@ -55,7 +55,8 @@
             <div>
                 <label for="select_carrera">Carrera</label>
                 <select id="select_carrera" runat="server">
-                    <option value="TID">carrera1</option>
+                    
+                   
                 </select>
             </div>
 
@@ -95,7 +96,7 @@
                         <th>Estado</th>
                     </tr>
             </table>--%>
-              <asp:GridView ID="gv_matricula_cursos"  class="gvtab" runat="server" AutoGenerateColumns="True" Enabled="True" AutoGenerateEditButton="True" AutoGenerateSelectButton="True">
+              <asp:GridView ID="gv_matricula_cursos"  class="gvtab" runat="server" AutoGenerateColumns="True" Enabled="True">
              </asp:GridView>
         </section>
       
