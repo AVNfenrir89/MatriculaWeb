@@ -49,7 +49,7 @@
             <div>
                 <label for="select_carrera">Carrera</label>
                 <select id="select_carrera" runat="server">
-                    <option value="carrera1">carrera1</option>
+
                 </select>
             </div>
         </section>

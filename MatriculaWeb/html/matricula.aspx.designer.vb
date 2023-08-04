@@ -14,22 +14,22 @@ Option Explicit On
 Partial Public Class Formulario_web12
 
     '''<summary>
-    '''Control lt_estudiante.
+    '''Control select_estudiante.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lt_estudiante As Global.System.Web.UI.WebControls.Literal
+    Protected WithEvents select_estudiante As Global.System.Web.UI.HtmlControls.HtmlSelect
 
     '''<summary>
-    '''Control lt_carrera.
+    '''Control select_carrera.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lt_carrera As Global.System.Web.UI.WebControls.Literal
+    Protected WithEvents select_carrera As Global.System.Web.UI.HtmlControls.HtmlSelect
 
     '''<summary>
     '''Control label_cuatrimestre.

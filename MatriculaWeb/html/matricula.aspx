@@ -10,15 +10,15 @@
 
             <div>
                 <label for="select_estudiante">Selecionar ID del estudiante</label>
-                <select id="select_estudiante">
-                    <asp:Literal ID="lt_estudiante" runat="server"></asp:Literal>
+                <select id="select_estudiante" runat="server">
+                    
                 </select>
             </div>
 
             <div>
-                <label for="select-carrera">Selecionar carrera</label>
-                <select id="select-carrera">
-                    <asp:Literal ID="lt_carrera" runat="server"></asp:Literal>
+                <label for="select_carrera">Selecionar carrera</label>
+                <select id="select_carrera" runat="server">
+                    
                 </select>
             </div>
 
@@ -87,7 +87,7 @@
 
 
     <section>
-        <asp:GridView ID="gv_matricular" class="gvtab" runat="server" AutoGenerateColumns="True" Enabled="True" AutoGenerateEditButton="True" AutoGenerateSelectButton="True">
+        <asp:GridView ID="gv_matricular" class="gvtab" runat="server" AutoGenerateColumns="True" >
         </asp:GridView>
     </section>
 
