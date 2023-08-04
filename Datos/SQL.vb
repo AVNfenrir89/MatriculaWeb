@@ -143,6 +143,31 @@ Public Class SQL
         ' Cerramos la conexión
         CerrarConexion()
     End Sub
+
+
+    ' Método para modificar una carrera en la base de datos
+    Sub ModificarCursoBD(idCurso As String, idCarrera As String, nombre As String, creditos As Integer, notaMinima As Integer, cantMin As Integer, cantMax As Integer, grado As String, estado As String, costo As Integer)
+        Dim sqlInstruccion As SqlClient.SqlCommand
+
+        AbrirConexion()
+
+        ' Utilizamos un comando SQL para actualizar la carrera con el ID_Carrera específico
+        sqlInstruccion = New SqlClient.SqlCommand("UPDATE Curso SET Nombre = @Nombre, Grado = @Grado, Estado = @Estado WHERE ID_Carrera = @ID_Carrera", conexion)
+        sqlInstruccion.Parameters.AddWithValue("@ID_Carrera", idCarrera)
+        sqlInstruccion.Parameters.AddWithValue("@Nombre", nombre)
+        sqlInstruccion.Parameters.AddWithValue("@Grado", grado)
+        sqlInstruccion.Parameters.AddWithValue("@Estado", estado)
+
+        Try
+            ' Ejecución de la instrucción UPDATE
+            sqlInstruccion.ExecuteNonQuery()
+        Catch ex As Exception
+            Throw New System.Exception("Error al ejecutar el UPDATE: " + ex.Message)
+        End Try
+
+        ' Cerramos la conexión
+        CerrarConexion()
+    End Sub
 #End Region
 
 #Region "Procedimientos Estudiantes"
@@ -204,6 +229,10 @@ Public Class SQL
 
         ' Cerramos la conexión
         CerrarConexion()
+    End Sub
+
+    Sub modificarEstudianteBD()
+
     End Sub
 
 #End Region
@@ -273,9 +302,31 @@ Public Class SQL
         ' Cerramos la conexión
         CerrarConexion()
     End Sub
-    'función para obtener el nombre y los id de las carreras
 
 
+    ' Método para modificar una carrera en la base de datos
+    Sub ModificarCarreraBD(idCarrera As String, Nombre As String, Grado As String, Estado As String)
+        Dim sqlInstruccion As SqlClient.SqlCommand
+
+        AbrirConexion()
+
+        ' Utilizamos un comando SQL para actualizar la carrera con el ID_Carrera específico
+        sqlInstruccion = New SqlClient.SqlCommand("UPDATE Carrera SET Nombre = @Nombre, Grado = @Grado, Estado = @Estado WHERE ID_Carrera = @ID_Carrera", conexion)
+        sqlInstruccion.Parameters.AddWithValue("@ID_Carrera", idCarrera)
+        sqlInstruccion.Parameters.AddWithValue("@Nombre", Nombre)
+        sqlInstruccion.Parameters.AddWithValue("@Grado", Grado)
+        sqlInstruccion.Parameters.AddWithValue("@Estado", Estado)
+
+        Try
+            ' Ejecución de la instrucción UPDATE
+            sqlInstruccion.ExecuteNonQuery()
+        Catch ex As Exception
+            Throw New System.Exception("Error al ejecutar el UPDATE: " + ex.Message)
+        End Try
+
+        ' Cerramos la conexión
+        CerrarConexion()
+    End Sub
 
 #End Region
 

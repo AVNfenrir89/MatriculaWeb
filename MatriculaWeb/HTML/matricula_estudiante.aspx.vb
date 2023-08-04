@@ -4,6 +4,7 @@ Public Class Formulario_web11
     Dim obj_Estudiantes As New ClaseEstudiantes
     Dim obj_Carreras As New Negocios.ClaseCarreras
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        cargarInfo()
         Dim Carreras As New DataTable
         Dim nombre_carrera As String
         Dim idCarrera As String
@@ -19,7 +20,7 @@ Public Class Formulario_web11
         Next
 
 
-        cargarInfo()
+
     End Sub
 
 
@@ -36,6 +37,7 @@ Public Class Formulario_web11
             obj_Estudiantes.Direccion = input_direccion.Value
             obj_Estudiantes.AgregarDatosEstudiantes()
             cargarInfo()
+            limpiar()
         Catch ex As Exception
             Throw ex
         End Try
@@ -48,5 +50,23 @@ Public Class Formulario_web11
         Catch ex As Exception
             Throw ex
         End Try
+    End Sub
+
+    Protected Sub btn_Borrar_Click(sender As Object, e As EventArgs) Handles btn_Borrar.Click
+        obj_Estudiantes.IdEstudiantes = input_id_estudiante.Value
+        obj_Estudiantes.borrarEstudiante()
+        cargarInfo()
+        limpiar()
+    End Sub
+    Sub limpiar()
+        input_id_estudiante.Value = ""
+        input_nombre_est.Value = ""
+        input_apellidos.Value = ""
+        input_telefono.Value = ""
+        input_fecha.Value = ""
+        input_correo.Value = ""
+        input_direccion.Value = ""
+        select_beca.Value = ""
+        select_carrera.Value = ""
     End Sub
 End Class
