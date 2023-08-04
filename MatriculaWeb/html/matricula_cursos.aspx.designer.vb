@@ -122,6 +122,15 @@ Partial Public Class Formulario_web1
     Protected WithEvents btn_Borrar As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
+    '''Control btn_Modificar.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btn_Modificar As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
     '''Control gv_matricula_cursos.
     '''</summary>
     '''<remarks>

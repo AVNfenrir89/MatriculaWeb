@@ -40,6 +40,7 @@ Public Class Formulario_web1
             'agregar y cargar en tiempo real
             obj_Cursos.AgregarDatosCursos()
             cargarInfo()
+            limpiar()
         Catch ex As Exception
             Throw ex
         End Try
@@ -60,18 +61,17 @@ Public Class Formulario_web1
         obj_Cursos.IdCurso = input_id_curso.Value
         obj_Cursos.borrarCurso()
         cargarInfo()
-        'limpiar()
+        limpiar()
     End Sub
-    'Sub limpiar()
-    '    obj_Cursos.IdCurso = ""
-    '    obj_Cursos.IdCarrera = ""
-    '    obj_Cursos.Nombre = ""
-    '    obj_Cursos.Creditos = ""
-    '    obj_Cursos.NotaMinima =
-    '    obj_Cursos.CantMax =
-    '    obj_Cursos.CantMin =
-    '    obj_Cursos.Costo =
-    '    obj_Cursos.Grado = ""
-    '    obj_Cursos.Estado = ""
-    'End Sub
+    Sub limpiar()
+        input_id_curso.Value = ""
+        input_nombre.Value = ""
+        input_nota.Value = ""
+        input_cant_max.Value = ""
+        input_cant_min.Value = ""
+        input_creditos.Value = ""
+        select_carrera.Value = ""
+        select_estado.Value = ""
+        select_grado.Value = ""
+    End Sub
 End Class
