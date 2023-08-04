@@ -190,6 +190,21 @@ Public Class SQL
         End Try
         CerrarConexion()
     End Sub
+    Sub BorrarEstudianteBD(idEstudiante As String)
+        Dim sqlInstruccion As SqlClient.SqlCommand
+
+        AbrirConexion()
+        sqlInstruccion = New SqlClient.SqlCommand("DELETE FROM Estudiantes WHERE ID_Estudiantes = @ID_Estudiantes", conexion)
+        sqlInstruccion.Parameters.AddWithValue("@ID_Estudiantes", idEstudiante)
+        Try
+            sqlInstruccion.ExecuteNonQuery()
+        Catch ex As Exception
+            Throw New System.Exception("Error al ejecutar el DELETE: " + ex.Message)
+        End Try
+
+        ' Cerramos la conexión
+        CerrarConexion()
+    End Sub
 
 #End Region
 

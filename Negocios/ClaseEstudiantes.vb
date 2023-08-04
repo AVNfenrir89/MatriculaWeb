@@ -119,5 +119,8 @@ Public Class ClaseEstudiantes
         obj_EstudiantesBD.InsertarEstudianteBD(_idEstudiantes, _idCarrera, _nombre, _apellidos, _beca, _telefono, _fechaNacimiento, _correo, _direccion)
 
     End Sub
+    Sub borrarEstudiante()
+        obj_EstudiantesBD.BorrarEstudianteBD(_idEstudiantes)
+    End Sub
 #End Region
 End Class
