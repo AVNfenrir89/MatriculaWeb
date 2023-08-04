@@ -8,7 +8,6 @@ Public Class Formulario_web1
         Dim Carreras As New DataTable
         Dim nombre_carrera As String
         Dim idCarrera As String
-        Dim i As Integer = 0
         obj_Carreras.LeeDatosCarrera()
         Carreras = obj_Carreras.TablaCarreras
 
@@ -18,7 +17,6 @@ Public Class Formulario_web1
             idCarrera = fila("ID_Carrera")
             Dim opcion As New ListItem(nombre_carrera, idCarrera)
             select_carrera.Items.Add(opcion)
-            i += 1
         Next
 
         'cargar el dgv cuando se levante la pantalla
