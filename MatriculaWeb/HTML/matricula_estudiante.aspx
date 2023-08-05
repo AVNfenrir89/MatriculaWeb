@@ -70,7 +70,7 @@
             <input id="beca_no" runat="server" name="beca" type="radio" value="no" />
         </section>
 
-        <asp:Button ID="btn_Agregar_estudiante" runat="server" Text="Agregar" />
+        <asp:Button ID="btn_Agregar_estudiante" class="btn_matricular btn_funcionario" runat="server" Text="Agregar" />
 
      <div>
                       <!--Cambios realizados-->
@@ -101,7 +101,7 @@
                         <th>Estado</th>
                     </tr>
             </table>--%>
-        <asp:GridView ID="gv_matricula_estudiantes" class="gvtab" runat="server" AutoGenerateColumns="True" Enabled="True" AutoGenerateEditButton="True" AutoGenerateSelectButton="True">
+        <asp:GridView ID="gv_matricula_estudiantes" class="gvtab" runat="server" AutoGenerateColumns="True" Enabled="True">
         </asp:GridView>
     </section>
 
