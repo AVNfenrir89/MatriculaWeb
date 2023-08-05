@@ -54,34 +54,36 @@
             </div>
         </section>
 
-        <section id="datos_estudiante_cuatro">
-            <p>Beca</p>
-            <label for="beca_si">Sí</label>
-            <input id="beca_si" runat="server" name="beca" type="radio" value="si" />
-            <label for="select_beca"></label>
+        <section id="datos_estudiante_cuatro" >
 
-            <select id="select_beca" runat="server" enable="false" disabled="disabled">
+            <p>Beca</p>
+            <label for="beca_si">Sí</label>       
+     <%--       <input id="beca_si" runat="server" name="beca" type="radio" value="si" />--%>
+            <asp:RadioButton ID="beca_si" runat="server" value="si"  name="beca" OnCheckedChanged="beca_si_CheckedChanged" />
+            <label for="select_beca"></label>
+            <select id="select_beca" runat="server" >
                 <option value="25">25</option>
                 <option value="50">50</option>
                 <option value="75">75</option>
             </select>
 
             <label for="beca_no">No</label>
-            <input id="beca_no" runat="server" name="beca" type="radio" value="no" />
+             <asp:RadioButton ID="beca_no" runat="server" value="no"  name="beca" />
+         <%--   <input id="beca_no" runat="server" name="beca" type="radio" value="no" />--%>
+            
         </section>
 
-        <asp:Button ID="btn_Agregar_estudiante" class="btn_matricular btn_funcionario" runat="server" Text="Agregar" />
+   
 
-     <div>
-                      <!--Cambios realizados-->
-             <label for="input_Id_Borrar">Boton para eliminar fila </label>
-                 <asp:Button ID="btn_Borrar" runat="server" Text="Borrar" />
-                </div>
-                  <div>
-                      <!--Cambios realizados-->
-             <label for="input_Id_Modificar">Boton para modifcar fila </label>
-                 <asp:Button ID="btn_Modificar" runat="server" Text="Modifcar" />
-                </div>
+        <section  id="datos_estudiante_cinco">
+
+            <asp:Button ID="btn_Agregar_estudiante" class="btn_matricular btn_funcionario" runat="server" Text="Agregar" />
+
+
+
+        </section>
+  
+
     </section>
 
     <section id="taba_cursos">
@@ -104,5 +106,93 @@
         <asp:GridView ID="gv_matricula_estudiantes" class="gvtab" runat="server" AutoGenerateColumns="True" Enabled="True">
         </asp:GridView>
     </section>
+
+    <section id="datos_estudiante">
+
+        <section id="datos_estudiante_uno" class="seccion-uno">
+            <h1>Ingresa el ID de estudiante</h1>
+            <input type="text" id="input_buscar" runat="server" />
+            <asp:Button ID="btn_buscar" class="btn_matricular btn_funcionario" runat="server" Text="Buscar" OnClick="btn_buscar_Click" />
+        </section>
+
+
+        <section id="datos_estudiante_uno">
+
+            <div>
+                <label for="input_nombre_est2">Nombre</label>
+                <input type="text" id="input_nombre_est2" runat="server" />
+            </div>
+            <div>
+                <label for="input_apellidos2">Apellidos</label>
+                <input type="text" id="input_apellidos2" runat="server" />
+            </div>
+
+            <div>
+                <label for="input_fecha2">Fecha de Nacimiento</label>
+                <input type="text" id="input_fecha2" runat="server" />
+            </div>
+
+        </section>
+
+        <section id="datos_estudiante_dos">
+            <div>
+                <label for="input_direccion2">Dirección</label>
+                <input type="text" id="input_direccion2" runat="server" />
+            </div>
+
+            <div>
+                <label for="input_telefono2">Teléfono</label>
+                <input type="text" runat="server" id="input_telefono2" />
+            </div>
+            <div>
+                <label for="input_correo2" runat="server">Correo electronico</label>
+                <input type="email" id="input_correo2" runat="server" placeholder="email@example.com" />
+            </div>
+        </section>
+
+        <section id="datos_estudiante_tres" class="seccion-uno">
+            <div>
+                <label for="select_carrera2">Carrera</label>
+                <select ID="select_carrea2"  class="select-carrera" runat="server">
+                </select>
+            </div>
+
+            <div id="datos_estudiante_cuatro" class="seccion-uno">
+                <p>Beca</p>
+                <label for="beca_si2">Sí</label>
+                <input id="beca_si2" runat="server" name="beca" type="radio" value="si" />
+                <label for="select_beca"></label>
+
+                <select id="select2" runat="server" enable="false" disabled="disabled">
+                    <option value="25">25</option>
+                    <option value="50">50</option>
+                    <option value="75">75</option>
+                </select>
+
+                <label for="beca_no2">No</label>
+                <input id="beca_no2" runat="server" name="beca" type="radio" value="no" />
+            </div>
+        </section>
+
+
+
+        <section id="datos_estudiante_cinco">
+
+            <div>
+                <!--Cambios realizados-->
+                <label for="input_Id_Borrar">Boton para eliminar fila </label>
+                <asp:Button ID="btn_Borrar" class="btn_matricular btn_funcionario" runat="server" Text="Borrar" />
+            </div>
+
+            <div>
+                <!--Cambios realizados-->
+                <label for="input_Id_Modificar">Boton para modifcar fila </label>
+                <asp:Button ID="btn_Modificar" class="btn_matricular btn_funcionario" runat="server" Text="Modifcar" OnClick="btn_Modificar_Click" />
+            </div>
+        </section>
+
+
+    </section>
+
 
 </asp:Content>

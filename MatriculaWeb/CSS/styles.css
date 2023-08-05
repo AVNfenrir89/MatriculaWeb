@@ -40,8 +40,9 @@ body {
 }
 
 #formPincipal {
+    padding: 50px;
     margin: auto;
-    height: 95vh;
+    height: 100%;
     background: #eeeeee;
 }
 
@@ -111,31 +112,48 @@ h1 {
         border: 1px;
     }
 
-
-#select_carrera {
-    border-radius: 5px;
-    height: 23px;
-    border: 1px;
-    width: 350px;
-}
+    #datos_estudiante_tres select {
+        outline: none;
+        border-radius: 5px;
+        height: 23px;
+        border: 1px;
+    }
+    #select_carrera {
+        border-radius: 5px;
+        height: 23px;
+        border: 1px;
+        width: 350px;
+    }
 
 #datos_estudiante_cuatro {
     display: flex;
     justify-content: center;
+    align-items:center;
     margin-bottom: 30px;
 }
+
+    #datos_estudiante_cuatro select {
+        outline: none;
+        border-radius: 5px;
+    }
 
     #datos_estudiante_cuatro p {
         margin-right: 10px;
     }
 
-    #datos_estudiante_cuatro label {
+#datos_estudiante_cuatro label {
+        margin-right: 10px;
+        margin-left:10px;
+ }
+
+#datos_estudiante_cinco {
+    display: flex;
+    justify-content: center;
+}
+
+    #select_beca {
         margin-right: 10px;
     }
-
-#select_beca {
-    margin-right: 10px;
-}
 
 
 #cursos_dos {
@@ -193,7 +211,8 @@ h1 {
 .gvtab {
     padding: 5px;
     text-align: center;
-    margin-top: 150px;
+    margin-top: 100px;
+    margin-bottom: 100px;
     border: 2px solid #8db594;
     border-radius: 8px;
     width: 900px;
@@ -357,4 +376,16 @@ h1 {
 .btn_funcionario{
     margin-bottom: 25px;
     margin-left: 25px;
+
+}
+.seccion-uno {
+    align-items: center;
+    align-content:center;
+}
+.select-carrera {
+    outline: none;
+    width: 350px;
+    border-radius: 5px;
+    height: 23px;
+    border: 1px;
 }

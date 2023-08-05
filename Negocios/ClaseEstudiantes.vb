@@ -122,5 +122,9 @@ Public Class ClaseEstudiantes
     Sub borrarEstudiante()
         obj_EstudiantesBD.BorrarEstudianteBD(_idEstudiantes)
     End Sub
+
+    Sub SelecionarEstudiante()
+        obj_EstudiantesBD.SelecionarEstudiante(IdEstudiantes)
+    End Sub
 #End Region
 End Class

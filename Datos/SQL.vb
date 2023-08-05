@@ -1,4 +1,5 @@
-﻿Imports System.Data
+﻿Imports System.Collections.ObjectModel
+Imports System.Data
 Imports System.Data.SqlClient
 Public Class SQL
     Dim conexion As SqlConnection
@@ -231,9 +232,49 @@ Public Class SQL
         CerrarConexion()
     End Sub
 
-    Sub modificarEstudianteBD()
 
+    'Public Function SelecionarEstudiante(idEstudiante) As DataTable
+    '    Dim sqlInstruccion As SqlClient.SqlCommand
+    '    Dim dt As New DataTable()
+    '    AbrirConexion()
+    '    sqlInstruccion = New SqlClient.SqlCommand("SELECT FROM Estudiantes WHERE ID_Estudiantes = @ID_Estudiantes", conexion)
+    '    Try
+
+    '        Dim reader As SqlDataReader = sqlInstruccion.ExecuteReader()
+    '        dt.Load(reader)
+    '    Catch ex As Exception
+    '        ' Manejar excepciones, si es necesario
+    '        Throw New System.Exception("Error al ejecutar el SELECT: " + ex.Message)
+    '    End Try
+    '    Return dt
+    'End Function
+    'Sub modificarEstudianteBD()
+
+    'End Sub
+
+    Sub SelecionarEstudiante(idEstudiante)
+
+        Dim instruccionSQL As SqlClient.SqlCommand
+        Dim DataAdapter As SqlClient.SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlClient.SqlCommand("SELECT * FROM Estudiantes WHERE ID_Estudiantes =" & idEstudiante, conexion)
+
+        If dsEstudiantes.Tables().Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count > 1 Then
+                dsEstudiantes.Tables(0).Clear()
+            End If
+        End If
+
+        Try
+            DataAdapter = New SqlClient.SqlDataAdapter(instruccionSQL)
+            DataAdapter.Fill(dsEstudiantes)
+        Catch ex As Exception
+            Throw New System.Exception(ex.Message)
+        End Try
+        CerrarConexion()
     End Sub
+
 
 #End Region
 
