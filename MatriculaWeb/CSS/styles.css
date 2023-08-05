@@ -389,3 +389,7 @@ h1 {
     height: 23px;
     border: 1px;
 }
+
+.btn_Borrar {
+    margin-right :25px; 
+}

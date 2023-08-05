@@ -107,7 +107,10 @@
         </asp:GridView>
     </section>
 
+    <h1>Sección para editar o modificar un estudiante</h1>
+
     <section id="datos_estudiante">
+
 
         <section id="datos_estudiante_uno" class="seccion-uno">
             <h1>Ingresa el ID de estudiante</h1>
@@ -161,9 +164,9 @@
                 <p>Beca</p>
                 <label for="beca_si2">Sí</label>
                 <input id="beca_si2" runat="server" name="beca" type="radio" value="si" />
-                <label for="select_beca"></label>
+                
 
-                <select id="select2" runat="server" enable="false" disabled="disabled">
+                <select id="select_beca2" runat="server" enable="false" disabled="disabled">
                     <option value="25">25</option>
                     <option value="50">50</option>
                     <option value="75">75</option>
@@ -176,12 +179,12 @@
 
 
 
-        <section id="datos_estudiante_cinco">
+        <section id="datos_estudiante_cinco" class ="botones_borrar_editar">
 
-            <div>
+            <div >
                 <!--Cambios realizados-->
                 <label for="input_Id_Borrar">Boton para eliminar fila </label>
-                <asp:Button ID="btn_Borrar" class="btn_matricular btn_funcionario" runat="server" Text="Borrar" />
+                <asp:Button ID="btn_Borrar" class="btn_matricular btn_funcionario btn_Borrar" runat="server" Text="Borrar" />
             </div>
 
             <div>
