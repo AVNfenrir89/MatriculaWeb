@@ -4,6 +4,8 @@ Public Class Formulario_web11
     Dim obj_Estudiantes As New ClaseEstudiantes
     Dim obj_Carreras As New Negocios.ClaseCarreras
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        beca_no.Checked = True
+        select_beca.Disabled = True
         cargarInfo()
         Dim Carreras As New DataTable
         Dim nombre_carrera As String
@@ -17,8 +19,8 @@ Public Class Formulario_web11
             idCarrera = fila("ID_Carrera")
             Dim opcion As New ListItem(nombre_carrera, idCarrera)
             select_carrera.Items.Add(opcion)
+            select_carrea2.Items.Add(opcion)
         Next
-
 
 
     End Sub
@@ -31,7 +33,12 @@ Public Class Formulario_web11
             obj_Estudiantes.Nombre = input_nombre_est.Value
             obj_Estudiantes.Apellidos = input_apellidos.Value
             obj_Estudiantes.Telefono = input_telefono.Value
-            obj_Estudiantes.Beca = select_beca.Value
+            If beca_no.Checked Then
+                obj_Estudiantes.Beca = 0
+            Else
+                obj_Estudiantes.Beca = select_beca.Value
+            End If
+            'obj_Estudiantes.Beca = select_beca.Value
             obj_Estudiantes.FechaNacimiento = input_fecha.Value
             obj_Estudiantes.Correo = input_correo.Value
             obj_Estudiantes.Direccion = input_direccion.Value
@@ -53,20 +60,55 @@ Public Class Formulario_web11
     End Sub
 
     Protected Sub btn_Borrar_Click(sender As Object, e As EventArgs) Handles btn_Borrar.Click
-        obj_Estudiantes.IdEstudiantes = input_id_estudiante.Value
+        obj_Estudiantes.IdEstudiantes = input_buscar.Value
         obj_Estudiantes.borrarEstudiante()
         cargarInfo()
         limpiar()
     End Sub
     Sub limpiar()
-        input_id_estudiante.Value = ""
-        input_nombre_est.Value = ""
-        input_apellidos.Value = ""
-        input_telefono.Value = ""
-        input_fecha.Value = ""
-        input_correo.Value = ""
-        input_direccion.Value = ""
-        select_beca.Value = ""
-        select_carrera.Value = ""
+        input_buscar.Value = ""
+        input_nombre_est2.Value = ""
+        input_apellidos2.Value = ""
+        input_telefono2.Value = ""
+        input_fecha2.Value = ""
+        input_correo2.Value = ""
+        input_direccion2.Value = ""
+
+    End Sub
+
+    Protected Sub btn_Modificar_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+
+    Protected Sub beca_si_CheckedChanged(sender As Object, e As EventArgs)
+        If beca_si.Checked Then
+            beca_no.Checked = False
+            select_beca.Disabled = False
+        End If
+    End Sub
+
+    Protected Sub btn_buscar_Click(sender As Object, e As EventArgs)
+        Dim estudiates As New DataTable
+        obj_Estudiantes.IdEstudiantes = input_buscar.Value
+        obj_Estudiantes.SelecionarEstudiante()
+        estudiates = obj_Estudiantes.TablaEstudiantes
+        For Each fila As DataRow In estudiates.Rows
+            input_nombre_est2.Value = fila("Nombre")
+            input_apellidos2.Value = fila("Apellidos")
+            input_fecha2.Value = fila("Fecha_Nacimiento")
+            input_direccion2.Value = fila("Direccion")
+            input_telefono2.Value = fila("Telefono")
+            input_correo2.Value = fila("Correo")
+            If fila("Beca") = 0 Then
+                beca_no2.Checked = True
+            Else
+                beca_si2.Checked = True
+
+            End If
+        Next
+
+
+
     End Sub
 End Class
