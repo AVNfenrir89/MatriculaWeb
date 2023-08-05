@@ -4,8 +4,7 @@ Public Class Formulario_web1
     Dim obj_Cursos As New Negocios.ClaseCursos
     Dim obj_Carreras As New Negocios.ClaseCarreras
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        'cargar el dgv cuando se levante la pantalla
-        cargarInfo()
+
         Dim Carreras As New DataTable
         Dim nombre_carrera As String
         Dim idCarrera As String
@@ -20,7 +19,8 @@ Public Class Formulario_web1
             select_carrera.Items.Add(opcion)
         Next
 
-
+        'cargar el dgv cuando se levante la pantalla
+        cargarInfo()
 
     End Sub
 

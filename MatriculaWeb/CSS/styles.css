@@ -315,3 +315,46 @@ h1 {
     border-radius: 6px;
     color: white;
 }
+
+.funcionarios_uno {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+.funcionarios_uno input {
+        outline: none;
+        width: 150px;
+        border-radius: 5px;
+        height: 23px;
+        border: 1px;
+}
+.funcionarios_dos {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.funcionarios_dos input {
+        outline: none;
+        width: 150px;
+        border-radius: 5px;
+        height: 23px;
+        border: 1px;
+}
+
+.funcionarios_dos select {
+        outline: none;
+        width: 150px;
+        border-radius: 5px;
+        height: 23px;
+        border: 1px;
+}
+
+.btn_funcionario{
+    margin-bottom: 25px;
+    margin-left: 25px;
+}
