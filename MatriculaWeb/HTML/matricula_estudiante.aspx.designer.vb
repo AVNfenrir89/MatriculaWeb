@@ -221,13 +221,13 @@ Partial Public Class Formulario_web11
     Protected WithEvents beca_si2 As Global.System.Web.UI.HtmlControls.HtmlInputRadioButton
 
     '''<summary>
-    '''Control select2.
+    '''Control select_beca2.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents select2 As Global.System.Web.UI.HtmlControls.HtmlSelect
+    Protected WithEvents select_beca2 As Global.System.Web.UI.HtmlControls.HtmlSelect
 
     '''<summary>
     '''Control beca_no2.
