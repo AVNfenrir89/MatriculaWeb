@@ -74,4 +74,8 @@ Public Class Formulario_web1
         select_estado.Value = ""
         select_grado.Value = ""
     End Sub
+
+    Protected Sub btn_Modificar_Click(sender As Object, e As EventArgs) Handles btn_Modificar.Click
+
+    End Sub
 End Class
