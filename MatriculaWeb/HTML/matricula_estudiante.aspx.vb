@@ -28,7 +28,6 @@ Public Class Formulario_web11
 
     End Sub
 
-
     Protected Sub btn_Agregar_estudiante_Click(sender As Object, e As EventArgs) Handles btn_Agregar_estudiante.Click
         Try
             obj_Estudiantes.IdEstudiantes = input_id_estudiante.Value
@@ -63,10 +62,14 @@ Public Class Formulario_web11
     End Sub
 
     Protected Sub btn_Borrar_Click(sender As Object, e As EventArgs) Handles btn_Borrar.Click
-        obj_Estudiantes.IdEstudiantes = input_buscar.Value
-        obj_Estudiantes.borrarEstudiante()
-        cargarInfo()
-        limpiar()
+        Try
+            obj_Estudiantes.IdEstudiantes = input_buscar.Value
+            obj_Estudiantes.borrarEstudiante()
+            cargarInfo()
+            limpiar()
+        Catch ex As Exception
+            Throw ex
+        End Try
     End Sub
     Sub limpiar()
         input_buscar.Value = ""
@@ -79,10 +82,9 @@ Public Class Formulario_web11
 
     End Sub
 
-    Protected Sub btn_Modificar_Click(sender As Object, e As EventArgs)
+    Protected Sub btn_Modificar_Click(sender As Object, e As EventArgs) Handles btn_Modificar.Click
 
     End Sub
-
 
     Protected Sub beca_si_CheckedChanged(sender As Object, e As EventArgs)
         If beca_si.Checked Then
@@ -90,9 +92,7 @@ Public Class Formulario_web11
             select_beca.Disabled = False
         End If
     End Sub
-
     Protected Sub btn_buscar_Click(sender As Object, e As EventArgs)
-
         Dim estudiates As New DataTable
         obj_Estudiantes.IdEstudiantes = input_buscar.Value
         obj_Estudiantes.SelecionarEstudiante()
@@ -119,7 +119,6 @@ Public Class Formulario_web11
                     select_beca2.SelectedIndex = 2
                 End If
             End If
-
             Dim i As Integer = 0
             For Each item As ListItem In select_carrea2.Items
                 If item.Value = fila("ID_Carrera") Then
