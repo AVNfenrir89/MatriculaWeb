@@ -76,6 +76,22 @@ Public Class Formulario_web1
     End Sub
 
     Protected Sub btn_Modificar_Click(sender As Object, e As EventArgs) Handles btn_Modificar.Click
-
+        Try
+            obj_Cursos.IdCurso = input_id_curso.Value
+            obj_Cursos.IdCarrera = select_carrera.Value
+            obj_Cursos.Nombre = input_nombre.Value
+            obj_Cursos.Creditos = input_creditos.Value
+            obj_Cursos.NotaMinima = input_nota.Value
+            obj_Cursos.CantMax = input_cant_max.Value
+            obj_Cursos.CantMin = input_cant_min.Value
+            obj_Cursos.Costo = obj_Cursos.Costo_curso(input_creditos.Value)
+            obj_Cursos.Grado = select_grado.Value
+            obj_Cursos.Estado = select_estado.Value
+            obj_Cursos.modificarCurso()
+            cargarInfo()
+            limpiar()
+        Catch ex As Exception
+            Throw ex
+        End Try
     End Sub
 End Class

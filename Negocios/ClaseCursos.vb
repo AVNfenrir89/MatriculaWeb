@@ -143,7 +143,7 @@ Public Class ClaseCursos
         obj_CursosBD.BorrarCursoBD(_idCurso)
     End Sub
 
-    Sub modificar()
+    Sub modificarCurso()
         obj_CursosBD.ModificarCursoBD(_idCurso, _idCarrera, _nombre, _creditos, _notaMinima, _cantMin, _cantMax, _grado, _estado, _costo)
     End Sub
 #End Region
