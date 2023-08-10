@@ -104,7 +104,6 @@ Public Class SQL
 
         'Se prepara la instruccion SQL 
         sqlInstruccion = New SqlClient.SqlCommand("insert into Cursos(ID_Cursos, ID_Carrera, Nombre, Creditos, Nota_Min, Min_Estudiantes, Max_Estudiantes, Grado, Estado, Costo) values (@ID_Cursos, @ID_Carrera, @Nombre, @Creditos, @Nota_Min, @Min_Estudiantes, @Max_Estudiantes, @Grado, @Estado, @Costo)", conexion)
-
         'envio de parametros y sus respectivos valores
         sqlInstruccion.Parameters.AddWithValue("@ID_Cursos", idCurso)
         sqlInstruccion.Parameters.AddWithValue("@ID_Carrera", idCarrera)
@@ -232,7 +231,6 @@ Public Class SQL
         Catch ex As Exception
             Throw New System.Exception("Error al ejecutar el DELETE: " + ex.Message)
         End Try
-
         ' Cerramos la conexión
         CerrarConexion()
     End Sub
@@ -256,6 +254,25 @@ Public Class SQL
     'Sub modificarEstudianteBD()
 
     'End Sub
+    Sub ModificarEstudiante(idEstudiante As Integer, idCarrera As String, nombre As String, apellidos As String, beca As Integer, telefono As String, fecha As Date, correo As String, direccion As String)
+        Dim sqlInstruccion As SqlClient.SqlCommand
+        AbrirConexion()
+        sqlInstruccion = New SqlClient.SqlCommand("UPDATE Estudiantes SET ID_Carrera = @ID_Carrera, Nombre=@Nombre, Apellidos=@Apellidos, Beca=@Beca, Telefono= @Telefono, Fecha=@Fecha, Correo=@Correo, Direccion=@Direccion WHERE ID_Estudiantes=@ID_Estudiantes", conexion)
+        sqlInstruccion.Parameters.AddWithValue("@ID_Carrera", idCarrera)
+        sqlInstruccion.Parameters.AddWithValue("@Nombre", nombre)
+        sqlInstruccion.Parameters.AddWithValue("@Apellidos", apellidos)
+        sqlInstruccion.Parameters.AddWithValue("@Beca", beca)
+        sqlInstruccion.Parameters.AddWithValue("@Telefono", telefono)
+        sqlInstruccion.Parameters.AddWithValue("@Fecha_Nacimiento", fecha)
+        sqlInstruccion.Parameters.AddWithValue("@Correo", correo)
+        sqlInstruccion.Parameters.AddWithValue("@Direccion", direccion)
+        Try
+            sqlInstruccion.ExecuteNonQuery()
+        Catch ex As Exception
+            Throw New System.Exception("Error al ejecutar el insert:" + ex.Message)
+        End Try
+        CerrarConexion()
+    End Sub
 
     Sub SelecionarEstudiante(idEstudiante)
 
