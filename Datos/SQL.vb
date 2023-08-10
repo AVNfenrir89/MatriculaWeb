@@ -153,12 +153,17 @@ Public Class SQL
         AbrirConexion()
 
         ' Utilizamos un comando SQL para actualizar la carrera con el ID_Carrera específico
-        sqlInstruccion = New SqlClient.SqlCommand("UPDATE Curso SET Nombre = @Nombre, Grado = @Grado, Estado = @Estado WHERE ID_Carrera = @ID_Carrera", conexion)
+        sqlInstruccion = New SqlClient.SqlCommand("UPDATE Curso SET ID_Carrera=@ID_Carrera, Nombre = @Nombre, Creditos = @Creditos, Nota_Min = @Nota_Min, Min_Estudiantes = @Min_Estudiantes, Max_Estudiantes=@Max_Estudiantes, Grado = @Grado, Estado = @Estado, Costo=@Costo WHERE ID_Curso = @ID_Curso", conexion)
+        sqlInstruccion.Parameters.AddWithValue("@ID_Cursos", idCurso)
         sqlInstruccion.Parameters.AddWithValue("@ID_Carrera", idCarrera)
         sqlInstruccion.Parameters.AddWithValue("@Nombre", nombre)
+        sqlInstruccion.Parameters.AddWithValue("@Creditos", creditos)
+        sqlInstruccion.Parameters.AddWithValue("@Nota_Min", notaMinima)
+        sqlInstruccion.Parameters.AddWithValue("@Min_Estudiantes", cantMin)
+        sqlInstruccion.Parameters.AddWithValue("@Max_Estudiantes", cantMax)
         sqlInstruccion.Parameters.AddWithValue("@Grado", grado)
         sqlInstruccion.Parameters.AddWithValue("@Estado", estado)
-
+        sqlInstruccion.Parameters.AddWithValue("@Costo", costo)
         Try
             ' Ejecución de la instrucción UPDATE
             sqlInstruccion.ExecuteNonQuery()
