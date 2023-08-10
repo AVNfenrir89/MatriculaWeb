@@ -83,7 +83,27 @@ Public Class Formulario_web11
     End Sub
 
     Protected Sub btn_Modificar_Click(sender As Object, e As EventArgs) Handles btn_Modificar.Click
-
+        Try
+            obj_Estudiantes.IdEstudiantes = input_id_estudiante.Value
+            obj_Estudiantes.IdCarrera = select_carrera.Value
+            obj_Estudiantes.Nombre = input_nombre_est.Value
+            obj_Estudiantes.Apellidos = input_apellidos.Value
+            obj_Estudiantes.Telefono = input_telefono.Value
+            If beca_no.Checked Then
+                obj_Estudiantes.Beca = 0
+            Else
+                obj_Estudiantes.Beca = select_beca.Value
+            End If
+            'obj_Estudiantes.Beca = select_beca.Value
+            obj_Estudiantes.FechaNacimiento = input_fecha.Value
+            obj_Estudiantes.Correo = input_correo.Value
+            obj_Estudiantes.Direccion = input_direccion.Value
+            obj_Estudiantes.AgregarDatosEstudiantes()
+            cargarInfo()
+            limpiar()
+        Catch ex As Exception
+            Throw ex
+        End Try
     End Sub
 
     Protected Sub beca_si_CheckedChanged(sender As Object, e As EventArgs)
