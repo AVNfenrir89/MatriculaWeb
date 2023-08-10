@@ -96,7 +96,7 @@ Public Class ClaseEstudiantes
 
     Public Property Direccion As String
         Get
-            Return _direccion
+            Return _direccion.Trim
         End Get
         Set(value As String)
             _direccion = value
@@ -127,6 +127,9 @@ Public Class ClaseEstudiantes
         obj_EstudiantesBD.SelecionarEstudiante(IdEstudiantes)
     End Sub
 
+    Sub ModificarEstudiante()
+        obj_EstudiantesBD.ModificarEstudiante(_idEstudiantes, _idCarrera, _nombre, _apellidos, _beca, _telefono, _fechaNacimiento, _correo, _direccion)
+    End Sub
 
 #End Region
 End Class

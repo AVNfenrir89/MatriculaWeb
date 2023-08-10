@@ -236,28 +236,11 @@ Public Class SQL
     End Sub
 
 
-    'Public Function SelecionarEstudiante(idEstudiante) As DataTable
-    '    Dim sqlInstruccion As SqlClient.SqlCommand
-    '    Dim dt As New DataTable()
-    '    AbrirConexion()
-    '    sqlInstruccion = New SqlClient.SqlCommand("SELECT FROM Estudiantes WHERE ID_Estudiantes = @ID_Estudiantes", conexion)
-    '    Try
-
-    '        Dim reader As SqlDataReader = sqlInstruccion.ExecuteReader()
-    '        dt.Load(reader)
-    '    Catch ex As Exception
-    '        ' Manejar excepciones, si es necesario
-    '        Throw New System.Exception("Error al ejecutar el SELECT: " + ex.Message)
-    '    End Try
-    '    Return dt
-    'End Function
-    'Sub modificarEstudianteBD()
-
-    'End Sub
     Sub ModificarEstudiante(idEstudiante As Integer, idCarrera As String, nombre As String, apellidos As String, beca As Integer, telefono As String, fecha As Date, correo As String, direccion As String)
         Dim sqlInstruccion As SqlClient.SqlCommand
         AbrirConexion()
-        sqlInstruccion = New SqlClient.SqlCommand("UPDATE Estudiantes SET ID_Carrera = @ID_Carrera, Nombre=@Nombre, Apellidos=@Apellidos, Beca=@Beca, Telefono= @Telefono, Fecha=@Fecha, Correo=@Correo, Direccion=@Direccion WHERE ID_Estudiantes=@ID_Estudiantes", conexion)
+        sqlInstruccion = New SqlClient.SqlCommand("UPDATE Estudiantes SET ID_Carrera = @ID_Carrera, Nombre=@Nombre, Apellidos=@Apellidos, Beca=@Beca, Telefono= @Telefono, Fecha_Nacimiento=@Fecha_Nacimiento, Correo=@Correo, Direccion=@Direccion WHERE ID_Estudiantes=@ID_Estudiantes", conexion)
+        sqlInstruccion.Parameters.AddWithValue("@ID_Estudiantes", idEstudiante)
         sqlInstruccion.Parameters.AddWithValue("@ID_Carrera", idCarrera)
         sqlInstruccion.Parameters.AddWithValue("@Nombre", nombre)
         sqlInstruccion.Parameters.AddWithValue("@Apellidos", apellidos)

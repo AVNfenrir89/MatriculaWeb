@@ -4,24 +4,23 @@ Public Class Formulario_web1
     Dim obj_Cursos As New Negocios.ClaseCursos
     Dim obj_Carreras As New Negocios.ClaseCarreras
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        'cargar el dgv cuando se levante la pantalla
-        cargarInfo()
-        Dim Carreras As New DataTable
-        Dim nombre_carrera As String
-        Dim idCarrera As String
-        obj_Carreras.LeeDatosCarrera()
-        Carreras = obj_Carreras.TablaCarreras
+        If Not IsPostBack Then
+            'cargar el dgv cuando se levante la pantalla
+            cargarInfo()
+            Dim Carreras As New DataTable
+            Dim nombre_carrera As String
+            Dim idCarrera As String
+            obj_Carreras.LeeDatosCarrera()
+            Carreras = obj_Carreras.TablaCarreras
 
-        'se itera cada fila de la tabla carreras y se agrega items al select_carrera
-        For Each fila As DataRow In Carreras.Rows
-            nombre_carrera = fila("nombre")
-            idCarrera = fila("ID_Carrera")
-            Dim opcion As New ListItem(nombre_carrera, idCarrera)
-            select_carrera.Items.Add(opcion)
-        Next
-
-
-
+            'se itera cada fila de la tabla carreras y se agrega items al select_carrera
+            For Each fila As DataRow In Carreras.Rows
+                nombre_carrera = fila("nombre")
+                idCarrera = fila("ID_Carrera")
+                Dim opcion As New ListItem(nombre_carrera, idCarrera)
+                select_carrera.Items.Add(opcion)
+            Next
+        End If
     End Sub
 
     Protected Sub agrega_curso_Click(sender As Object, e As EventArgs) Handles agrega_curso.Click
