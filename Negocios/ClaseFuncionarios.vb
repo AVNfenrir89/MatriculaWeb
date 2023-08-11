@@ -1,11 +1,14 @@
 ﻿Imports Datos
 Public Class ClaseFuncionarios
     Dim obj_FuncionariosBD As New SQL
-    Public _nombre As String
-    Public _apellidos As String
-    Public _identificacion As String
-    Private _usuario As String
-    Private _clave As String
+    Dim _nombre As String
+    Dim _apellido1 As String
+    Dim _apellido2 As String
+    Dim _correo As String
+    Dim _identificacion As String
+    Dim _usuario As String
+    Dim _clave As String
+    Dim _estado As String
 
 #Region "propiedades"
     Public Property TablaFuncionarios As DataTable
@@ -33,12 +36,12 @@ Public Class ClaseFuncionarios
         End Set
     End Property
 
-    Public Property Apellidos As String
+    Public Property Apellido1 As String
         Get
-            Return _apellidos
+            Return _apellido1
         End Get
         Set(value As String)
-            _apellidos = value
+            _apellido1 = value
         End Set
     End Property
 
@@ -57,6 +60,33 @@ Public Class ClaseFuncionarios
         End Get
         Set(value As String)
             _clave = value
+        End Set
+    End Property
+
+    Public Property Estado As String
+        Get
+            Return _estado
+        End Get
+        Set(value As String)
+            _estado = value
+        End Set
+    End Property
+
+    Public Property Apellido2 As String
+        Get
+            Return _apellido2
+        End Get
+        Set(value As String)
+            _apellido2 = value
+        End Set
+    End Property
+
+    Public Property Correo As String
+        Get
+            Return _correo
+        End Get
+        Set(value As String)
+            _correo = value
         End Set
     End Property
 #End Region
