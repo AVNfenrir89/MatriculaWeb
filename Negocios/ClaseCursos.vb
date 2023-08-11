@@ -11,6 +11,7 @@ Public Class ClaseCursos
     Dim _grado As String
     Dim _estado As String
     Dim _costo As Integer
+    Dim _cuatri As String
     'obj para referenciar de que tipo es el objeto
     Dim obj_CursosBD As New SQL
 
@@ -111,6 +112,15 @@ Public Class ClaseCursos
         End Get
         Set(value As DataTable)
 
+        End Set
+    End Property
+
+    Public Property Cuatri As String
+        Get
+            Return _cuatri
+        End Get
+        Set(value As String)
+            _cuatri = value
         End Set
     End Property
 
