@@ -11,14 +11,12 @@
             <div>
                 <label for="select_estudiante">Selecionar ID del estudiante</label>
                 <select id="select_estudiante" runat="server">
-                    
                 </select>
             </div>
 
             <div>
                 <label for="select_carrera">Selecionar carrera</label>
                 <select id="select_carrera" runat="server">
-                    
                 </select>
             </div>
 
@@ -46,28 +44,28 @@
 
                 <div>
                     <input type="checkbox" id="curso_dos" value="Curso" runat="server" />
-                    <label id="lb_curso_dos" runat="server" for="curso_dos">Curso</label>                
+                    <label id="lb_curso_dos" runat="server" for="curso_dos">Curso</label>
                 </div>
 
                 <div>
                     <input type="checkbox" id="curso_tres" value="Curso" runat="server" />
-                    <label id="lb_curso_tres" runat="server" for="curso_tres">Curso</label>                 
+                    <label id="lb_curso_tres" runat="server" for="curso_tres">Curso</label>
                 </div>
             </section>
-         
+
             <section>
 
-                <div>                   
+                <div>
                     <input type="checkbox" id="curso_cuatro" value="Curso" runat="server" />
                     <label id="lb_curso_cuatro" runat="server" for="curso_cuatro" text="">Curso</label>
                 </div>
 
-                <div>                  
+                <div>
                     <input type="checkbox" id="curso_cinco" value="Curso" runat="server" />
                     <label id="lb_curso_cinco" runat="server" for="curso_cinco">Curso</label>
                 </div>
 
-                <div>                 
+                <div>
                     <input type="checkbox" id="curso_seis" value="Curso" runat="server" />
                     <label id="lb_curso_seis" runat="server" for="curso_seis">Curso</label>
                 </div>
@@ -76,7 +74,7 @@
 
         </section>
 
-        <section class ="matricula-tres">
+        <section class="matricula-tres">
             <asp:Button ID="btn_total" class="btn_matricular" runat="server" Text="Total" OnClick="btn_total_Click" />
             <label id="lb_total" runat="server">____________</label>
             <asp:Button ID="btn_matricular" class="btn_matricular" runat="server" Text="Matricular" OnClick="btn_matricular_Click1" />
@@ -91,6 +89,91 @@
         </asp:GridView>
     </section>
 
+    <h1>Sección para editar o borrar una matrícula</h1>
+    <section id="datos_estudiante">
+
+        <section id="datos_estudiante_uno" class="seccion-uno">
+            <h1>Ingresa el ID de la Matrícula</h1>
+            <input type="text" id="input_buscar" runat="server" />
+            <asp:Button ID="btn_buscar" class="btn_matricular btn_funcionario" runat="server" Text="Buscar"  />
+        </section>
+
+        <section class="matricula-uno">
+            <div>
+                <label for="select_carrera2">Selecionar carrera</label>
+                <select id="select_carrera2" runat="server">
+                </select>
+            </div>
+
+            <div>
+                <label for="label_cuatrimestre2">Selecionar cuatrimestre</label>
+                <select id="label_cuatrimestre2" runat="server">
+                    <option value="I">I</option>
+                    <option value="II">II</option>
+                    <option value="II">II</option>
+                    <option value="IV">IV</option>
+                </select>
+            </div>
+        </section>
+
+        
+        <section class="matricula-dos">
+
+            <section>
+                <div>
+                    <input type="checkbox" id="curso_uno2" value="Curso" runat="server" />
+                    <label id="lb_curso_uno2" runat="server" for="curso_uno2" text="">Curso</label>
+                </div>
+
+                <div>
+                    <input type="checkbox" id="curso_dos2" value="Curso" runat="server" />
+                    <label id="lb_curso_dos2" runat="server" for="curso_dos2">Curso</label>
+                </div>
+
+                <div>
+                    <input type="checkbox" id="curso_tres2" value="Curso" runat="server" />
+                    <label id="lb_curso_tres2" runat="server" for="curso_tres2">Curso</label>
+                </div>
+            </section>
+
+            <section>
+
+                <div>
+                    <input type="checkbox" id="curso_cuatro2" value="Curso" runat="server" />
+                    <label id="lb_curso_cuatro2" runat="server" for="curso_cuatro2" text="">Curso</label>
+                </div>
+
+                <div>
+                    <input type="checkbox" id="curso_cinco2" value="Curso" runat="server" />
+                    <label id="lb_curso_cinco2" runat="server" for="curso_cinco2">Curso</label>
+                </div>
+
+                <div>
+                    <input type="checkbox" id="curso_seis2" value="Curso" runat="server" />
+                    <label id="lb_curso_seis2" runat="server" for="curso_seis2">Curso</label>
+                </div>
+
+            </section>
+
+        </section>
+
+        <section id="datos_estudiante_cinco" class="botones_borrar_editar">
+
+            <div>
+                <!--Cambios realizados-->
+                <label for="input_Id_Borrar">Boton para eliminar fila </label>
+                <asp:Button ID="btn_Borrar" class="btn_matricular btn_funcionario btn_Borrar" runat="server" Text="Borrar" />
+            </div>
+
+            <div>
+                <!--Cambios realizados-->
+                <label for="input_Id_Modificar">Boton para modifcar fila </label>
+                <asp:Button ID="btn_Modificar" class="btn_matricular btn_funcionario" runat="server" Text="Modifcar" />
+            </div>
+
+        </section>
+
+    </section>
 
 
 

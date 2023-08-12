@@ -64,4 +64,76 @@
         </asp:GridView>
     </section>
 
+    <h1>Sección para editar o modificar un funcionario</h1>
+    <section id="datos_estudiante">
+        <section id="datos_estudiante_uno" class="seccion-uno">
+            <h1>Ingresa el ID del Funcionario</h1>
+            <input type="text" id="input_buscar" runat="server" />
+            <asp:Button ID="btn_buscar" class="btn_matricular btn_funcionario" runat="server" Text="Buscar" />
+        </section>
+
+        <section class="funcionarios_uno">
+
+            <div>
+                <label for="nombre_funcionario2">Nombre</label>
+                <input type="text" id="nombre_funcionario2" runat="server" />
+            </div>
+
+            <div>
+                <label for="pApellido_funcionario2">Primer Apelido</label>
+                <input type="text" id="pApellido_funcionario2" runat="server" />
+            </div>
+
+            <div>
+                <label for="sApellido_funcionario2">Segundo Apellido</label>
+                <input type="text" id="sApellido_funcionario2" runat="server" />
+            </div>
+
+        </section>
+
+        <section class="funcionarios_dos">
+
+            <div>
+                <label for="correo_funcionario2">Correo</label>
+                <input type="email" id="correo_funcionario2" runat="server" />
+            </div>
+
+            <div>
+                <label for="usuario_funcionario2">Usuario</label>
+                <input type="text" id="usuario_funcionario2" runat="server" />
+            </div>
+
+            <div>
+                <label for="pass_funcionario2">Contraseña</label>
+                <input type="password" id="pass_funcionario2" runat="server" />
+            </div>
+
+            <div>
+                <label for="estado_funcionario2">Estado</label>
+                <select type="text" id="estado_funcionario2" runat="server">
+                    <option value="activo">Activo</option>
+                    <option value="inactivo">Inactivo</option>
+                </select>
+            </div>
+
+        </section>
+
+        <section id="datos_estudiante_cinco" class="botones_borrar_editar">
+
+            <div>
+                <!--Cambios realizados-->
+                <label for="input_Id_Borrar">Boton para eliminar fila </label>
+                <asp:Button ID="btn_Borrar" class="btn_matricular btn_funcionario btn_Borrar" runat="server" Text="Borrar" />
+            </div>
+
+            <div>
+                <!--Cambios realizados-->
+                <label for="input_Id_Modificar">Boton para modifcar fila </label>
+                <asp:Button ID="btn_Modificar" class="btn_matricular btn_funcionario" runat="server" Text="Modifcar" />
+            </div>
+
+        </section>
+
+    </section>
+
 </asp:Content>

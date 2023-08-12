@@ -7,11 +7,9 @@ Public Class Formulario_web1
         If Not IsPostBack Then
             'cargar el dgv cuando se levante la pantalla
             cargarInfo()
-            ' Dim Carreras As New DataTable
             Dim nombre_carrera As String
             Dim idCarrera As String
             obj_Carreras.LeeDatosCarrera()
-            ' Carreras = obj_Carreras.TablaCarreras
 
             'se itera cada fila de la tabla carreras y se agrega items al select_carrera
             For Each fila As DataRow In obj_Carreras.TablaCarreras.Rows

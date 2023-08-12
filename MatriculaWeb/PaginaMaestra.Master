@@ -11,23 +11,24 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <nav id="nav_principal">
+    <nav class="nav_principal">
         <ul id="lista">
             <li><a href="Carreras.aspx">Registro Carrera</a></li>
             <li><a href="matricula_cursos.aspx">Registro cursos</a></li>
             <li><a href="matricula_estudiante.aspx">Registro Estudiante</a></li>
             <li><a href="matricula.aspx">Matricular</a></li>
-            <li><a href="consulta_cursos.aspx">Consulatar Cursos</a></li>
-            <li><a href="consulta_matricula.aspx">Consultar Matrículas</a></li>
             <li><a href="funcionarios.aspx">Funcionarios</a></li>
+            <li><a href="consulta_cursos.aspx">Consulatar Cursos</a></li>
+            <li><a href="consulta_matricula.aspx">Consultar Matrículas</a></li>          
             <li><a href="acerca_de.aspx">Acerca De</a></li>
             <li><a id="funcionario" runat="server"></a></li>
-            <li><a href="">Cerrar Seción</a></li>
+            <li><a href="">Cerrar Sesión</a></li>
         </ul>
     </nav>
     <form id="formPincipal" runat="server">
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
     </form>
+    <footer>2023</footer>
 </body>
 </html>

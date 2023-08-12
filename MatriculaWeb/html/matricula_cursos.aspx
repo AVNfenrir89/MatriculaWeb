@@ -156,7 +156,7 @@
 
                     </section>
                                
-                    <section id="datos_estudiante_cuatro" class="cursos_selects" >
+                    <section id="datos_estudiante_tres" class="cursos_selects" >
 
                        <%-- selects--%>
                         <div>

@@ -102,4 +102,103 @@ Partial Public Class Formulario_web13
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents gv_funcionario As Global.System.Web.UI.WebControls.GridView
+
+    '''<summary>
+    '''Control input_buscar.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents input_buscar As Global.System.Web.UI.HtmlControls.HtmlInputText
+
+    '''<summary>
+    '''Control btn_buscar.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btn_buscar As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''Control nombre_funcionario2.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents nombre_funcionario2 As Global.System.Web.UI.HtmlControls.HtmlInputText
+
+    '''<summary>
+    '''Control pApellido_funcionario2.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents pApellido_funcionario2 As Global.System.Web.UI.HtmlControls.HtmlInputText
+
+    '''<summary>
+    '''Control sApellido_funcionario2.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents sApellido_funcionario2 As Global.System.Web.UI.HtmlControls.HtmlInputText
+
+    '''<summary>
+    '''Control correo_funcionario2.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents correo_funcionario2 As Global.System.Web.UI.HtmlControls.HtmlInputGenericControl
+
+    '''<summary>
+    '''Control usuario_funcionario2.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents usuario_funcionario2 As Global.System.Web.UI.HtmlControls.HtmlInputText
+
+    '''<summary>
+    '''Control pass_funcionario2.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents pass_funcionario2 As Global.System.Web.UI.HtmlControls.HtmlInputPassword
+
+    '''<summary>
+    '''Control estado_funcionario2.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents estado_funcionario2 As Global.System.Web.UI.HtmlControls.HtmlSelect
+
+    '''<summary>
+    '''Control btn_Borrar.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btn_Borrar As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''Control btn_Modificar.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btn_Modificar As Global.System.Web.UI.WebControls.Button
 End Class
