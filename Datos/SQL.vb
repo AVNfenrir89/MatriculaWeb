@@ -153,7 +153,7 @@ Public Class SQL
         AbrirConexion()
 
         ' Utilizamos un comando SQL para actualizar la carrera con el ID_Carrera específico
-        sqlInstruccion = New SqlClient.SqlCommand("UPDATE Curso SET ID_Carrera=@ID_Carrera, Nombre = @Nombre, Creditos = @Creditos, Nota_Min = @Nota_Min, Min_Estudiantes = @Min_Estudiantes, Max_Estudiantes=@Max_Estudiantes, Grado = @Grado, Estado = @Estado, Costo=@Costo WHERE ID_Curso = @ID_Curso", conexion)
+        sqlInstruccion = New SqlClient.SqlCommand("UPDATE Curso SET ID_Carrera=@ID_Carrera, Nombre = @Nombre, Creditos = @Creditos, Nota_Min = @Nota_Min, Min_Estudiantes = @Min_Estudiantes, Max_Estudiantes=@Max_Estudiantes, Grado = @Grado, Estado = @Estado, Costo=@Costo WHERE ID_Cursos = @ID_Cursos", conexion)
         sqlInstruccion.Parameters.AddWithValue("@ID_Cursos", idCurso)
         sqlInstruccion.Parameters.AddWithValue("@ID_Carrera", idCarrera)
         sqlInstruccion.Parameters.AddWithValue("@Nombre", nombre)
@@ -172,6 +172,28 @@ Public Class SQL
         End Try
 
         ' Cerramos la conexión
+        CerrarConexion()
+    End Sub
+
+    Sub SelecionarCurso(idCurso)
+
+        Dim instruccionSQL As SqlClient.SqlCommand
+        Dim DataAdapter As SqlClient.SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlClient.SqlCommand("SELECT * FROM Cursos WHERE ID_Cursos =" & idCurso, conexion)
+
+        If dsCursos.Tables().Count > 0 Then
+            If dsCursos.Tables(0).Rows.Count > 1 Then
+                dsCursos.Tables(0).Clear()
+            End If
+        End If
+        Try
+            DataAdapter = New SqlClient.SqlDataAdapter(instruccionSQL)
+            DataAdapter.Fill(dsCursos)
+        Catch ex As Exception
+            Throw New System.Exception(ex.Message)
+        End Try
         CerrarConexion()
     End Sub
 #End Region
@@ -372,9 +394,28 @@ Public Class SQL
         ' Cerramos la conexión
         CerrarConexion()
     End Sub
+    Sub SelecionarCarrera(idCarrera)
+        Dim instruccionSQL As SqlClient.SqlCommand
+        Dim DataAdapter As SqlClient.SqlDataAdapter
+        AbrirConexion()
+        instruccionSQL = New SqlClient.SqlCommand("SELECT * FROM Carrera WHERE ID_Carrera =" & idCarrera, conexion)
+        If dsCarreras.Tables().Count > 0 Then
+            If dsCarreras.Tables(0).Rows.Count > 1 Then
+                dsCarreras.Tables(0).Clear()
+            End If
+        End If
+        Try
+            DataAdapter = New SqlClient.SqlDataAdapter(instruccionSQL)
+            DataAdapter.Fill(dsCarreras)
+        Catch ex As Exception
+            Throw New System.Exception(ex.Message)
+        End Try
+        CerrarConexion()
+    End Sub
 
 #End Region
 
+<<<<<<< HEAD
 #Region "Procedimientos funcionarios"
     Sub LoginFuncionario(IdFuncionario)
         Dim sqlInstruccion As SqlClient.SqlCommand
@@ -382,14 +423,107 @@ Public Class SQL
         AbrirConexion()
         sqlInstruccion = New SqlClient.SqlCommand("Select * from Funcionarios where ID_Funcionarios = " & IdFuncionario, conexion)
 
+=======
+#Region "Procedimientos Funcionarios"
+
+    Sub LeerTablaFuncionarios()
+        Dim sqlInstruccion As SqlClient.SqlCommand
+        Dim DataAdapter As SqlClient.SqlDataAdapter
+        AbrirConexion()
+        sqlInstruccion = New SqlClient.SqlCommand("Select * from Funcionarios", conexion)
+        If dsFuncionarios.Tables().Count > 0 Then
+            If dsFuncionarios.Tables(0).Rows.Count > 1 Then
+                dsFuncionarios.Tables(0).Clear()
+
+            End If
+        End If
+        Try
+            DataAdapter = New SqlClient.SqlDataAdapter(sqlInstruccion)
+            DataAdapter.Fill(dsFuncionarios)
+        Catch ex As Exception
+            Throw New System.Exception(ex.Message)
+        End Try
+    End Sub
+
+    Sub InsertarFuncionarios(idFuncionarios As String, nombre As String, apellido1 As String, apellido2 As String, correo As String, usuario As String, contraseña As String, estado As String)
+        Dim sqlInstruccion As SqlClient.SqlCommand
+        AbrirConexion()
+        sqlInstruccion = New SqlClient.SqlCommand("insert into Funcionarios(ID_Funcionarios, Nombre, P_Apellido, S_Apellido, Correo, Usuario, Contrasena, Estado)", conexion)
+        sqlInstruccion.Parameters.AddWithValue("@ID_Funcionarios", idFuncionarios)
+        sqlInstruccion.Parameters.AddWithValue("@Nombre", nombre)
+        sqlInstruccion.Parameters.AddWithValue("@P_Apellido", apellido1)
+        sqlInstruccion.Parameters.AddWithValue("@S_Apellido", apellido2)
+        sqlInstruccion.Parameters.AddWithValue("@Correo", correo)
+        sqlInstruccion.Parameters.AddWithValue("@Usuario", usuario)
+        sqlInstruccion.Parameters.AddWithValue("@Contrasena", contraseña)
+        sqlInstruccion.Parameters.AddWithValue("@Estado", estado)
+        Try
+            sqlInstruccion.ExecuteNonQuery()
+
+        Catch ex As Exception
+            Throw New System.Exception("Error al ejecutar el insert:" + ex.Message)
+        End Try
+        CerrarConexion()
+    End Sub
+
+    Sub BorrarFuncionarioBD(idFuncionario As String)
+        Dim sqlInstruccion As SqlClient.SqlCommand
+
+        AbrirConexion()
+        sqlInstruccion = New SqlClient.SqlCommand("DELETE FROM Funcionarios WHERE ID_Funcionarios= @ID_Funcionarios", conexion)
+        sqlInstruccion.Parameters.AddWithValue("@ID_Funcionarios", idFuncionario)
+
+        Try
+            sqlInstruccion.ExecuteNonQuery()
+        Catch ex As Exception
+            Throw New System.Exception("Error al ejecutar el DELETE: " + ex.Message)
+        End Try
+
+        ' Cerramos la conexión
+        CerrarConexion()
+    End Sub
+
+
+    Sub ModificarFuncionarioBD(idFuncionarios As String, nombre As String, apellido1 As String, apellido2 As String, correo As String, usuario As String, contraseña As String, estado As String)
+        Dim sqlInstruccion As SqlClient.SqlCommand
+
+        AbrirConexion()
+        sqlInstruccion = New SqlClient.SqlCommand("UPDATE Funcionarios SET Nombre = @Nombre, P_Apellido= @P_Apellido, S_Apellido= @S_Apellido, Correo= @Correo, Usuario=@Usuario, Contrasena=@Contrasena, Estado = @Estado WHERE ID_Funcionarios = @ID_Funcionarios", conexion)
+        sqlInstruccion.Parameters.AddWithValue("@ID_Funcionarios", idFuncionarios)
+        sqlInstruccion.Parameters.AddWithValue("@Nombre", nombre)
+        sqlInstruccion.Parameters.AddWithValue("@P_Apellido", apellido1)
+        sqlInstruccion.Parameters.AddWithValue("@S_Apellido", apellido2)
+        sqlInstruccion.Parameters.AddWithValue("@Correo", correo)
+        sqlInstruccion.Parameters.AddWithValue("@Usuario", usuario)
+        sqlInstruccion.Parameters.AddWithValue("@Contrasena", contraseña)
+        sqlInstruccion.Parameters.AddWithValue("@Estado", estado)
+        Try
+            sqlInstruccion.ExecuteNonQuery()
+        Catch ex As Exception
+            Throw New System.Exception("Error al ejecutar el UPDATE: " + ex.Message)
+        End Try
+        CerrarConexion()
+    End Sub
+
+    Sub SelecionarFuncionario(idFuncionario)
+        Dim instruccionSQL As SqlClient.SqlCommand
+        Dim DataAdapter As SqlClient.SqlDataAdapter
+        AbrirConexion()
+        instruccionSQL = New SqlClient.SqlCommand("SELECT * FROM Funcionarios WHERE ID_Funcionarios =" & idFuncionario, conexion)
+>>>>>>> a3adef9c83dcb5dd09b1db3bd5068ee40c5f4bcf
         If dsFuncionarios.Tables().Count > 0 Then
             If dsFuncionarios.Tables(0).Rows.Count > 1 Then
                 dsFuncionarios.Tables(0).Clear()
             End If
         End If
+<<<<<<< HEAD
 
         Try
             DataAdapter = New SqlClient.SqlDataAdapter(sqlInstruccion)
+=======
+        Try
+            DataAdapter = New SqlClient.SqlDataAdapter(instruccionSQL)
+>>>>>>> a3adef9c83dcb5dd09b1db3bd5068ee40c5f4bcf
             DataAdapter.Fill(dsFuncionarios)
         Catch ex As Exception
             Throw New System.Exception(ex.Message)
@@ -399,6 +533,10 @@ Public Class SQL
 #End Region
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> a3adef9c83dcb5dd09b1db3bd5068ee40c5f4bcf
 #End Region
 End Class
 

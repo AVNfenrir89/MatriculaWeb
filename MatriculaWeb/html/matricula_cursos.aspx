@@ -27,6 +27,7 @@
                             <input type="text" id="input_creditos" runat="server" required="required" />
                         </div>
 
+<<<<<<< HEAD
                         <div>
                             <label for="label_cuatrimestre">Selecionar cuatrimestre</label>
                             <select id="label_cuatrimestre" runat="server">
@@ -38,6 +39,28 @@
                         </div>
 
                     </section>
+=======
+            <div>
+                <label for="select_carrera">Carrera</label>
+                <select id="select_carrera" runat="server">
+                    
+                   
+                </select>
+            </div>
+            <div>
+                <label for="select_cuatrimestre">Cuatrimestre</label>
+                <select id="select_cuatrimestre" runat="server">
+                    
+                   
+                </select>
+            </div>
+            <div>
+                <label for="select_estado">Estado</label>
+                <select id="select_estado" runat="server">
+                    <option value="activo">Activo</option>
+                    <option value="inactivo">Inactivo</option>
+                </select>
+>>>>>>> a3adef9c83dcb5dd09b1db3bd5068ee40c5f4bcf
 
                     <section id="cursos_dos" contenteditable="false" draggable="false">
 

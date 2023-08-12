@@ -1,5 +1,19 @@
+<<<<<<< HEAD
 ﻿Imports System.Security.AccessControl
 Imports Datos
+=======
+﻿Imports Datos
+Public Class ClaseFuncionarios
+    Dim obj_FuncionariosBD As New SQL
+    Dim _nombre As String
+    Dim _apellido1 As String
+    Dim _apellido2 As String
+    Dim _correo As String
+    Dim _identificacion As String
+    Dim _usuario As String
+    Dim _clave As String
+    Dim _estado As String
+>>>>>>> a3adef9c83dcb5dd09b1db3bd5068ee40c5f4bcf
 
 Public Class ClaseFuncionarios
 
@@ -43,6 +57,7 @@ Public Class ClaseFuncionarios
         End Set
     End Property
 
+<<<<<<< HEAD
     Public Property pApellido As String
         Get
             Return _pApellido
@@ -58,6 +73,14 @@ Public Class ClaseFuncionarios
         End Get
         Set(value As String)
             _sApellido = value
+=======
+    Public Property Apellido1 As String
+        Get
+            Return _apellido1
+        End Get
+        Set(value As String)
+            _apellido1 = value
+>>>>>>> a3adef9c83dcb5dd09b1db3bd5068ee40c5f4bcf
         End Set
     End Property
 
@@ -79,6 +102,7 @@ Public Class ClaseFuncionarios
         End Set
     End Property
 
+<<<<<<< HEAD
     Public Property Correo As String
         Get
             Return _correo
@@ -88,6 +112,8 @@ Public Class ClaseFuncionarios
         End Set
     End Property
 
+=======
+>>>>>>> a3adef9c83dcb5dd09b1db3bd5068ee40c5f4bcf
     Public Property Estado As String
         Get
             Return _estado
@@ -97,6 +123,7 @@ Public Class ClaseFuncionarios
         End Set
     End Property
 
+<<<<<<< HEAD
     Public Property Mensaje As String
         Get
             Return _mensaje
@@ -156,5 +183,24 @@ Public Class ClaseFuncionarios
             Estado = fila("Estado").trim
         Next
     End Sub
+=======
+    Public Property Apellido2 As String
+        Get
+            Return _apellido2
+        End Get
+        Set(value As String)
+            _apellido2 = value
+        End Set
+    End Property
+
+    Public Property Correo As String
+        Get
+            Return _correo
+        End Get
+        Set(value As String)
+            _correo = value
+        End Set
+    End Property
+>>>>>>> a3adef9c83dcb5dd09b1db3bd5068ee40c5f4bcf
 #End Region
 End Class
