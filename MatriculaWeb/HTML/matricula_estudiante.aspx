@@ -158,7 +158,7 @@
                     <div id="datos_estudiante_cuatro" class="seccion-uno">
                         <p>Beca</p>
                         <label for="beca_si2">Sí</label>
-                        <asp:RadioButton ID="beca_si2" runat="server" />
+                        <asp:RadioButton ID="beca_si2" runat="server" value="si" name="beca" AutoPostBack="True" OnCheckedChanged="beca_si2_CheckedChanged"  />
 
                         <select id="select_beca2" runat="server" enable="false" disabled="disabled">
                             <option value="25">25</option>

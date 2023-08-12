@@ -61,7 +61,6 @@ Public Class Formulario_web11
             Throw ex
         End Try
     End Sub
-
     Protected Sub btn_Borrar_Click(sender As Object, e As EventArgs) Handles btn_Borrar.Click
         Try
             obj_Estudiantes.IdEstudiantes = input_buscar.Value
@@ -174,14 +173,14 @@ Public Class Formulario_web11
     End Sub
 
     Protected Sub beca_no2_CheckedChanged(sender As Object, e As EventArgs)
-        If beca_no.Checked Then
+        If beca_no2.Checked Then
             beca_si2.Checked = False
             select_beca2.Disabled = True
         End If
     End Sub
 
     Protected Sub beca_si2_CheckedChanged(sender As Object, e As EventArgs)
-        If beca_si.Checked Then
+        If beca_si2.Checked Then
             beca_no2.Checked = False
             select_beca2.Disabled = False
         End If
