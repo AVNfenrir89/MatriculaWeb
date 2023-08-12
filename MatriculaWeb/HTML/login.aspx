@@ -41,8 +41,8 @@
             </div>
 
             <div class="data-form" >
-                <label for="correo" class="labelLogin">Email</label>
-                <input type="email" placeholder="example@email" id="correo" runat="server" class="form-email form-login" />
+                <label for="input_correo" class="labelLogin">Email</label>
+                <input type="email" placeholder="example@email" id="input_correo" runat="server" class="form-email form-login" />
             </div>
 
             <div class="data-form">
@@ -51,8 +51,8 @@
             </div>
 
             <div class="data-form">
-                <label for="contrasena" class="labelLogin">Contraseña</label>
-                <input type="password"  runat="server" id="contrasena" class="usuario-form form-login" />
+                <label for="input_contrasena" class="labelLogin">Contraseña</label>
+                <input type="password"  runat="server" id="input_contrasena" class="usuario-form form-login" />
             </div>
 
             <asp:Button ID="btn_IniciarSesion" class="btn_login" runat="server" Text="Iniciar Sesión" OnClick="btn_IniciarSesion_Click" />

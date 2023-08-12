@@ -393,3 +393,8 @@ h1 {
 .btn_Borrar {
     margin-right :25px; 
 }
+
+.cursos_selects select {
+    outline: none;
+    width: 150px;
+}

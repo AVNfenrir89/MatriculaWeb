@@ -59,13 +59,13 @@ Partial Public Class login
     Protected WithEvents input_sApellido As Global.System.Web.UI.HtmlControls.HtmlInputText
 
     '''<summary>
-    '''Control correo.
+    '''Control input_correo.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents correo As Global.System.Web.UI.HtmlControls.HtmlInputGenericControl
+    Protected WithEvents input_correo As Global.System.Web.UI.HtmlControls.HtmlInputGenericControl
 
     '''<summary>
     '''Control input_usuario.
@@ -77,13 +77,13 @@ Partial Public Class login
     Protected WithEvents input_usuario As Global.System.Web.UI.HtmlControls.HtmlInputText
 
     '''<summary>
-    '''Control contrasena.
+    '''Control input_contrasena.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents contrasena As Global.System.Web.UI.HtmlControls.HtmlInputPassword
+    Protected WithEvents input_contrasena As Global.System.Web.UI.HtmlControls.HtmlInputPassword
 
     '''<summary>
     '''Control btn_IniciarSesion.

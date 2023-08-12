@@ -19,6 +19,7 @@ Public Class Formulario_web1
                 idCarrera = fila("ID_Carrera")
                 Dim opcion As New ListItem(nombre_carrera, idCarrera)
                 select_carrera.Items.Add(opcion)
+                select_carrera2.Items.Add(opcion)
             Next
         End If
     End Sub

@@ -1,5 +1,6 @@
 ﻿Imports System.Collections.ObjectModel
 Imports System.Data
+Imports System.Data.Common
 Imports System.Data.SqlClient
 Public Class SQL
     Dim conexion As SqlConnection
@@ -284,8 +285,6 @@ Public Class SQL
 #End Region
 
 #Region "Procedimientos carreras"
-
-
     Sub leerTablaCarreras()
         Dim instruccionSQL As SqlClient.SqlCommand
         Dim DataAdapter As SqlClient.SqlDataAdapter
@@ -375,6 +374,30 @@ Public Class SQL
     End Sub
 
 #End Region
+
+#Region "Procedimientos funcionarios"
+    Sub LoginFuncionario(IdFuncionario)
+        Dim sqlInstruccion As SqlClient.SqlCommand
+        Dim DataAdapter As SqlClient.SqlDataAdapter
+        AbrirConexion()
+        sqlInstruccion = New SqlClient.SqlCommand("Select * from Funcionarios where ID_Funcionarios = " & IdFuncionario, conexion)
+
+        If dsFuncionarios.Tables().Count > 0 Then
+            If dsFuncionarios.Tables(0).Rows.Count > 1 Then
+                dsFuncionarios.Tables(0).Clear()
+            End If
+        End If
+
+        Try
+            DataAdapter = New SqlClient.SqlDataAdapter(sqlInstruccion)
+            DataAdapter.Fill(dsFuncionarios)
+        Catch ex As Exception
+            Throw New System.Exception(ex.Message)
+        End Try
+        CerrarConexion()
+    End Sub
+#End Region
+
 
 #End Region
 End Class
