@@ -5,7 +5,7 @@ Public Class ClaseFuncionarios
 
     Dim datosFuncionario As New DataTable
     Dim obj_FuncionariosBD As New SQL
-    Public _nombre As String
+    Shared _nombre As String
     Public _pApellido As String
     Public _sApellido As String
     Public _identificacion As String
@@ -121,32 +121,32 @@ Public Class ClaseFuncionarios
 
 
             If Not _clave = fila("Contrasena").trim Then
-                Mensaje = "La contraseña no es correcta"
+                Mensaje = "El Usuario no exite o está inactivo"
                 Exit For
             End If
 
             If Not _usuario = fila("Usuario").trim Then
-                Mensaje = "El usuario no es correcto"
+                Mensaje = "El Usuario no exite o está inactivo"
                 Exit For
             End If
 
             If Not fila("Nombre").trim = _nombre Then
-                Mensaje = "El nombre no es correcto"
+                Mensaje = "El Usuario no exite o está inactivo"
                 Exit For
             End If
 
             If Not _pApellido = fila("P_Apellido").trim Then
-                Mensaje = "El primer apellido no es correcto"
+                Mensaje = "El Usuario no exite o está inactivo"
                 Exit For
             End If
 
             If Not _sApellido = fila("S_Apellido").trim Then
-                Mensaje = "El segundo apellido no es correcto"
+                Mensaje = "El Usuario no exite o está inactivo"
                 Exit For
             End If
 
             If Not _correo = fila("Correo").trim Then
-                Mensaje = "El correo no es  correcto"
+                Mensaje = "El Usuario no exite o está inactivo"
                 Exit For
             End If
 

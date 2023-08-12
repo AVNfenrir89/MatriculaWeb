@@ -34,7 +34,7 @@
 
 
         Catch ex As Exception
-            Mensaje(" Error")
+            Mensaje("Error")
         End Try
 
 

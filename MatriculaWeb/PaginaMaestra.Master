@@ -21,6 +21,8 @@
             <li><a href="consulta_matricula.aspx">Consultar Matrículas</a></li>
             <li><a href="funcionarios.aspx">Funcionarios</a></li>
             <li><a href="acerca_de.aspx">Acerca De</a></li>
+            <li><a id="funcionario" runat="server"></a></li>
+            <li><a href="">Cerrar Seción</a></li>
         </ul>
     </nav>
     <form id="formPincipal" runat="server">
