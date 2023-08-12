@@ -182,7 +182,7 @@
                     <div>
                         <!--Cambios realizados-->
                         <label for="input_Id_Modificar">Boton para modifcar fila </label>
-                        <asp:Button ID="btn_Modificar" class="btn_matricular btn_funcionario" runat="server" Text="Modifcar" OnClick="btn_Modificar_Click" />
+                        <asp:Button ID="btn_Modificar" class="btn_matricular btn_funcionario" runat="server" Text="Modifcar"  />
                     </div>
                 </section>
 
