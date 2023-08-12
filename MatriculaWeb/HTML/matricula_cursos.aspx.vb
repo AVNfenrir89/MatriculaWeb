@@ -88,6 +88,9 @@ Public Class Formulario_web1
             obj_Cursos.Grado = select_grado.Value
             obj_Cursos.Estado = select_estado.Value
             obj_Cursos.modificarCurso()
+
+
+
             cargarInfo()
             limpiar()
         Catch ex As Exception
