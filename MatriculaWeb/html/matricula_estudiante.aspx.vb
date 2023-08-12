@@ -9,15 +9,15 @@ Public Class Formulario_web11
             beca_no.Checked = True
             select_beca.Disabled = True
             cargarInfo()
-            Dim Carreras As New DataTable
+            ' Dim Carreras As New DataTable
             Dim nombre_carrera As String
             Dim idCarrera As String
             obj_Carreras.LeeDatosCarrera()
-            Carreras = obj_Carreras.TablaCarreras
+
 
             'se itera cada fila de la tabla carreras y se agrega items al select_carrera
             If valor Then
-                For Each fila As DataRow In Carreras.Rows
+                For Each fila As DataRow In obj_Carreras.TablaCarreras.Rows
                     nombre_carrera = fila("nombre")
                     idCarrera = fila("ID_Carrera")
                     Dim opcion As New ListItem(nombre_carrera, idCarrera)
@@ -116,12 +116,12 @@ Public Class Formulario_web11
     End Sub
 
     Protected Sub btn_buscar_Click(sender As Object, e As EventArgs)
-        Dim estudiates As New DataTable
+        ' Dim estudiates As New DataTable
         obj_Estudiantes.IdEstudiantes = input_buscar.Value
         obj_Estudiantes.SelecionarEstudiante()
-        estudiates = obj_Estudiantes.TablaEstudiantes
+        'estudiates = obj_Estudiantes.TablaEstudiantes
 
-        For Each fila As DataRow In estudiates.Rows
+        For Each fila As DataRow In obj_Estudiantes.TablaEstudiantes.Rows
 
             input_nombre_est2.Value = fila("Nombre")
             input_apellidos2.Value = fila("Apellidos")

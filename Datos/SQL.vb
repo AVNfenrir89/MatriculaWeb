@@ -415,16 +415,8 @@ Public Class SQL
 
 #End Region
 
-<<<<<<< HEAD
-#Region "Procedimientos funcionarios"
-    Sub LoginFuncionario(IdFuncionario)
-        Dim sqlInstruccion As SqlClient.SqlCommand
-        Dim DataAdapter As SqlClient.SqlDataAdapter
-        AbrirConexion()
-        sqlInstruccion = New SqlClient.SqlCommand("Select * from Funcionarios where ID_Funcionarios = " & IdFuncionario, conexion)
 
-=======
-#Region "Procedimientos Funcionarios"
+#Region "Procedimientos funcionarios"
 
     Sub LeerTablaFuncionarios()
         Dim sqlInstruccion As SqlClient.SqlCommand
@@ -483,7 +475,6 @@ Public Class SQL
         CerrarConexion()
     End Sub
 
-
     Sub ModificarFuncionarioBD(idFuncionarios As String, nombre As String, apellido1 As String, apellido2 As String, correo As String, usuario As String, contraseña As String, estado As String)
         Dim sqlInstruccion As SqlClient.SqlCommand
 
@@ -510,33 +501,24 @@ Public Class SQL
         Dim DataAdapter As SqlClient.SqlDataAdapter
         AbrirConexion()
         instruccionSQL = New SqlClient.SqlCommand("SELECT * FROM Funcionarios WHERE ID_Funcionarios =" & idFuncionario, conexion)
->>>>>>> a3adef9c83dcb5dd09b1db3bd5068ee40c5f4bcf
+
         If dsFuncionarios.Tables().Count > 0 Then
             If dsFuncionarios.Tables(0).Rows.Count > 1 Then
                 dsFuncionarios.Tables(0).Clear()
             End If
         End If
-<<<<<<< HEAD
 
         Try
-            DataAdapter = New SqlClient.SqlDataAdapter(sqlInstruccion)
-=======
-        Try
             DataAdapter = New SqlClient.SqlDataAdapter(instruccionSQL)
->>>>>>> a3adef9c83dcb5dd09b1db3bd5068ee40c5f4bcf
             DataAdapter.Fill(dsFuncionarios)
         Catch ex As Exception
             Throw New System.Exception(ex.Message)
         End Try
         CerrarConexion()
     End Sub
+
 #End Region
 
-
-<<<<<<< HEAD
-=======
-
->>>>>>> a3adef9c83dcb5dd09b1db3bd5068ee40c5f4bcf
 #End Region
 End Class
 

@@ -8,114 +8,91 @@
 
             <section id="datos_estudiante">
 
-                    <h1>Ingresa todos los datos del curso</h1>
+                <h1>Ingresa todos los datos del curso</h1>
 
-                    <section id="datos_estudiante_uno">
+                <section id="datos_estudiante_uno">
 
-                        <div>
-                            <label class="lb_id_curso" for="input_id_curso">ID Curso</label>
-                            <input type="text" id="input_id_curso" runat="server" required="required" />
-                        </div>
+                    <div>
+                        <label class="lb_id_curso" for="input_id_curso">ID Curso</label>
+                        <input type="text" id="input_id_curso" runat="server" required="required" />
+                    </div>
 
-                        <div>
-                            <label for="input_nombre">Nombre</label>
-                            <input type="text" id="input_nombre" runat="server" required="required" />
-                        </div>
+                    <div>
+                        <label for="input_nombre">Nombre</label>
+                        <input type="text" id="input_nombre" runat="server" required="required" />
+                    </div>
 
-                        <div>
-                            <label for="input_creditos">Créditos</label>
-                            <input type="text" id="input_creditos" runat="server" required="required" />
-                        </div>
+                    <div>
+                        <label for="input_creditos">Créditos</label>
+                        <input type="text" id="input_creditos" runat="server" required="required" />
+                    </div>
 
-<<<<<<< HEAD
-                        <div>
-                            <label for="label_cuatrimestre">Selecionar cuatrimestre</label>
-                            <select id="label_cuatrimestre" runat="server">
-                                <option value="I">I</option>
-                                <option value="II">II</option>
-                                <option value="II">II</option>
-                                <option value="IV">IV</option>
-                            </select>
-                        </div>
+                    <div>
+                        <label for="label_cuatrimestre">Selecionar cuatrimestre</label>
+                        <select id="label_cuatrimestre" runat="server">
+                            <option value="I">I</option>
+                            <option value="II">II</option>
+                            <option value="II">II</option>
+                            <option value="IV">IV</option>
+                        </select>
+                    </div>
 
-                    </section>
-=======
-            <div>
-                <label for="select_carrera">Carrera</label>
-                <select id="select_carrera" runat="server">
-                    
-                   
-                </select>
-            </div>
-            <div>
-                <label for="select_cuatrimestre">Cuatrimestre</label>
-                <select id="select_cuatrimestre" runat="server">
-                    
-                   
-                </select>
-            </div>
-            <div>
-                <label for="select_estado">Estado</label>
-                <select id="select_estado" runat="server">
-                    <option value="activo">Activo</option>
-                    <option value="inactivo">Inactivo</option>
-                </select>
->>>>>>> a3adef9c83dcb5dd09b1db3bd5068ee40c5f4bcf
+                </section>
 
-                    <section id="cursos_dos" contenteditable="false" draggable="false">
+                <section id="cursos_dos" contenteditable="false" draggable="false">
 
-                        <div>
-                            <label for="input_nota">Nota mínima</label>
-                            <input type="text" id="input_nota" runat="server" required="required" />
-                        </div>
+                    <div>
+                        <label for="input_nota">Nota mínima</label>
+                        <input type="text" id="input_nota" runat="server" required="required" />
+                    </div>
 
-                        <div>
-                            <label for="input_cant_min">Cantidad mínima</label>
-                            <input type="text" id="input_cant_min" runat="server" required="required" />
-                        </div>
+                    <div>
+                        <label for="input_cant_min">Cantidad mínima</label>
+                        <input type="text" id="input_cant_min" runat="server" required="required" />
+                    </div>
 
-                        <div>
-                            <label for="input_cant_max">Cantidad máxima</label>
-                            <input type="text" runat="server" id="input_cant_max" required="required" />
-                        </div>
+                    <div>
+                        <label for="input_cant_max">Cantidad máxima</label>
+                        <input type="text" runat="server" id="input_cant_max" required="required" />
+                    </div>
 
-                        <div>
-                            <label for="input_costo">Costo</label>
-                            <input type="text" runat="server" placeholder="10000 colones por crédito" id="input_costo" enableviewstate="False" />
-                        </div>
+                    <div>
+                        <label for="input_costo">Costo</label>
+                        <input type="text" runat="server" placeholder="10000 colones por crédito" id="input_costo" enableviewstate="False" />
+                    </div>
 
-                    </section>
+                </section>
 
-                    <section id="datos_cursos_tres">
-                        <%--select grado--%>
-                        <div>
-                            <label for="select_grado">Grado</label>
-                            <select id="select_grado" runat="server">
-                                <option value="BACH">Bachillerato</option>
-                                <option value="LIC">Licienciatura</option>
-                            </select>
-                        </div>
+                <section id="datos_cursos_tres">
+                    <%--select grado--%>
+                    <div>
+                        <label for="select_grado">Grado</label>
+                        <select id="select_grado" runat="server">
+                            <option value="BACH">Bachillerato</option>
+                            <option value="LIC">Licienciatura</option>
+                        </select>
+                    </div>
 
-                        <%-- select carrera--%>
-                        <div>
-                            <label for="select_carrera">Carrera</label>
-                            <select id="select_carrera" runat="server">
-                            </select>
-                        </div>
+                    <%-- select carrera--%>
+                    <div>
+                        <label for="select_carrera">Carrera</label>
+                        <select id="select_carrera" runat="server">
+                        </select>
+                    </div>
 
-                        <%--select estado--%>
-                        <div>
-                            <label for="select_estado">Estado</label>
-                            <select id="select_estado" runat="server">
-                                <option value="activo">Activo</option>
-                                <option value="inactivo">Inactivo</option>
-                            </select>
+                    <%--select estado--%>
+                    <div>
+                        <label for="select_estado">Estado</label>
+                        <select id="select_estado" runat="server">
+                            <option value="activo">Activo</option>
+                            <option value="inactivo">Inactivo</option>
+                        </select>
 
-                        </div>
+                    </div>
 
-                        <asp:Button ID="agrega_curso" class="btn_matricular btn_funcionario" runat="server" Text="Agregar" />
+                    <asp:Button ID="agrega_curso" class="btn_matricular btn_funcionario" runat="server" Text="Agregar" />
 
-                    </section>
+                </section>
 
             </section>
 
