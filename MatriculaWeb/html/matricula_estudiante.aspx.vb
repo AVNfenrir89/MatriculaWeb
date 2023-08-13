@@ -5,6 +5,9 @@ Public Class Formulario_web11
     Dim obj_Carreras As New Negocios.ClaseCarreras
     Shared valor As Boolean = True
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        'If Not User.Identity.IsAuthenticated Then
+        '    Response.Redirect("login.aspx") ' Redirigir al inicio de sesión si no está autenticado
+        'End If
         If Not IsPostBack Then
             beca_no.Checked = True
             select_beca.Disabled = True
