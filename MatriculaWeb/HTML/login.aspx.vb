@@ -13,6 +13,7 @@
     End Sub
 
     Protected Sub btn_IniciarSesion_Click(sender As Object, e As EventArgs)
+
         Try
             obj_Funcionario.Identificacion = input_idFuncioanrio.Value
             obj_Funcionario.LoginFuncionarios()
@@ -27,7 +28,8 @@
                 Mensaje("Error!! El usuario no exite o esta inactivo")
                 Return
             ElseIf obj_Funcionario.Estado.ToLower = "activo" Then
-                Response.Redirect("matricula_cursos.aspx")
+                FormsAuthentication.RedirectFromLoginPage(obj_Funcionario.Usuario, False)
+                Response.Redirect("Carreras.aspx")
             Else
                 Mensaje(obj_Funcionario.Mensaje)
             End If
@@ -39,4 +41,6 @@
 
 
     End Sub
+
+
 End Class

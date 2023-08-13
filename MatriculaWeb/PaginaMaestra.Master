@@ -22,8 +22,9 @@
             <li><a href="consulta_matricula.aspx">Consultar Matrículas</a></li>          
             <li><a href="acerca_de.aspx">Acerca De</a></li>
             <li><a id="funcionario" runat="server"></a></li>
-            <li><a href="">Cerrar Sesión</a></li>
+            <li><a href="cerrar.aspx" >Cerrar Sesión</a></li> 
         </ul>
+       
     </nav>
     <form id="formPincipal" runat="server">
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">

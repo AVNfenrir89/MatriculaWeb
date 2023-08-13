@@ -53,8 +53,8 @@ Public Class SQL
         End Set
     End Property
 #End Region
-#Region "Metodos"
 
+#Region "Metodos"
     Sub AbrirConexion()
         Try
             conexion = New SqlConnection(_string_conexion)
@@ -145,7 +145,6 @@ Public Class SQL
         CerrarConexion()
     End Sub
 
-
     ' Método para modificar una carrera en la base de datos
     Sub ModificarCursoBD(idCurso As String, idCarrera As String, nombre As String, creditos As Integer, notaMinima As Integer, cantMin As Integer, cantMax As Integer, grado As String, estado As String, costo As Integer)
         Dim sqlInstruccion As SqlClient.SqlCommand
@@ -196,6 +195,7 @@ Public Class SQL
         End Try
         CerrarConexion()
     End Sub
+
 #End Region
 
 #Region "Procedimientos Estudiantes"
@@ -415,7 +415,6 @@ Public Class SQL
 
 #End Region
 
-
 #Region "Procedimientos funcionarios"
 
     Sub LeerTablaFuncionarios()
@@ -519,6 +518,32 @@ Public Class SQL
 
 #End Region
 
+#Region "Procedimientos matrícula"
+
+    Sub SelecionarIDestudisntes(idcurso, idcarrera, cuatrimestre)
+        Dim instruccionSQL As SqlClient.SqlCommand
+        Dim DataAdapter As SqlClient.SqlDataAdapter
+        AbrirConexion()
+        instruccionSQL = New SqlClient.SqlCommand("SELECT @ID_Estudiante FROM Matricula WHERE ID_Carrera =" & idcarrera & "  ", conexion)
+
+        If dsFuncionarios.Tables().Count > 0 Then
+            If dsFuncionarios.Tables(0).Rows.Count > 1 Then
+                dsFuncionarios.Tables(0).Clear()
+            End If
+        End If
+
+        Try
+            DataAdapter = New SqlClient.SqlDataAdapter(instruccionSQL)
+            DataAdapter.Fill(dsFuncionarios)
+        Catch ex As Exception
+            Throw New System.Exception(ex.Message)
+        End Try
+        CerrarConexion()
+    End Sub
+
 #End Region
+
+#End Region
+
 End Class
 

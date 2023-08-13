@@ -1,5 +1,6 @@
-﻿
+﻿Imports Datos
 Public Class ClaseMatrticula
+
     Dim _idMatricula As Integer
     Dim _idEstudiante As Integer
     Dim _idCarrera As String
@@ -7,7 +8,17 @@ Public Class ClaseMatrticula
     Dim _costo As Integer
     Dim _cuatrimestre As String
     Dim _periodo As String
+    Dim obj_MatriculaBD As New SQL
+
 #Region "Propiedades"
+    Public Property TablaMatricula As DataTable
+        Get
+            Return obj_MatriculaBD.TablaMatricula
+        End Get
+        Set(value As DataTable)
+
+        End Set
+    End Property
     Public Property IdMatricula As Integer
         Get
             Return _idMatricula
@@ -70,6 +81,7 @@ Public Class ClaseMatrticula
             _periodo = value
         End Set
     End Property
+
 #End Region
 
 

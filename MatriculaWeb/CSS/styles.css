@@ -243,7 +243,11 @@ h1 {
     flex-direction: column;
     padding:35px;
 }
-#formlogin {
+
+    .mainLogin h2 {
+        color: #8db594;
+    }
+    #formlogin {
     display: flex;
     align-items: center;
     align-content: center;

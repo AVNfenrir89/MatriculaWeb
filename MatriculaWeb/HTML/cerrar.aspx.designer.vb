@@ -11,14 +11,14 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class Formulario_web16
+Partial Public Class Formulario_web18
 
     '''<summary>
-    '''Control gv_cursos.
+    '''Control Login1.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents gv_cursos As Global.System.Web.UI.WebControls.GridView
+    Protected WithEvents Login1 As Global.System.Web.UI.WebControls.Login
 End Class

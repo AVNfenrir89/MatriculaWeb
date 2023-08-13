@@ -1,6 +1,7 @@
 ﻿
 Imports Datos 'importe datos
 Public Class ClaseCursos
+
     Dim _idCurso As String
     Dim _idCarrera As String
     Dim _nombre As String
@@ -136,7 +137,6 @@ Public Class ClaseCursos
     End Function
     Sub validar()
         'validar cantidad de estudiantes minima y maxima ?
-
     End Sub
 
     'agruegue metodo para leer la info de la tabla BD al dgv
@@ -144,18 +144,19 @@ Public Class ClaseCursos
         obj_CursosBD.leerTablaCursos()
     End Sub
     Sub AgregarDatosCursos()
-
         obj_CursosBD.InsertarCursosBD(_idCurso, _idCarrera, _nombre, _creditos, _notaMinima, _cantMin, _cantMax, _grado, _estado, _costo)
-
-
     End Sub
     Sub borrarCurso()
         obj_CursosBD.BorrarCursoBD(_idCurso)
     End Sub
-
     Sub modificarCurso()
         obj_CursosBD.ModificarCursoBD(_idCurso, _idCarrera, _nombre, _creditos, _notaMinima, _cantMin, _cantMax, _grado, _estado, _costo)
     End Sub
+
+    Sub SeleccionarPorIDcurso()
+        obj_CursosBD.SelecionarCurso(IdCurso)
+    End Sub
 #End Region
+
 End Class
 

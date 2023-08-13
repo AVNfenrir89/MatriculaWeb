@@ -18,7 +18,7 @@
 
         <main class="mainLogin">
             <h1>Bienvenido al sistema de matrícula</h1>
-            <p>Inicia sesión</p>
+            <h2>Inicia sesión</h2>
 
             <div class="data-form">
                 <label for="input_idFuncioanrio" class="labelLogin">ID Funcionario</label>
@@ -54,6 +54,7 @@
                 <label for="input_contrasena" class="labelLogin">Contraseña</label>
                 <input type="password"  runat="server" id="input_contrasena" class="usuario-form form-login" required="required" />
             </div>
+          
 
             <asp:Button ID="btn_IniciarSesion" class="btn_login" runat="server" Text="Iniciar Sesión" OnClick="btn_IniciarSesion_Click" />
             

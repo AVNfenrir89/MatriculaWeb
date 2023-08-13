@@ -1,20 +1,24 @@
 ﻿Imports Negocios
 Public Class Formulario_web12
+
     Inherits System.Web.UI.Page
     Dim obj_Carreras As New Negocios.ClaseCarreras
     Dim obj_Estudiantes As New Negocios.ClaseEstudiantes
+    Dim obj_matricula As New Negocios.ClaseMatrticula
+    Dim obj_curso As New Negocios.ClaseCursos
+
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
+        'If Not User.Identity.IsAuthenticated Then
+        '    Response.Redirect("login.aspx") ' Redirigir al inicio de sesión si no está autenticado
+        'End If
+
         If Not IsPostBack Then
-            'Dim estudiante As New DataTable
-            ' Dim Carreras As New DataTable
+
             Dim nombre As String
             Dim id As String
             obj_Carreras.LeeDatosCarrera()
-            ' Carreras = obj_Carreras.TablaCarreras
             obj_Estudiantes.LeeDatosEstudiantes()
-            ' estudiante = obj_Estudiantes.TablaEstudiantes
-
             'se itera cada fila de la tabla carreras y se agrega items al select_carrera
             For Each fila As DataRow In obj_Carreras.TablaCarreras.Rows
                 nombre = fila("Nombre")
@@ -32,10 +36,6 @@ Public Class Formulario_web12
         End If
 
     End Sub
-
-
-
-
     Protected Sub btn_mostrar_Click(sender As Object, e As EventArgs)
 
         lb_curso_uno.InnerText = ""
@@ -52,10 +52,16 @@ Public Class Formulario_web12
     End Sub
 
     Protected Sub btn_total_Click(sender As Object, e As EventArgs)
+        Dim minEstudiantes As Integer
 
+        If curso_uno.Checked Then
+            obj_curso.IdCurso = curso_uno.Value
+            obj_curso.SeleccionarPorIDcurso()
+            For Each fila As DataRow In obj_curso.TablaCursos.Rows
+                minEstudiantes = fila("Min_Estudiantes")
+            Next
+        End If
     End Sub
 
-    Protected Sub btn_matricular_Click1(sender As Object, e As EventArgs)
 
-    End Sub
 End Class

@@ -93,6 +93,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CSS\styles.css" />
+    <Content Include="HTML\cerrar.aspx" />
     <Content Include="HTML\acerca_de.aspx" />
     <Content Include="HTML\Carreras.aspx" />
     <Content Include="HTML\consulta_cursos.aspx" />
@@ -105,6 +106,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HTML\cerrar.aspx.designer.vb">
+      <DependentUpon>cerrar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HTML\cerrar.aspx.vb">
+      <DependentUpon>cerrar.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="HTML\acerca_de.aspx.designer.vb">
       <DependentUpon>acerca_de.aspx</DependentUpon>
     </Compile>
