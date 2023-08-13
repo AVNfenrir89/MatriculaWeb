@@ -5,6 +5,7 @@
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
          <asp:UpdatePanel ID="UpdatePanel1" runat="server">
          <ContentTemplate>
+
              <section id="datos_estudiante">
                  <h1>Ingresa todos los datos de la carrera</h1>
                  <section id="datos_estudiante_uno">
@@ -44,11 +45,13 @@
             <asp:GridView ID="gv_carreras" class="gvtab" runat="server" AutoGenerateColumns="True" Enabled="True"></asp:GridView>
 
 
-             <h1>Sección para editar o modificar una carrera</h1>
+             <h1 class="titulo_dos">Sección para editar o modificar una carrera</h1>
              <section id="datos_estudiante">
-                 <section id="datos_estudiante_uno" class="seccion-uno">>
+                 <section id="datos_estudiante_uno" class="seccion-uno">
+                     >
                      <h1>Ingresa el ID de la carrera</h1>
-                     <div></label>
+                     <div>
+                         </label>
                          <input type="text" id="input_id_carrera2" runat="server" />
                          <asp:Button ID="btn_buscar" class="btn_matricular btn_funcionario" runat="server" Text="Buscar" />
                      </div>

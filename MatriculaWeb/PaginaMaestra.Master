@@ -29,6 +29,6 @@
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
     </form>
-    <footer>2023</footer>
+   
 </body>
 </html>

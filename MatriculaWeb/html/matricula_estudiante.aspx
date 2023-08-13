@@ -104,7 +104,7 @@
                 </asp:GridView>
             </section>
 
-            <h1>Sección para editar o modificar un estudiante</h1>
+            <h1 class="titulo_dos">Sección para editar o modificar un estudiante</h1>
 
             <section id="datos_estudiante">
 

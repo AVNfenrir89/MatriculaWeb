@@ -401,3 +401,7 @@ h1 {
     outline: none;
     width: 150px;
 }
+.titulo_dos{
+        position: relative;
+    left: 25%;
+}

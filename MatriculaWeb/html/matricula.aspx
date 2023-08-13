@@ -89,7 +89,7 @@
         </asp:GridView>
     </section>
 
-    <h1>Sección para editar o borrar una matrícula</h1>
+    <h1 class="titulo_dos">Sección para editar o borrar una matrícula</h1>
     <section id="datos_estudiante">
 
         <section id="datos_estudiante_uno" class="seccion-uno">

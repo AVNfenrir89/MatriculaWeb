@@ -64,7 +64,7 @@
         </asp:GridView>
     </section>
 
-    <h1>Sección para editar o modificar un funcionario</h1>
+    <h1 class="titulo_dos">Sección para editar o modificar un funcionario</h1>
     <section id="datos_estudiante">
         <section id="datos_estudiante_uno" class="seccion-uno">
             <h1>Ingresa el ID del Funcionario</h1>
