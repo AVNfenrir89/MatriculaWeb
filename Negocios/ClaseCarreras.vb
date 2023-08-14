@@ -55,5 +55,7 @@ Public Class ClaseCarreras
     Sub LeeDatosCarrera()
         obj_CarrerasBD.leerTablaCarreras()
     End Sub
-
+    Sub AgregarDatosCarrera()
+        obj_CarrerasBD.InsertarCarrerasBD(_idCarrera, _nombre, _estado, _grados)
+    End Sub
 End Class
