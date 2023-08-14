@@ -7,7 +7,11 @@
         'End If
     End Sub
 
-    Protected Sub btn_agregar_Click(sender As Object, e As EventArgs)
+    Protected Sub btn_agregar_Click(sender As Object, e As EventArgs) Handles btn_agregar.Click
+        Try
 
+        Catch ex As Exception
+
+        End Try
     End Sub
 End Class

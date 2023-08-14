@@ -56,6 +56,16 @@ Public Class ClaseCarreras
         obj_CarrerasBD.leerTablaCarreras()
     End Sub
     Sub AgregarDatosCarrera()
-        obj_CarrerasBD.InsertarCarrerasBD(_idCarrera, _nombre, _estado, _grados)
+        obj_CarrerasBD.InsertarCarrerasBD(_idCarrera, _nombre, _grados, _estado)
     End Sub
+    Sub BorrarDatosCarrera()
+        obj_CarrerasBD.BorrarCarreraBD(_idCarrera)
+    End Sub
+    Sub ModificarCarrera()
+        obj_CarrerasBD.ModificarCarreraBD(_idCarrera, _nombre, _estado, _grados)
+    End Sub
+    Sub SeleccionarCarrera()
+        obj_CarrerasBD.SelecionarCarrera(_idCarrera)
+    End Sub
+
 End Class
