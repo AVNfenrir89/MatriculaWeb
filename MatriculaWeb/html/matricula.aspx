@@ -55,10 +55,7 @@
 
             <section>
 
-                <div>
-                </div>
             </section>
-
 
         </section>
 
@@ -83,7 +80,7 @@
         <section id="datos_estudiante_uno" class="seccion-uno">
             <h1>Ingresa el ID de la Matrícula</h1>
             <input type="text" id="input_buscar" runat="server" />
-            <asp:Button ID="btn_buscar" class="btn_matricular btn_funcionario" runat="server" Text="Buscar"  />
+            <asp:Button ID="btn_buscar" class="btn_matricular btn_funcionario" runat="server" Text="Buscar" />
         </section>
 
         <section class="matricula-uno">
@@ -104,7 +101,7 @@
             </div>
         </section>
 
-        
+
         <section class="matricula-dos">
 
             <section>
@@ -125,11 +122,11 @@
             </section>
 
             <section>
-
-                <div>
-                </div>
-
             </section>
+
+        </section>
+
+        <section id="datos_estudiante_cinco" class="botones_borrar_editar">
             <div>
                 <!--Cambios realizados-->
                 <label for="input_Id_Borrar">Boton para eliminar fila </label>
@@ -141,11 +138,8 @@
                 <label for="input_Id_Modificar">Boton para modifcar fila </label>
                 <asp:Button ID="btn_Modificar" class="btn_matricular btn_funcionario" runat="server" Text="Modifcar" />
             </div>
-
         </section>
 
     </section>
-
-
 
 </asp:Content>
