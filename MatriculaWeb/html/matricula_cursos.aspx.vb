@@ -58,12 +58,7 @@ Public Class Formulario_web1
 
     End Sub
 
-    Protected Sub btn_Borrar_Click(sender As Object, e As EventArgs) Handles btn_Borrar.Click
-        obj_Cursos.IdCurso = input_id_curso.Value
-        obj_Cursos.borrarCurso()
-        cargarInfo()
-        limpiar()
-    End Sub
+
     Sub limpiar()
         input_id_curso.Value = ""
         input_nombre.Value = ""
@@ -89,9 +84,6 @@ Public Class Formulario_web1
             obj_Cursos.Grado = select_grado.Value
             obj_Cursos.Estado = select_estado.Value
             obj_Cursos.modificarCurso()
-
-
-
             cargarInfo()
             limpiar()
         Catch ex As Exception
@@ -100,41 +92,53 @@ Public Class Formulario_web1
     End Sub
 
     Protected Sub btn_buscar_Click(sender As Object, e As EventArgs)
-        obj_Cursos.IdCurso = input_buscar.Value
-        obj_Cursos.SeleccionarPorIDcurso()
-        For Each fila As DataRow In obj_Cursos.TablaCursos.Rows
-            input_nombre2.Value = fila("Nombre")
-            input_creditos2.Value = fila("Creditos")
-            input_nota2.Value = fila("Nota_Min")
-            input_cant_min2.Value = fila("Min_Estudiantes")
-            input_cant_max2.Value = fila("Max_Estudiantes")
-            If fila("Grado") = "bachillerato" Then
-                select_grado2.SelectedIndex = 0
-            Else
-                select_grado2.SelectedIndex = 1
-            End If
-            If fila("Estado") = "activo" Then
-                select_estado2.SelectedIndex = 0
-            Else
-                select_estado2.SelectedIndex = 1
-            End If
+        Try
+            obj_Cursos.IdCurso = input_buscar.Value
+            obj_Cursos.SeleccionarPorIDcurso()
+            For Each fila As DataRow In obj_Cursos.TablaCursos.Rows
+                input_nombre2.Value = fila("Nombre")
+                input_creditos2.Value = fila("Creditos")
+                input_nota2.Value = fila("Nota_Min")
+                input_cant_min2.Value = fila("Min_Estudiantes")
+                input_cant_max2.Value = fila("Max_Estudiantes")
+                If fila("Grado") = "bachillerato" Then
+                    select_grado2.SelectedIndex = 0
+                Else
+                    select_grado2.SelectedIndex = 1
+                End If
+                If fila("Estado") = "activo" Then
+                    select_estado2.SelectedIndex = 0
+                Else
+                    select_estado2.SelectedIndex = 1
+                End If
 
-            Dim i As Integer = 0
-            For Each item As ListItem In select_carrera2.Items
-                If item.Value = fila("ID_Carrera") Then
-                    select_carrera2.SelectedIndex = i
-                    Exit For
-                End If
-                i += 1
+                Dim i As Integer = 0
+                For Each item As ListItem In select_carrera2.Items
+                    If item.Value = fila("ID_Carrera") Then
+                        select_carrera2.SelectedIndex = i
+                        Exit For
+                    End If
+                    i += 1
+                Next
+                i = 0
+                For Each item As ListItem In select_cuatrimestre_2.Items
+                    If item.Value = fila("Cuatrimestre") Then
+                        select_cuatrimestre_2.SelectedIndex = i
+                        Exit For
+                    End If
+                    i += 1
+                Next
             Next
-            i = 0
-            For Each item As ListItem In select_cuatrimestre_2.Items
-                If item.Value = fila("Cuatrimestre") Then
-                    select_cuatrimestre_2.SelectedIndex = i
-                    Exit For
-                End If
-                i += 1
-            Next
-        Next
+        Catch ex As Exception
+            Throw ex
+        End Try
+
+    End Sub
+
+    Protected Sub btn_Borrar_Click(sender As Object, e As EventArgs) Handles btn_Borrar.Click
+        obj_Cursos.IdCurso = input_buscar.Value
+        obj_Cursos.borrarCurso()
+        cargarInfo()
+        limpiar()
     End Sub
 End Class

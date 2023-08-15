@@ -56,18 +56,6 @@
             <section>
 
                 <div>
-                    <input type="checkbox" id="curso_cuatro" value="Curso" runat="server" />
-                    <label id="lb_curso_cuatro" runat="server" for="curso_cuatro" text="">Curso</label>
-                </div>
-
-                <div>
-                    <input type="checkbox" id="curso_cinco" value="Curso" runat="server" />
-                    <label id="lb_curso_cinco" runat="server" for="curso_cinco">Curso</label>
-                </div>
-
-                <div>
-                    <input type="checkbox" id="curso_seis" value="Curso" runat="server" />
-                    <label id="lb_curso_seis" runat="server" for="curso_seis">Curso</label>
                 </div>
             </section>
 
@@ -139,26 +127,9 @@
             <section>
 
                 <div>
-                    <input type="checkbox" id="curso_cuatro2" value="Curso" runat="server" />
-                    <label id="lb_curso_cuatro2" runat="server" for="curso_cuatro2" text="">Curso</label>
-                </div>
-
-                <div>
-                    <input type="checkbox" id="curso_cinco2" value="Curso" runat="server" />
-                    <label id="lb_curso_cinco2" runat="server" for="curso_cinco2">Curso</label>
-                </div>
-
-                <div>
-                    <input type="checkbox" id="curso_seis2" value="Curso" runat="server" />
-                    <label id="lb_curso_seis2" runat="server" for="curso_seis2">Curso</label>
                 </div>
 
             </section>
-
-        </section>
-
-        <section id="datos_estudiante_cinco" class="botones_borrar_editar">
-
             <div>
                 <!--Cambios realizados-->
                 <label for="input_Id_Borrar">Boton para eliminar fila </label>
