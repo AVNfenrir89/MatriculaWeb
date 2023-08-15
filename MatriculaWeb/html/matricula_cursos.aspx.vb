@@ -77,6 +77,15 @@ Public Class Formulario_web1
         input_cant_max.Value = ""
     End Sub
 
+    Sub LimpiarModificarBorar()
+        input_buscar.Value = ""
+        input_nombre2.Value = ""
+        input_creditos2.Value = ""
+        input_nota2.Value = ""
+        input_cant_max2.Value = ""
+        input_cant_min2.Value = ""
+        input_creditos2.Value = ""
+    End Sub
     Protected Sub btn_Modificar_Click(sender As Object, e As EventArgs) Handles btn_Modificar.Click
         Try
             obj_Cursos.IdCurso = input_buscar.Value
@@ -92,7 +101,8 @@ Public Class Formulario_web1
             obj_Cursos.Cuatri = select_cuatrimestre_2.Value
             obj_Cursos.modificarCurso()
             cargarInfo()
-            limpiar()
+            LimpiarModificarBorar()
+
         Catch ex As Exception
             Throw ex
         End Try
@@ -106,7 +116,8 @@ Public Class Formulario_web1
                 input_nombre2.Value = fila("Nombre")
                 input_creditos2.Value = fila("Creditos")
                 input_nota2.Value = fila("Nota_Min")
-
+                input_cant_min2.Value = fila("Min_Estudiantes")
+                input_cant_max2.Value = fila("Max_Estudiantes")
 
                 If fila("Grado") = "bachillerato" Then
                     select_grado2.SelectedIndex = 0

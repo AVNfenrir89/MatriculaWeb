@@ -62,7 +62,7 @@ Public Class ClaseCarreras
         obj_CarrerasBD.BorrarCarreraBD(_idCarrera)
     End Sub
     Sub ModificarCarrera()
-        obj_CarrerasBD.ModificarCarreraBD(_idCarrera, _nombre, _estado, _grados)
+        obj_CarrerasBD.ModificarCarreraBD(_idCarrera, _nombre, _grados, _estado)
     End Sub
     Sub SeleccionarCarrera()
         obj_CarrerasBD.SelecionarCarrera(_idCarrera)
