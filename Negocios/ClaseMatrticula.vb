@@ -85,6 +85,16 @@ Public Class ClaseMatrticula
 #End Region
 
 
+    Sub AgregarMatricula()
+        obj_MatriculaBD.InsertarMatricula(_idMatricula, _idEstudiante, _idCarrera, _costo, _cuatrimestre, _periodo)
+    End Sub
 
+    Sub RecibirTablaID()
+        obj_MatriculaBD.ConsultarIdMatricula(_idEstudiante, _idCarrera, _cuatrimestre)
+    End Sub
+
+    Sub GuardarCursosporMatricula()
+        obj_MatriculaBD.InsertarCursosxMatricula(_idCursos, _idMatricula)
+    End Sub
 
 End Class

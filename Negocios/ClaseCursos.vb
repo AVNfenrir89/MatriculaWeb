@@ -156,6 +156,9 @@ Public Class ClaseCursos
     Sub SeleccionarPorIDcurso()
         obj_CursosBD.SelecionarCurso(IdCurso)
     End Sub
+    Sub BuscarIDPorNombre()
+        obj_CursosBD.ConsultaIdPorNombre(_nombre)
+    End Sub
 #End Region
 
 End Class

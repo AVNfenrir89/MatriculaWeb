@@ -40,14 +40,11 @@ Public Class Formulario_web12
 
         lb_curso_uno.InnerText = ""
         curso_uno.Value = ""
-
         lb_curso_dos.InnerText = ""
         curso_dos.Value = ""
 
 
     End Sub
-
-
 
     Protected Sub btn_total_Click(sender As Object, e As EventArgs)
         Dim minEstudiantes As Integer
@@ -73,5 +70,11 @@ Public Class Formulario_web12
             obj_curso.BuscarIDPorNombre()
             obj_matricula.GuardarCursosporMatricula()
         End If
+
     End Sub
+
+    'consultar nombre de cursos para los checkbox
+    'arreglar total
+    'revisar matricula
+    'revisar modificar
 End Class
