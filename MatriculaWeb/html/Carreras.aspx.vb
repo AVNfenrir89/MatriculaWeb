@@ -80,13 +80,13 @@ Public Class Formulario_web15
 
         For Each fila As DataRow In obj_Carrera.TablaCarreras.Rows
             input_nombre_carrera2.Value = fila("Nombre")
-            If fila("Estado") = "activo" Then
+            If "activo" = fila("Estado").trim Then
                 select_estado2.SelectedIndex = 0
             Else
                 select_estado2.SelectedIndex = 1
             End If
 
-            If fila("Grado") = "BACH" Then
+            If fila("Grado").trim = "BACH" Then
                 select_grado2.SelectedIndex = 0
             Else
                 select_grado2.SelectedIndex = 1

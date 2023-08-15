@@ -10,6 +10,7 @@ Public Class SQL
     Dim dsCarreras As New DataSet
     Dim dsMatricula As New DataSet
     Dim dsCursos As New DataSet
+    Dim _mensaje As String
 
 #Region "Propiedades"
     Public Property TablaEstudiantes As DataTable
@@ -50,6 +51,15 @@ Public Class SQL
         End Get
         Set(value As DataTable)
 
+        End Set
+    End Property
+
+    Public Property Mensaje As String
+        Get
+            Return _mensaje
+        End Get
+        Set(value As String)
+            _mensaje = value
         End Set
     End Property
 #End Region
@@ -182,8 +192,8 @@ Public Class SQL
         Dim DataAdapter As SqlClient.SqlDataAdapter
         AbrirConexion()
         'instrucción select
-        instruccionSQL = New SqlClient.SqlCommand("SELECT * FROM Cursos WHERE ID_Cursos =" & idCurso, conexion)
-
+        instruccionSQL = New SqlClient.SqlCommand("SELECT * FROM Cursos WHERE ID_Cursos = @ID_Cursos", conexion)
+        instruccionSQL.Parameters.AddWithValue("@ID_Cursos", idCurso)
         If dsCursos.Tables().Count > 0 Then
             If dsCursos.Tables(0).Rows.Count > 1 Then
                 dsCursos.Tables(0).Clear()
@@ -420,7 +430,8 @@ Public Class SQL
         Dim instruccionSQL As SqlClient.SqlCommand
         Dim DataAdapter As SqlClient.SqlDataAdapter
         AbrirConexion()
-        instruccionSQL = New SqlClient.SqlCommand("SELECT * FROM Carreras WHERE ID_Carrera = " & idCarrera, conexion)
+        instruccionSQL = New SqlClient.SqlCommand("SELECT * FROM Carreras WHERE ID_Carrera = @ID_Carrera", conexion)
+        instruccionSQL.Parameters.AddWithValue("@ID_Carrera", idCarrera)
         If dsCarreras.Tables().Count > 0 Then
             If dsCarreras.Tables(0).Rows.Count > 1 Then
                 dsCarreras.Tables(0).Clear()

@@ -15,7 +15,7 @@ Public Class ClaseCursos
     Dim _cuatri As String
     'obj para referenciar de que tipo es el objeto
     Dim obj_CursosBD As New SQL
-
+    Dim mensaje As String = obj_CursosBD.Mensaje
 #Region "Propiedades"
     Public Property IdCurso As String
         Get

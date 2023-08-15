@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-      <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
 
@@ -19,17 +19,17 @@
 
                     <div>
                         <label for="input_nombre">Nombre</label>
-                        <input type="text" id="input_nombre" runat="server"  />
+                        <input type="text" id="input_nombre" runat="server" />
                     </div>
 
                     <div>
                         <label for="input_creditos">Créditos</label>
-                        <input type="text" id="input_creditos" runat="server"  />
+                        <input type="text" id="input_creditos" runat="server" />
                     </div>
 
                     <div>
-                        <label for="label_cuatrimestre">Selecionar cuatrimestre</label>
-                        <select id="label_cuatrimestre" runat="server">
+                        <label for="select_cuatrimestre">Selecionar cuatrimestre</label>
+                        <select id="select_cuatrimestre" runat="server">
                             <option value="I">I</option>
                             <option value="II">II</option>
                             <option value="III">III</option>
@@ -48,12 +48,12 @@
 
                     <div>
                         <label for="input_cant_min">Cantidad mínima</label>
-                        <input type="text" id="input_cant_min" runat="server"  />
+                        <input type="text" id="input_cant_min" runat="server" />
                     </div>
 
                     <div>
                         <label for="input_cant_max">Cantidad máxima</label>
-                        <input type="text" runat="server" id="input_cant_max"  />
+                        <input type="text" runat="server" id="input_cant_max" />
                     </div>
 
                     <div>
@@ -121,39 +121,39 @@
 
             <section id="datos_estudiante">
 
-                    <section id="datos_estudiante_uno" class="seccion-uno">
-                        <h1>Ingresa el ID del Curso</h1>
-                        <input type="text" id="input_buscar" runat="server" />
-                        <asp:Button ID="btn_buscar" class="btn_matricular btn_funcionario" runat="server" Text="Buscar" OnClick="btn_buscar_Click" />
-                    </section>
+                <section id="datos_estudiante_uno" class="seccion-uno">
+                    <h1>Ingresa el ID del Curso</h1>
+                    <input type="text" id="input_buscar" runat="server" />
+                    <asp:Button ID="btn_buscar" class="btn_matricular btn_funcionario" runat="server" Text="Buscar" OnClick="btn_buscar_Click" />
+                </section>
 
-                    <section id="datos_estudiante_uno">
+                <section id="datos_estudiante_uno">
 
-                        <div>
-                            <label for="input_nombre2">Nombre</label>
-                            <input type="text" id="input_nombre2" runat="server" />
-                        </div>
+                    <div>
+                        <label for="input_nombre2">Nombre</label>
+                        <input type="text" id="input_nombre2" runat="server" />
+                    </div>
 
-                        <div>
-                            <label for="input_creditos2">Créditos</label>
-                            <input type="text" id="input_creditos2" runat="server" />
-                        </div>
+                    <div>
+                        <label for="input_creditos2">Créditos</label>
+                        <input type="text" id="input_creditos2" runat="server" />
+                    </div>
 
-              
 
-                        <div id="select_cuatrimestre2">
-                            <label for="select_cuatrimestre_2">Selecionar cuatrimestre</label>
-                            <select id="select_cuatrimestre_2" runat="server">
-                                <option value="I">I</option>
-                                <option value="II">II</option>
-                                <option value="III">III</option>
-                                <option value="IV">IV</option>
-                            </select>
-                            </div>
 
-                    </section>
+                    <div id="select_cuatrimestre2">
+                        <label for="select_cuatrimestre_2">Selecionar cuatrimestre</label>
+                        <select id="select_cuatrimestre_2" runat="server">
+                            <option value="I">I</option>
+                            <option value="II">II</option>
+                            <option value="III">III</option>
+                            <option value="IV">IV</option>
+                        </select>
+                    </div>
 
-                    <section id="cursos_dos" contenteditable="false" draggable="false">
+                </section>
+
+                <section id="cursos_dos" contenteditable="false" draggable="false">
                     <div>
                         <label for="input_nota2">Nota mínima</label>
                         <input type="text" id="input_nota2" runat="server" />
@@ -168,58 +168,58 @@
                         <label for="input_cant_max2">Cantidad máxima</label>
                         <input type="text" runat="server" id="input_cant_max2" />
                     </div>
-                </section>    
-                
-                    <section id="datos_estudiante_tres" class="cursos_selects" >
+                </section>
 
-                       <%-- selects--%>
-                        <div>
-                            <label for="select_grado2">Grado</label>
-                            <select id="select_grado2" runat="server">
-                                <option value="BACH">Bachillerato</option>
-                                <option value="LIC">Licienciatura</option>
-                            </select>
-                        </div>
+                <section id="datos_estudiante_tres" class="cursos_selects">
 
-                        <div>
-                            <label for="select_carrera2">Carrera</label>
-                            <select id="select_carrera2" runat="server">
-                            </select>
-                        </div>
+                    <%-- selects--%>
+                    <div>
+                        <label for="select_grado2">Grado</label>
+                        <select id="select_grado2" runat="server">
+                            <option value="BACH">Bachillerato</option>
+                            <option value="LIC">Licienciatura</option>
+                        </select>
+                    </div>
 
-                        <div>
+                    <div>
+                        <label for="select_carrera2">Carrera</label>
+                        <select id="select_carrera2" runat="server">
+                        </select>
+                    </div>
 
-                            <label for="select_estado2">Estado</label>
-                            <select id="select_estado2" runat="server">
-                                <option value="activo">Activo</option>
-                                <option value="inactivo">Inactivo</option>
-                            </select >
+                    <div>
 
-                        </div>
+                        <label for="select_estado2">Estado</label>
+                        <select id="select_estado2" runat="server">
+                            <option value="activo">Activo</option>
+                            <option value="inactivo">Inactivo</option>
+                        </select>
 
-                    </section>
+                    </div>
 
-                    <section id="datos_estudiante_cinco" class="botones_borrar_editar">
+                </section>
 
-                       <%-- botón eliminar--%>
-                        <div>
-                            <!--Cambios realizados-->
-                            <label for="input_Id_Borrar">Boton para eliminar fila </label>
-                            <asp:Button ID="btn_Borrar" class="btn_matricular btn_funcionario btn_Borrar" runat="server" Text="Borrar" />
-                        </div>
+                <section id="datos_estudiante_cinco" class="botones_borrar_editar">
 
-                       <%-- botón modificar--%>
-                        <div>
-                            <!--Cambios realizados-->
-                            <label for="input_Id_Modificar">Boton para modifcar fila </label>
-                            <asp:Button ID="btn_Modificar" class="btn_matricular btn_funcionario" runat="server" Text="Modifcar" />
-                        </div>
+                    <%-- botón eliminar--%>
+                    <div>
+                        <!--Cambios realizados-->
+                        <label for="input_Id_Borrar">Boton para eliminar fila </label>
+                        <asp:Button ID="btn_Borrar" class="btn_matricular btn_funcionario btn_Borrar" runat="server" Text="Borrar" />
+                    </div>
 
-                    </section>
-                      
+                    <%-- botón modificar--%>
+                    <div>
+                        <!--Cambios realizados-->
+                        <label for="input_Id_Modificar">Boton para modifcar fila </label>
+                        <asp:Button ID="btn_Modificar" class="btn_matricular btn_funcionario" runat="server" Text="Modifcar" />
+                    </div>
+
+                </section>
+
             </section>
 
         </ContentTemplate>
-    </asp:UpdatePanel> 
+    </asp:UpdatePanel>
 
 </asp:Content>
