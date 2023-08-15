@@ -17,7 +17,7 @@ Public Class ClaseFuncionarios
     Private _mensaje As String
 #Region "propiedades"
     Sub New()
-        _estado = "inactivo"
+        Estado = "inactivo"
     End Sub
     Public Property TablaFuncionarios As DataTable
         Get
@@ -117,7 +117,7 @@ Public Class ClaseFuncionarios
 
 #Region "metodos "
     Sub LoginFuncionarios()
-        obj_FuncionariosBD.SelecionarFuncionario(_identificacion)
+        obj_FuncionariosBD.LoginFuncionario(_usuario)
     End Sub
     Sub leerTablaFuncionarios()
         obj_FuncionariosBD.LeerTablaFuncionarios()
@@ -132,40 +132,20 @@ Public Class ClaseFuncionarios
         obj_FuncionariosBD.ModificarFuncionarioBD(_identificacion, _nombre, _pApellido, sApellido, _correo, _usuario, _clave, _estado)
     End Sub
     Sub ValidaDatosFuncionario()
-
+        If TablaFuncionarios.Rows.Count = 0 Then
+            Mensaje = "El Usuario o contraseña incorrecto no exite"
+        End If
         For Each fila As DataRow In TablaFuncionarios.Rows
 
-
             If Not _clave = fila("Contrasena").trim Then
-                Mensaje = "El Usuario no exite o está inactivo"
+                Mensaje = "El Usuario o contraseña incorrecto o no exite"
                 Exit For
             End If
 
-            If Not _usuario = fila("Usuario").trim Then
-                Mensaje = "El Usuario no exite o está inactivo"
+            If "inactivo" = fila("Estado").trim Then
+                Mensaje = "El Usuario está inactivo"
                 Exit For
             End If
-
-            If Not fila("Nombre").trim = _nombre Then
-                Mensaje = "El Usuario no exite o está inactivo"
-                Exit For
-            End If
-
-            If Not _pApellido = fila("P_Apellido").trim Then
-                Mensaje = "El Usuario no exite o está inactivo"
-                Exit For
-            End If
-
-            If Not _sApellido = fila("S_Apellido").trim Then
-                Mensaje = "El Usuario no exite o está inactivo"
-                Exit For
-            End If
-
-            If Not _correo = fila("Correo").trim Then
-                Mensaje = "El Usuario no exite o está inactivo"
-                Exit For
-            End If
-
             Estado = fila("Estado").trim
         Next
     End Sub

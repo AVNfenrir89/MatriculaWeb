@@ -549,6 +549,28 @@ Public Class SQL
         CerrarConexion()
     End Sub
 
+    Sub LoginFuncionario(usuario)
+        Dim instruccionSQL As SqlClient.SqlCommand
+        Dim DataAdapter As SqlClient.SqlDataAdapter
+        AbrirConexion()
+        instruccionSQL = New SqlClient.SqlCommand("SELECT Contrasena, Estado FROM Funcionarios WHERE Usuario =@Usuario", conexion)
+        instruccionSQL.Parameters.AddWithValue("@Usuario", usuario)
+        If dsFuncionarios.Tables().Count > 0 Then
+            If dsFuncionarios.Tables(0).Rows.Count > 1 Then
+                dsFuncionarios.Tables(0).Clear()
+            End If
+        End If
+
+        Try
+            DataAdapter = New SqlClient.SqlDataAdapter(instruccionSQL)
+            DataAdapter.Fill(dsFuncionarios)
+        Catch ex As Exception
+            Throw New System.Exception(ex.Message)
+        End Try
+        CerrarConexion()
+    End Sub
+
+
 #End Region
 
 #Region "Procedimientos matrícula"
