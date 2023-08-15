@@ -47,9 +47,7 @@ Public Class Formulario_web12
 
     End Sub
 
-    Protected Sub btn_matricular_Click(sender As Object, e As EventArgs)
 
-    End Sub
 
     Protected Sub btn_total_Click(sender As Object, e As EventArgs)
         Dim minEstudiantes As Integer
@@ -63,5 +61,17 @@ Public Class Formulario_web12
         End If
     End Sub
 
-
+    Protected Sub btn_matricular_Click(sender As Object, e As EventArgs) Handles btn_matricular.Click
+        obj_matricula.IdCarrera = select_carrera.Value
+        obj_matricula.IdEstudiante = select_estudiante.Value
+        obj_matricula.Cuatrimestre = label_cuatrimestre.Value
+        obj_matricula.Costo = lb_total.InnerText
+        'falta el periodo
+        obj_matricula.AgregarMatricula() 'usar el id de la matricula y el id del curso para guardar en cursos por matricula
+        obj_matricula.RecibirTablaID()
+        If curso_uno.Checked Then
+            obj_curso.BuscarIDPorNombre()
+            obj_matricula.GuardarCursosporMatricula()
+        End If
+    End Sub
 End Class
