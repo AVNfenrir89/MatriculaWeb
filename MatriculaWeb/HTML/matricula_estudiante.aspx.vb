@@ -8,27 +8,27 @@ Public Class Formulario_web11
         'If Not User.Identity.IsAuthenticated Then
         '    Response.Redirect("login.aspx") ' Redirigir al inicio de sesión si no está autenticado
         'End If
+
+        cargarInfo()
         If Not IsPostBack Then
             beca_no.Checked = True
             select_beca.Disabled = True
             cargarInfo()
-            ' Dim Carreras As New DataTable
+
             Dim nombre_carrera As String
             Dim idCarrera As String
             obj_Carreras.LeeDatosCarrera()
 
 
             'se itera cada fila de la tabla carreras y se agrega items al select_carrera
-            If valor Then
-                For Each fila As DataRow In obj_Carreras.TablaCarreras.Rows
-                    nombre_carrera = fila("nombre")
-                    idCarrera = fila("ID_Carrera")
-                    Dim opcion As New ListItem(nombre_carrera, idCarrera)
-                    select_carrera.Items.Add(opcion)
-                    select_carrera2.Items.Add(opcion)
-                Next
-                valor = False
-            End If
+
+            For Each fila As DataRow In obj_Carreras.TablaCarreras.Rows
+                nombre_carrera = fila("nombre")
+                idCarrera = fila("ID_Carrera")
+                Dim opcion As New ListItem(nombre_carrera, idCarrera)
+                select_carrera.Items.Add(opcion)
+                select_carrera2.Items.Add(opcion)
+            Next
         End If
     End Sub
 
@@ -101,7 +101,7 @@ Public Class Formulario_web11
             obj_Estudiantes.Nombre = input_nombre_est2.Value
             obj_Estudiantes.Apellidos = input_apellidos2.Value
             obj_Estudiantes.Telefono = input_telefono2.Value
-            If beca_no.Checked Then
+            If beca_no2.Checked Then
                 obj_Estudiantes.Beca = 0
             Else
                 obj_Estudiantes.Beca = select_beca2.Value
