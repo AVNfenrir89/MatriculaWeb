@@ -185,6 +185,15 @@ Partial Public Class Formulario_web1
     Protected WithEvents input_creditos2 As Global.System.Web.UI.HtmlControls.HtmlInputText
 
     '''<summary>
+    '''Control select_cuatrimestre_2.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents select_cuatrimestre_2 As Global.System.Web.UI.HtmlControls.HtmlSelect
+
+    '''<summary>
     '''Control input_nota2.
     '''</summary>
     '''<remarks>
@@ -194,13 +203,22 @@ Partial Public Class Formulario_web1
     Protected WithEvents input_nota2 As Global.System.Web.UI.HtmlControls.HtmlInputText
 
     '''<summary>
-    '''Control select_cuatrimestre_2.
+    '''Control input_cant_min2.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents select_cuatrimestre_2 As Global.System.Web.UI.HtmlControls.HtmlSelect
+    Protected WithEvents input_cant_min2 As Global.System.Web.UI.HtmlControls.HtmlInputText
+
+    '''<summary>
+    '''Control input_cant_max2.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents input_cant_max2 As Global.System.Web.UI.HtmlControls.HtmlInputText
 
     '''<summary>
     '''Control select_grado2.
