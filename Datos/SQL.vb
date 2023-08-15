@@ -96,7 +96,7 @@ Public Class SQL
         CerrarConexion()
     End Sub
     'metodo de insertar
-    Sub InsertarCursosBD(idCurso As String, idCarrera As String, nombre As String, creditos As Integer, notaMinima As Integer, cantMin As Integer, cantMax As Integer, grado As String, estado As String, costo As Integer)
+    Sub InsertarCursosBD(idCurso As String, idCarrera As String, nombre As String, creditos As Integer, notaMinima As Integer, cantMin As Integer, cantMax As Integer, grado As String, estado As String, costo As Integer, cuatri As String)
         'variable para la instruccion
         Dim sqlInstruccion As SqlClient.SqlCommand
 
@@ -104,7 +104,7 @@ Public Class SQL
         AbrirConexion()
 
         'Se prepara la instruccion SQL 
-        sqlInstruccion = New SqlClient.SqlCommand("insert into Cursos(ID_Cursos, ID_Carrera, Nombre, Creditos, Nota_Min, Min_Estudiantes, Max_Estudiantes, Grado, Estado, Costo) values (@ID_Cursos, @ID_Carrera, @Nombre, @Creditos, @Nota_Min, @Min_Estudiantes, @Max_Estudiantes, @Grado, @Estado, @Costo)", conexion)
+        sqlInstruccion = New SqlClient.SqlCommand("insert into Cursos(ID_Cursos, ID_Carrera, Nombre, Creditos, Nota_Min, Min_Estudiantes, Max_Estudiantes, Grado, Estado, Costo, cuatrimestre) values (@ID_Cursos, @ID_Carrera, @Nombre, @Creditos, @Nota_Min, @Min_Estudiantes, @Max_Estudiantes, @Grado, @Estado, @Costo, @Cuatrimestre)", conexion)
         'envio de parametros y sus respectivos valores
         sqlInstruccion.Parameters.AddWithValue("@ID_Cursos", idCurso)
         sqlInstruccion.Parameters.AddWithValue("@ID_Carrera", idCarrera)
@@ -116,6 +116,7 @@ Public Class SQL
         sqlInstruccion.Parameters.AddWithValue("@Grado", grado)
         sqlInstruccion.Parameters.AddWithValue("@Estado", estado)
         sqlInstruccion.Parameters.AddWithValue("@Costo", costo)
+        sqlInstruccion.Parameters.AddWithValue("@Cuatrimestre", cuatri)
 
         Try
             'ejecucion de la instruccion
@@ -146,13 +147,13 @@ Public Class SQL
     End Sub
 
     ' Método para modificar una carrera en la base de datos
-    Sub ModificarCursoBD(idCurso As String, idCarrera As String, nombre As String, creditos As Integer, notaMinima As Integer, cantMin As Integer, cantMax As Integer, grado As String, estado As String, costo As Integer)
+    Sub ModificarCursoBD(idCurso As String, idCarrera As String, nombre As String, creditos As Integer, notaMinima As Integer, cantMin As Integer, cantMax As Integer, grado As String, estado As String, costo As Integer, cuatri As String)
         Dim sqlInstruccion As SqlClient.SqlCommand
 
         AbrirConexion()
 
         ' Utilizamos un comando SQL para actualizar la carrera con el ID_Carrera específico
-        sqlInstruccion = New SqlClient.SqlCommand("UPDATE Curso SET ID_Carrera=@ID_Carrera, Nombre = @Nombre, Creditos = @Creditos, Nota_Min = @Nota_Min, Min_Estudiantes = @Min_Estudiantes, Max_Estudiantes=@Max_Estudiantes, Grado = @Grado, Estado = @Estado, Costo=@Costo WHERE ID_Cursos = @ID_Cursos", conexion)
+        sqlInstruccion = New SqlClient.SqlCommand("UPDATE Cursos SET ID_Carrera=@ID_Carrera, Nombre = @Nombre, Creditos = @Creditos, Nota_Min = @Nota_Min, Min_Estudiantes = @Min_Estudiantes, Max_Estudiantes=@Max_Estudiantes, Grado = @Grado, Estado = @Estado, Costo=@Costo, Cuatrimestre = @Cuatrimestre WHERE ID_Cursos = @ID_Cursos", conexion)
         sqlInstruccion.Parameters.AddWithValue("@ID_Cursos", idCurso)
         sqlInstruccion.Parameters.AddWithValue("@ID_Carrera", idCarrera)
         sqlInstruccion.Parameters.AddWithValue("@Nombre", nombre)
@@ -163,6 +164,7 @@ Public Class SQL
         sqlInstruccion.Parameters.AddWithValue("@Grado", grado)
         sqlInstruccion.Parameters.AddWithValue("@Estado", estado)
         sqlInstruccion.Parameters.AddWithValue("@Costo", costo)
+        sqlInstruccion.Parameters.AddWithValue("@Cuatrimestre", cuatri)
         Try
             ' Ejecución de la instrucción UPDATE
             sqlInstruccion.ExecuteNonQuery()
@@ -182,6 +184,26 @@ Public Class SQL
         'instrucción select
         instruccionSQL = New SqlClient.SqlCommand("SELECT * FROM Cursos WHERE ID_Cursos =" & idCurso, conexion)
 
+        If dsCursos.Tables().Count > 0 Then
+            If dsCursos.Tables(0).Rows.Count > 1 Then
+                dsCursos.Tables(0).Clear()
+            End If
+        End If
+        Try
+            DataAdapter = New SqlClient.SqlDataAdapter(instruccionSQL)
+            DataAdapter.Fill(dsCursos)
+        Catch ex As Exception
+            Throw New System.Exception(ex.Message)
+        End Try
+        CerrarConexion()
+    End Sub
+    Sub ConsultaIdPorNombre(nombre As String)
+
+        Dim instruccionSQL As SqlClient.SqlCommand
+        Dim DataAdapter As SqlClient.SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlClient.SqlCommand("SELECT * FROM Cursos WHERE Nombre =" & nombre, conexion)
         If dsCursos.Tables().Count > 0 Then
             If dsCursos.Tables(0).Rows.Count > 1 Then
                 dsCursos.Tables(0).Clear()
@@ -520,7 +542,64 @@ Public Class SQL
 
 #Region "Procedimientos matrícula"
 
-    Sub SelecionarIDestudisntes(idcurso, idcarrera, cuatrimestre)
+    Sub LeerTablaMatriculaBD()
+        Dim instruccionSQL As SqlClient.SqlCommand
+        Dim DataAdapter As SqlClient.SqlDataAdapter
+        AbrirConexion()
+        instruccionSQL = New SqlClient.SqlCommand("Select * from Matricula", conexion)
+        If dsCursos.Tables().Count > 0 Then
+            If dsMatricula.Tables(0).Rows.Count > 1 Then
+                dsMatricula.Tables(0).Clear()
+            End If
+        End If
+        Try
+            DataAdapter = New SqlClient.SqlDataAdapter(instruccionSQL)
+            DataAdapter.Fill(dsCursos)
+        Catch ex As Exception
+            Throw New System.Exception(ex.Message)
+        End Try
+        CerrarConexion()
+    End Sub
+    Sub InsertarMatricula(idMatricula As Integer, idEstudiante As Integer, idCarrera As String, costo As Integer, cuatrimestre As String, periodo As String)
+        Dim sqlInstruccion As SqlClient.SqlCommand
+        AbrirConexion()
+        sqlInstruccion = New SqlClient.SqlCommand("insert into Matricula(ID_Matricula, ID_Estudiante, ID_Carrera, Costo, Cuatrimestre, Periodo) values (@ID_Matricula, @ID_Estudiante, @ID_Carrera, @Costo, @Cuatrimestre, @Periodo)", conexion)
+        sqlInstruccion.Parameters.AddWithValue("@ID_Matricula", idMatricula)
+        sqlInstruccion.Parameters.AddWithValue("@ID_Estudiante", idEstudiante)
+        sqlInstruccion.Parameters.AddWithValue("@ID_Carrera", idCarrera)
+        sqlInstruccion.Parameters.AddWithValue("@Costo", costo)
+        sqlInstruccion.Parameters.AddWithValue("@Cuatrimestre", cuatrimestre)
+        sqlInstruccion.Parameters.AddWithValue("@Periodo", periodo)
+        Try
+            sqlInstruccion.ExecuteNonQuery()
+        Catch ex As Exception
+            Throw New System.Exception("Error al ejecutar el insert:" + ex.Message)
+        End Try
+        CerrarConexion()
+    End Sub
+
+    Sub ConsultarIdMatricula(idCarrera As String, idEstudiante As String, cuatrimestre As String)
+        Dim instruccionSQL As SqlClient.SqlCommand
+        Dim DataAdapter As SqlClient.SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlClient.SqlCommand("SELECT * FROM Matricula WHERE ID_Estudiantes =" & idEstudiante & " AND ID_Carrera= " & idCarrera & " AND Cuatrimestre =" & cuatrimestre, conexion)
+
+        If dsMatricula.Tables().Count > 0 Then
+            If dsMatricula.Tables(0).Rows.Count > 1 Then
+                dsMatricula.Tables(0).Clear()
+            End If
+        End If
+        Try
+            DataAdapter = New SqlClient.SqlDataAdapter(instruccionSQL)
+            DataAdapter.Fill(dsMatricula)
+        Catch ex As Exception
+            Throw New System.Exception(ex.Message)
+        End Try
+        CerrarConexion()
+    End Sub
+    ''hiciste esto, no entiendo
+    Sub SelecionarIDestudisntes(idcarrera As String, cuatrimestre As String)
         Dim instruccionSQL As SqlClient.SqlCommand
         Dim DataAdapter As SqlClient.SqlDataAdapter
         AbrirConexion()
@@ -539,10 +618,101 @@ Public Class SQL
             Throw New System.Exception(ex.Message)
         End Try
         CerrarConexion()
+    End Sub '''''''''''''
+
+    Sub UpdateBD(idMatricula As Integer, idEstudiante As Integer, idCarrera As String, Costo As Integer, cuatrimestre As String, periodo As String)
+        Dim sqlInstruccion As SqlClient.SqlCommand
+
+        AbrirConexion()
+        sqlInstruccion = New SqlClient.SqlCommand("UPDATE Matricula SET ID_Estudiante= @ID_Estudiante, ID_Carrera= @ID_Carrera, Costo= @Costo, Cuatrimestre= @Cuatrimestre, Periodo= @Periodo WHERE ID_Matricula = @ID_Matricula", conexion)
+        sqlInstruccion.Parameters.AddWithValue("@ID_Matricula", idMatricula)
+        sqlInstruccion.Parameters.AddWithValue("@ID_Estudiante", idEstudiante)
+        sqlInstruccion.Parameters.AddWithValue("@ID_Carrera", idCarrera)
+        sqlInstruccion.Parameters.AddWithValue("@Costo", Costo)
+        sqlInstruccion.Parameters.AddWithValue("@Cuatrimestre", cuatrimestre)
+        sqlInstruccion.Parameters.AddWithValue("@Periodo", periodo)
+        Try
+            sqlInstruccion.ExecuteNonQuery()
+        Catch ex As Exception
+            Throw New System.Exception("Error al ejecutar el UPDATE: " + ex.Message)
+        End Try
+        CerrarConexion()
     End Sub
 
+#Region "Procedimiento tabla Intermedia"
+    Sub LeerTablaCursosxMatricula()
+        Dim instruccionSQL As SqlClient.SqlCommand
+        Dim DataAdapter As SqlClient.SqlDataAdapter
+        AbrirConexion()
+        instruccionSQL = New SqlClient.SqlCommand("Select * from CursoPorMatricula", conexion)
+        If dsMatricula.Tables().Count > 0 Then
+            If dsMatricula.Tables(0).Rows.Count > 1 Then
+                dsMatricula.Tables(0).Clear()
+            End If
+        End If
+
+        Try
+            DataAdapter = New SqlClient.SqlDataAdapter(instruccionSQL)
+            DataAdapter.Fill(dsMatricula)
+        Catch ex As Exception
+            Throw New System.Exception(ex.Message)
+        End Try
+        CerrarConexion()
+    End Sub
+    Sub InsertarCursosxMatricula(idCurso As String, idMatricula As Integer)
+        Dim sqlInstruccion As SqlClient.SqlCommand
+        AbrirConexion()
+        sqlInstruccion = New SqlClient.SqlCommand("insert into CursoPorMatricula(idCursoPorMatricula, idCurso, idMatricula) values (@idCursoPorMatricula, @idCurso, @idMatricula)", conexion)
+        sqlInstruccion.Parameters.AddWithValue("@idCursoPorMatricula", 0)
+        sqlInstruccion.Parameters.AddWithValue("@idCurso", idCurso)
+        sqlInstruccion.Parameters.AddWithValue("@idMatricula", idMatricula)
+        Try
+            sqlInstruccion.ExecuteNonQuery()
+        Catch ex As Exception
+            Throw New System.Exception("Error al ejecutar el insert:" + ex.Message)
+        End Try
+        CerrarConexion()
+
+    End Sub
+
+    Sub consultarCursosPormatricula(idMatricula As Integer)
+
+        Dim instruccionSQL As SqlClient.SqlCommand
+        Dim DataAdapter As SqlClient.SqlDataAdapter
+        AbrirConexion()
+        instruccionSQL = New SqlClient.SqlCommand()
+        instruccionSQL = New SqlClient.SqlCommand("SELECT * FROM CursosPorMatricula WHERE idMatricula =" & idMatricula, conexion)
+        If dsMatricula.Tables().Count > 0 Then
+            If dsMatricula.Tables(0).Rows.Count > 1 Then
+                dsMatricula.Tables(0).Clear()
+            End If
+        End If
+
+        Try
+            DataAdapter = New SqlClient.SqlDataAdapter(instruccionSQL)
+            DataAdapter.Fill(dsFuncionarios)
+        Catch ex As Exception
+            Throw New System.Exception(ex.Message)
+        End Try
+        CerrarConexion()
+    End Sub
+
+    Sub EliminarCursosPorMatricula(idCurso As String, idMatricula As Integer)
+        Dim sqlInstruccion As SqlClient.SqlCommand
+        AbrirConexion()
+        sqlInstruccion = New SqlClient.SqlCommand("DELETE FROM CursoPorMatricula WHERE idCurso= @idCurso AND idMatricula = @idMatricula", conexion)
+        sqlInstruccion.Parameters.AddWithValue("@idCurso", idCurso)
+        sqlInstruccion.Parameters.AddWithValue("@idMatricula", idMatricula)
+        Try
+            sqlInstruccion.ExecuteNonQuery()
+        Catch ex As Exception
+            Throw New System.Exception("Error al ejecutar el DELETE: " + ex.Message)
+        End Try
+        CerrarConexion()
+    End Sub
 #End Region
 
+#End Region
 #End Region
 
 End Class

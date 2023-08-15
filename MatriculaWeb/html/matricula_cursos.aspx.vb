@@ -38,6 +38,7 @@ Public Class Formulario_web1
             obj_Cursos.Costo = obj_Cursos.Costo_curso(input_creditos.Value)
             obj_Cursos.Grado = select_grado.Value
             obj_Cursos.Estado = select_estado.Value
+            obj_Cursos.Cuatri = label_cuatrimestre.Value
             'agregar y cargar en tiempo real
             obj_Cursos.AgregarDatosCursos()
             cargarInfo()
@@ -58,19 +59,10 @@ Public Class Formulario_web1
 
     End Sub
 
-    Protected Sub btn_Borrar_Click(sender As Object, e As EventArgs) Handles btn_Borrar.Click
-        obj_Cursos.IdCurso = input_id_curso.Value
-        obj_Cursos.borrarCurso()
-        cargarInfo()
-        limpiar()
-    End Sub
+
     Sub limpiar()
         input_id_curso.Value = ""
         input_nombre.Value = ""
-        input_nota.Value = ""
-        input_cant_max.Value = ""
-        input_cant_min.Value = ""
-        input_creditos.Value = ""
         select_carrera.Value = ""
         select_estado.Value = ""
         select_grado.Value = ""
@@ -78,20 +70,18 @@ Public Class Formulario_web1
 
     Protected Sub btn_Modificar_Click(sender As Object, e As EventArgs) Handles btn_Modificar.Click
         Try
-            obj_Cursos.IdCurso = input_id_curso.Value
-            obj_Cursos.IdCarrera = select_carrera.Value
-            obj_Cursos.Nombre = input_nombre.Value
-            obj_Cursos.Creditos = input_creditos.Value
-            obj_Cursos.NotaMinima = input_nota.Value
-            obj_Cursos.CantMax = input_cant_max.Value
-            obj_Cursos.CantMin = input_cant_min.Value
-            obj_Cursos.Costo = obj_Cursos.Costo_curso(input_creditos.Value)
-            obj_Cursos.Grado = select_grado.Value
-            obj_Cursos.Estado = select_estado.Value
+            obj_Cursos.IdCurso = input_buscar.Value
+            obj_Cursos.IdCarrera = select_carrera2.Value
+            obj_Cursos.Nombre = input_nombre2.Value
+            obj_Cursos.Creditos = input_creditos2.Value
+            obj_Cursos.NotaMinima = input_nota2.Value
+            obj_Cursos.CantMax = input_cant_max2.Value
+            obj_Cursos.CantMin = input_cant_min2.Value
+            obj_Cursos.Costo = obj_Cursos.Costo_curso(input_creditos2.Value)
+            obj_Cursos.Grado = select_grado2.Value
+            obj_Cursos.Estado = select_estado2.Value
+            obj_Cursos.Cuatri = select_cuatrimestre_2.Value
             obj_Cursos.modificarCurso()
-
-
-
             cargarInfo()
             limpiar()
         Catch ex As Exception
@@ -106,8 +96,8 @@ Public Class Formulario_web1
             input_nombre2.Value = fila("Nombre")
             input_creditos2.Value = fila("Creditos")
             input_nota2.Value = fila("Nota_Min")
-            input_cant_min2.Value = fila("Min_Estudiantes")
-            input_cant_max2.Value = fila("Max_Estudiantes")
+
+
             If fila("Grado") = "bachillerato" Then
                 select_grado2.SelectedIndex = 0
             Else

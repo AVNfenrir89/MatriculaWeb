@@ -32,7 +32,7 @@
                         <select id="label_cuatrimestre" runat="server">
                             <option value="I">I</option>
                             <option value="II">II</option>
-                            <option value="II">II</option>
+                            <option value="III">III</option>
                             <option value="IV">IV</option>
                         </select>
                     </div>
@@ -146,10 +146,10 @@
                             <select id="select_cuatrimestre_2" runat="server">
                                 <option value="I">I</option>
                                 <option value="II">II</option>
-                                <option value="II">II</option>
+                                <option value="III">III</option>
                                 <option value="IV">IV</option>
                             </select>
-                        </div>
+                            </div>
 
                     </section>
 
