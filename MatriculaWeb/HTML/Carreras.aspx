@@ -64,15 +64,15 @@
                      </div>
 
                      <div>
-                         <label for="select_grado">Grado</label>
-                         <select id="select1" runat="server">
+                         <label for="select_grado2">Grado</label>
+                         <select id="select_grado2" runat="server">
                              <option value="BACH">Bachillerato</option>
                              <option value="LIC">Licienciatura</option>
                          </select>
                      </div>
                      <div>
-                         <label for="select_estado">Estado</label>
-                         <select id="select2" runat="server">
+                         <label for="select_estado2">Estado</label>
+                         <select id="select_estado2" runat="server">
                              <option value="activo">Activo</option>
                              <option value="inactivo">Inactivo</option>
                          </select>
