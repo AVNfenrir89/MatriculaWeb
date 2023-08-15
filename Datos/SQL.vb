@@ -312,7 +312,7 @@ Public Class SQL
         Dim DataAdapter As SqlClient.SqlDataAdapter
         AbrirConexion()
 
-        instruccionSQL = New SqlClient.SqlCommand("Select * from Carrera", conexion)
+        instruccionSQL = New SqlClient.SqlCommand("Select * from Carreras", conexion)
         If dsCarreras.Tables().Count > 0 Then
             If dsCarreras.Tables(0).Rows.Count > 1 Then
                 dsCarreras.Tables(0).Clear()
@@ -334,7 +334,7 @@ Public Class SQL
 
         AbrirConexion()
 
-        sqlInstruccion = New SqlClient.SqlCommand("insert into Carrra(ID_Carrera, Nombre, Grado, Estado) values (@ID_Carrera, @Nombre, @Grado, @Estado)", conexion)
+        sqlInstruccion = New SqlClient.SqlCommand("insert into Carreras(ID_Carrera, Nombre, Grado, Estado) values (@ID_Carrera, @Nombre, @Grado, @Estado)", conexion)
         sqlInstruccion.Parameters.AddWithValue("@ID_Carrera", idCarrera)
         sqlInstruccion.Parameters.AddWithValue("@Nombre", Nombre)
         sqlInstruccion.Parameters.AddWithValue("@Grado", Grado)
@@ -357,7 +357,7 @@ Public Class SQL
         Dim sqlInstruccion As SqlClient.SqlCommand
 
         AbrirConexion()
-        sqlInstruccion = New SqlClient.SqlCommand("DELETE FROM Carrera WHERE ID_Carrera = @ID_Carrera", conexion)
+        sqlInstruccion = New SqlClient.SqlCommand("DELETE FROM Carreras WHERE ID_Carrera = @ID_Carrera", conexion)
         sqlInstruccion.Parameters.AddWithValue("@ID_Carrera", idCarrera)
 
         Try
@@ -378,7 +378,7 @@ Public Class SQL
         AbrirConexion()
 
         ' Utilizamos un comando SQL para actualizar la carrera con el ID_Carrera específico
-        sqlInstruccion = New SqlClient.SqlCommand("UPDATE Carrera SET Nombre = @Nombre, Grado = @Grado, Estado = @Estado WHERE ID_Carrera = @ID_Carrera", conexion)
+        sqlInstruccion = New SqlClient.SqlCommand("UPDATE Carreras SET Nombre = @Nombre, Grado = @Grado, Estado = @Estado WHERE ID_Carrera = @ID_Carrera", conexion)
         sqlInstruccion.Parameters.AddWithValue("@ID_Carrera", idCarrera)
         sqlInstruccion.Parameters.AddWithValue("@Nombre", Nombre)
         sqlInstruccion.Parameters.AddWithValue("@Grado", Grado)
@@ -398,7 +398,7 @@ Public Class SQL
         Dim instruccionSQL As SqlClient.SqlCommand
         Dim DataAdapter As SqlClient.SqlDataAdapter
         AbrirConexion()
-        instruccionSQL = New SqlClient.SqlCommand("SELECT * FROM Carrera WHERE ID_Carrera =" & idCarrera, conexion)
+        instruccionSQL = New SqlClient.SqlCommand("SELECT * FROM Carreras WHERE ID_Carrera = " & idCarrera, conexion)
         If dsCarreras.Tables().Count > 0 Then
             If dsCarreras.Tables(0).Rows.Count > 1 Then
                 dsCarreras.Tables(0).Clear()

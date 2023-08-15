@@ -53,7 +53,7 @@
                      <div>
                          </label>
                          <input type="text" id="input_id_carrera2" runat="server" />
-                         <asp:Button ID="btn_buscar" class="btn_matricular btn_funcionario" runat="server" Text="Buscar" />
+                         <asp:Button ID="btn_buscar" class="btn_matricular btn_funcionario" runat="server" Text="Buscar" OnClick="btn_buscar_Click" />
                      </div>
 
                  </section>

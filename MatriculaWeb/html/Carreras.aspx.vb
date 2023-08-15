@@ -72,4 +72,27 @@ Public Class Formulario_web15
         limpiarBorrarModifcar()
 
     End Sub
+
+    Protected Sub btn_buscar_Click(sender As Object, e As EventArgs)
+
+        obj_Carrera.IdCarrera = input_id_carrera2.Value
+        obj_Carrera.SeleccionarCarrera()
+
+        For Each fila As DataRow In obj_Carrera.TablaCarreras.Rows
+            input_nombre_carrera2.Value = fila("Nombre")
+            If fila("Estado") = "activo" Then
+                select_estado.SelectedIndex = 0
+            Else
+                select_estado.SelectedIndex = 1
+            End If
+
+            If fila("Grado") = "bachillerato" Then
+                select_grado.SelectedIndex = 0
+            Else
+                select_grado.SelectedIndex = 1
+            End If
+        Next
+
+    End Sub
+
 End Class
