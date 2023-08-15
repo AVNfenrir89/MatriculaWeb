@@ -70,7 +70,14 @@ Public Class Formulario_web12
             obj_curso.BuscarIDPorNombre()
             obj_matricula.GuardarCursosporMatricula()
         End If
-
+        If curso_dos.Checked Then
+            obj_curso.BuscarIDPorNombre()
+            obj_matricula.GuardarCursosporMatricula()
+        End If
+        If curso_tres.Checked Then
+            obj_curso.BuscarIDPorNombre()
+            obj_matricula.GuardarCursosporMatricula()
+        End If
     End Sub
 
     'consultar nombre de cursos para los checkbox
