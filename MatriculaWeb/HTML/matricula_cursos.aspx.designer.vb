@@ -194,13 +194,13 @@ Partial Public Class Formulario_web1
     Protected WithEvents input_nota2 As Global.System.Web.UI.HtmlControls.HtmlInputText
 
     '''<summary>
-    '''Control label_cuatrimestre2.
+    '''Control select_cuatrimestre_2.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents label_cuatrimestre2 As Global.System.Web.UI.HtmlControls.HtmlSelect
+    Protected WithEvents select_cuatrimestre_2 As Global.System.Web.UI.HtmlControls.HtmlSelect
 
     '''<summary>
     '''Control select_grado2.
