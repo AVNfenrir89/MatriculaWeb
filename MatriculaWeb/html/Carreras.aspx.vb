@@ -65,8 +65,8 @@ Public Class Formulario_web15
     Protected Sub btn_Modificar_Click(sender As Object, e As EventArgs) Handles btn_Modificar.Click
         obj_Carrera.IdCarrera = input_id_carrera2.Value
         obj_Carrera.Nombre = input_nombre_carrera2.Value
-        obj_Carrera.Grados = select_grado2.Value
         obj_Carrera.Estado = select_estado2.Value
+        obj_Carrera.Grados = select_grado2.Value
         obj_Carrera.ModificarCarrera()
         cargarInfo()
         limpiarBorrarModifcar()
@@ -86,7 +86,7 @@ Public Class Formulario_web15
                 select_estado2.SelectedIndex = 1
             End If
 
-            If fila("Grado") = "bachillerato" Then
+            If fila("Grado") = "BACH" Then
                 select_grado2.SelectedIndex = 0
             Else
                 select_grado2.SelectedIndex = 1

@@ -126,6 +126,8 @@ Public Class ClaseCursos
     End Property
 
 
+
+
 #End Region
 
 #Region "Métodos"
@@ -144,13 +146,13 @@ Public Class ClaseCursos
         obj_CursosBD.leerTablaCursos()
     End Sub
     Sub AgregarDatosCursos()
-        obj_CursosBD.InsertarCursosBD(_idCurso, _idCarrera, _nombre, _creditos, _notaMinima, _cantMin, _cantMax, _grado, _estado, _costo)
+        obj_CursosBD.InsertarCursosBD(_idCurso, _idCarrera, _nombre, _creditos, _notaMinima, _cantMin, _cantMax, _grado, _estado, _costo, _cuatri)
     End Sub
     Sub borrarCurso()
         obj_CursosBD.BorrarCursoBD(_idCurso)
     End Sub
     Sub modificarCurso()
-        obj_CursosBD.ModificarCursoBD(_idCurso, _idCarrera, _nombre, _creditos, _notaMinima, _cantMin, _cantMax, _grado, _estado, _costo)
+        obj_CursosBD.ModificarCursoBD(_idCurso, _idCarrera, _nombre, _creditos, _notaMinima, _cantMin, _cantMax, _grado, _estado, _costo, _cuatri)
     End Sub
 
     Sub SeleccionarPorIDcurso()

@@ -96,7 +96,7 @@ Public Class SQL
         CerrarConexion()
     End Sub
     'metodo de insertar
-    Sub InsertarCursosBD(idCurso As String, idCarrera As String, nombre As String, creditos As Integer, notaMinima As Integer, cantMin As Integer, cantMax As Integer, grado As String, estado As String, costo As Integer)
+    Sub InsertarCursosBD(idCurso As String, idCarrera As String, nombre As String, creditos As Integer, notaMinima As Integer, cantMin As Integer, cantMax As Integer, grado As String, estado As String, costo As Integer, cuatri As String)
         'variable para la instruccion
         Dim sqlInstruccion As SqlClient.SqlCommand
 
@@ -104,7 +104,7 @@ Public Class SQL
         AbrirConexion()
 
         'Se prepara la instruccion SQL 
-        sqlInstruccion = New SqlClient.SqlCommand("insert into Cursos(ID_Cursos, ID_Carrera, Nombre, Creditos, Nota_Min, Min_Estudiantes, Max_Estudiantes, Grado, Estado, Costo) values (@ID_Cursos, @ID_Carrera, @Nombre, @Creditos, @Nota_Min, @Min_Estudiantes, @Max_Estudiantes, @Grado, @Estado, @Costo)", conexion)
+        sqlInstruccion = New SqlClient.SqlCommand("insert into Cursos(ID_Cursos, ID_Carrera, Nombre, Creditos, Nota_Min, Min_Estudiantes, Max_Estudiantes, Grado, Estado, Costo, cuatrimestre) values (@ID_Cursos, @ID_Carrera, @Nombre, @Creditos, @Nota_Min, @Min_Estudiantes, @Max_Estudiantes, @Grado, @Estado, @Costo, @Cuatrimestre)", conexion)
         'envio de parametros y sus respectivos valores
         sqlInstruccion.Parameters.AddWithValue("@ID_Cursos", idCurso)
         sqlInstruccion.Parameters.AddWithValue("@ID_Carrera", idCarrera)
@@ -116,6 +116,7 @@ Public Class SQL
         sqlInstruccion.Parameters.AddWithValue("@Grado", grado)
         sqlInstruccion.Parameters.AddWithValue("@Estado", estado)
         sqlInstruccion.Parameters.AddWithValue("@Costo", costo)
+        sqlInstruccion.Parameters.AddWithValue("@Cuatrimestre", cuatri)
 
         Try
             'ejecucion de la instruccion
@@ -146,13 +147,13 @@ Public Class SQL
     End Sub
 
     ' Método para modificar una carrera en la base de datos
-    Sub ModificarCursoBD(idCurso As String, idCarrera As String, nombre As String, creditos As Integer, notaMinima As Integer, cantMin As Integer, cantMax As Integer, grado As String, estado As String, costo As Integer)
+    Sub ModificarCursoBD(idCurso As String, idCarrera As String, nombre As String, creditos As Integer, notaMinima As Integer, cantMin As Integer, cantMax As Integer, grado As String, estado As String, costo As Integer, cuatri As String)
         Dim sqlInstruccion As SqlClient.SqlCommand
 
         AbrirConexion()
 
         ' Utilizamos un comando SQL para actualizar la carrera con el ID_Carrera específico
-        sqlInstruccion = New SqlClient.SqlCommand("UPDATE Cursos SET ID_Carrera=@ID_Carrera, Nombre = @Nombre, Creditos = @Creditos, Nota_Min = @Nota_Min, Min_Estudiantes = @Min_Estudiantes, Max_Estudiantes=@Max_Estudiantes, Grado = @Grado, Estado = @Estado, Costo=@Costo WHERE ID_Cursos = @ID_Cursos", conexion)
+        sqlInstruccion = New SqlClient.SqlCommand("UPDATE Cursos SET ID_Carrera=@ID_Carrera, Nombre = @Nombre, Creditos = @Creditos, Nota_Min = @Nota_Min, Min_Estudiantes = @Min_Estudiantes, Max_Estudiantes=@Max_Estudiantes, Grado = @Grado, Estado = @Estado, Costo=@Costo, Cuatrimestre = @Cuatrimestre WHERE ID_Cursos = @ID_Cursos", conexion)
         sqlInstruccion.Parameters.AddWithValue("@ID_Cursos", idCurso)
         sqlInstruccion.Parameters.AddWithValue("@ID_Carrera", idCarrera)
         sqlInstruccion.Parameters.AddWithValue("@Nombre", nombre)
@@ -163,6 +164,7 @@ Public Class SQL
         sqlInstruccion.Parameters.AddWithValue("@Grado", grado)
         sqlInstruccion.Parameters.AddWithValue("@Estado", estado)
         sqlInstruccion.Parameters.AddWithValue("@Costo", costo)
+        sqlInstruccion.Parameters.AddWithValue("@Cuatrimestre", cuatri)
         Try
             ' Ejecución de la instrucción UPDATE
             sqlInstruccion.ExecuteNonQuery()
