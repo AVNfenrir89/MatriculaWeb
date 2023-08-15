@@ -149,6 +149,7 @@
                 </section>
 
                 <section id="datos_estudiante_tres" class="seccion-uno">
+
                     <div>
                         <label for="select_carrera2">Carrera</label>
                         <select id="select_carrera2" class="select-carrera" runat="server">
