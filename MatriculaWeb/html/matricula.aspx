@@ -38,8 +38,8 @@
 
             <section>
                 <div>
-                    <input type="checkbox" id="curso_uno" value="Curso" runat="server" />
-                    <label id="lb_curso_uno" runat="server" for="curso_uno" text="">Curso</label>
+                    <input type="checkbox" id="curso_uno" value="o" runat="server" />
+                    <label id="lb_curso_uno" runat="server" for="curso_uno" text="">o</label>
                 </div>
 
                 <div>
