@@ -99,4 +99,42 @@ Public Class Formulario_web1
         End Try
     End Sub
 
+    Protected Sub btn_buscar_Click(sender As Object, e As EventArgs)
+        obj_Cursos.IdCurso = input_buscar.Value
+        obj_Cursos.SeleccionarPorIDcurso()
+        For Each fila As DataRow In obj_Cursos.TablaCursos.Rows
+            input_nombre2.Value = fila("Nombre")
+            input_creditos2.Value = fila("Creditos")
+            input_nota2.Value = fila("Nota_Min")
+
+
+            If fila("Grado") = "bachillerato" Then
+                select_grado2.SelectedIndex = 0
+            Else
+                select_grado2.SelectedIndex = 1
+            End If
+            If fila("Estado") = "activo" Then
+                select_estado2.SelectedIndex = 0
+            Else
+                select_estado2.SelectedIndex = 1
+            End If
+
+            Dim i As Integer = 0
+            For Each item As ListItem In select_carrera2.Items
+                If item.Value = fila("ID_Carrera") Then
+                    select_carrera2.SelectedIndex = i
+                    Exit For
+                End If
+                i += 1
+            Next
+            i = 0
+            For Each item As ListItem In select_cuatrimestre_2.Items
+                If item.Value = fila("Cuatrimestre") Then
+                    select_cuatrimestre_2.SelectedIndex = i
+                    Exit For
+                End If
+                i += 1
+            Next
+        Next
+    End Sub
 End Class

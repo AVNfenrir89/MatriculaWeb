@@ -14,17 +14,17 @@
 
                     <div>
                         <label class="lb_id_curso" for="input_id_curso">ID Curso</label>
-                        <input type="text" id="input_id_curso" runat="server" required="required" />
+                        <input type="text" id="input_id_curso" runat="server" />
                     </div>
 
                     <div>
                         <label for="input_nombre">Nombre</label>
-                        <input type="text" id="input_nombre" runat="server" required="required" />
+                        <input type="text" id="input_nombre" runat="server"  />
                     </div>
 
                     <div>
                         <label for="input_creditos">Créditos</label>
-                        <input type="text" id="input_creditos" runat="server" required="required" />
+                        <input type="text" id="input_creditos" runat="server"  />
                     </div>
 
                     <div>
@@ -43,17 +43,17 @@
 
                     <div>
                         <label for="input_nota">Nota mínima</label>
-                        <input type="text" id="input_nota" runat="server" required="required" />
+                        <input type="text" id="input_nota" runat="server" />
                     </div>
 
                     <div>
                         <label for="input_cant_min">Cantidad mínima</label>
-                        <input type="text" id="input_cant_min" runat="server" required="required" />
+                        <input type="text" id="input_cant_min" runat="server"  />
                     </div>
 
                     <div>
                         <label for="input_cant_max">Cantidad máxima</label>
-                        <input type="text" runat="server" id="input_cant_max" required="required" />
+                        <input type="text" runat="server" id="input_cant_max"  />
                     </div>
 
                     <div>
@@ -124,7 +124,7 @@
                     <section id="datos_estudiante_uno" class="seccion-uno">
                         <h1>Ingresa el ID del Curso</h1>
                         <input type="text" id="input_buscar" runat="server" />
-                        <asp:Button ID="btn_buscar" class="btn_matricular btn_funcionario" runat="server" Text="Buscar" />
+                        <asp:Button ID="btn_buscar" class="btn_matricular btn_funcionario" runat="server" Text="Buscar" OnClick="btn_buscar_Click" />
                     </section>
 
                     <section id="datos_estudiante_uno">
@@ -144,9 +144,9 @@
                             <input type="text" id="input_nota2" runat="server" />
                         </div>
 
-                        <div>
-                            <label for="label_cuatrimestre2">Selecionar cuatrimestre</label>
-                            <select id="label_cuatrimestre2" runat="server">
+                        <div id="select_cuatrimestre2">
+                            <label for="select_cuatrimestre_2">Selecionar cuatrimestre</label>
+                            <select id="select_cuatrimestre_2" runat="server">
                                 <option value="I">I</option>
                                 <option value="II">II</option>
                                 <option value="II">II</option>
