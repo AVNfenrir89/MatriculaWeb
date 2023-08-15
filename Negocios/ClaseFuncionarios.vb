@@ -6,10 +6,10 @@ Public Class ClaseFuncionarios
 
     Dim datosFuncionario As New DataTable
     Dim obj_FuncionariosBD As New SQL
+    Public _identificacion As String
     Shared _nombre As String
     Public _pApellido As String
     Public _sApellido As String
-    Public _identificacion As String
     Public _correo As String
     Public _usuario As String
     Public _clave As String
@@ -119,6 +119,18 @@ Public Class ClaseFuncionarios
     Sub LoginFuncionarios()
         obj_FuncionariosBD.SelecionarFuncionario(_identificacion)
     End Sub
+    Sub leerTablaFuncionarios()
+        obj_FuncionariosBD.LeerTablaFuncionarios()
+    End Sub
+    Sub AgregarFuncionarios()
+        obj_FuncionariosBD.InsertarFuncionarios(_identificacion, _nombre, _pApellido, sApellido, _correo, _usuario, _clave, _estado)
+    End Sub
+    Sub borrarFuncionario()
+        obj_FuncionariosBD.BorrarFuncionarioBD(_identificacion)
+    End Sub
+    Sub ModificarFuncionario()
+        obj_FuncionariosBD.ModificarFuncionarioBD(_identificacion, _nombre, _pApellido, sApellido, _correo, _usuario, _clave, _estado)
+    End Sub
     Sub ValidaDatosFuncionario()
 
         For Each fila As DataRow In TablaFuncionarios.Rows
@@ -153,9 +165,6 @@ Public Class ClaseFuncionarios
                 Mensaje = "El Usuario no exite o está inactivo"
                 Exit For
             End If
-
-
-
 
             Estado = fila("Estado").trim
         Next
