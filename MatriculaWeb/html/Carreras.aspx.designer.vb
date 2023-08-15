@@ -113,22 +113,22 @@ Partial Public Class Formulario_web15
     Protected WithEvents input_nombre_carrera2 As Global.System.Web.UI.HtmlControls.HtmlInputText
 
     '''<summary>
-    '''Control select1.
+    '''Control select_grado2.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents select1 As Global.System.Web.UI.HtmlControls.HtmlSelect
+    Protected WithEvents select_grado2 As Global.System.Web.UI.HtmlControls.HtmlSelect
 
     '''<summary>
-    '''Control select2.
+    '''Control select_estado2.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents select2 As Global.System.Web.UI.HtmlControls.HtmlSelect
+    Protected WithEvents select_estado2 As Global.System.Web.UI.HtmlControls.HtmlSelect
 
     '''<summary>
     '''Control btn_Borrar.

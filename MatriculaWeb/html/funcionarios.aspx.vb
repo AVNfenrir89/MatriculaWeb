@@ -9,6 +9,7 @@
     End Sub
 
     Protected Sub btn_agregar_Click(sender As Object, e As EventArgs) Handles btn_agregar.Click
+
         Try
             obj_Funcionarios.Identificacion = id_funcionario.Value
             obj_Funcionarios.Nombre = nombre_funcionario.Value
