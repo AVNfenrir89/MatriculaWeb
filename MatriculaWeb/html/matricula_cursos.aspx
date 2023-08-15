@@ -139,10 +139,7 @@
                             <input type="text" id="input_creditos2" runat="server" />
                         </div>
 
-                        <div>
-                            <label for="input_nota2">Nota Mínima</label>
-                            <input type="text" id="input_nota2" runat="server" />
-                        </div>
+              
 
                         <div id="select_cuatrimestre2">
                             <label for="select_cuatrimestre_2">Selecionar cuatrimestre</label>
@@ -155,7 +152,24 @@
                         </div>
 
                     </section>
-                               
+
+                    <section id="cursos_dos" contenteditable="false" draggable="false">
+                    <div>
+                        <label for="input_nota2">Nota mínima</label>
+                        <input type="text" id="input_nota2" runat="server" />
+                    </div>
+
+                    <div>
+                        <label for="input_cant_min2">Cantidad mínima</label>
+                        <input type="text" id="input_cant_min2" runat="server" />
+                    </div>
+
+                    <div>
+                        <label for="input_cant_max2">Cantidad máxima</label>
+                        <input type="text" runat="server" id="input_cant_max2" />
+                    </div>
+                </section>    
+                
                     <section id="datos_estudiante_tres" class="cursos_selects" >
 
                        <%-- selects--%>
