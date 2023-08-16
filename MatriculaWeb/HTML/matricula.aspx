@@ -38,7 +38,7 @@
 
             </div>
 
-            <asp:Button ID="btn_mostrar" class="btn_mostrar" runat="server" Text="Mostrar Cursos" OnClick="btn_mostrar_Click" />
+            <asp:Button ID="btn_mostrar" class="btn_mostrar" runat="server" Text="Mostrar Cursos" />
 
         </section>
 

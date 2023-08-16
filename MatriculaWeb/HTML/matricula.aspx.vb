@@ -41,34 +41,34 @@ Public Class Formulario_web12
 
 
     End Sub
-    Protected Sub btn_mostrar_Click(sender As Object, e As EventArgs)
-        Try
-            Dim i As Integer = 0
-            obj_matricula.IdCarrera = select_carrera.SelectedValue
-            obj_matricula.Cuatrimestre = select_cuatrimestre.SelectedValue
-            obj_matricula.SelecionarCursosPorCarreraCuatrimestre()
-            For Each fila As DataRow In obj_matricula.Tabla_Cursos.Rows
-                If i = 0 Then
-                    lb_curso_uno.InnerText = fila("Nombre")
-                    curso_uno.Value = fila("ID_Cursos")
-                ElseIf i = 1 Then
-                    lb_curso_dos.InnerText = fila("Nombre")
-                    curso_dos.Value = fila("ID_Cursos")
-                ElseIf i = 2 Then
-                    lb_curso_tres.InnerText = fila("Nombre")
-                    curso_tres.Value = fila("ID_Cursos")
-                End If
-                i += 1
+    'Protected Sub btn_mostrar_Click(sender As Object, e As EventArgs)
+    '    Try
+    '        Dim i As Integer = 0
+    '        obj_matricula.IdCarrera = select_carrera.SelectedValue
+    '        obj_matricula.Cuatrimestre = select_cuatrimestre.SelectedValue
+    '        obj_matricula.SelecionarCursosPorCarreraCuatrimestre()
+    '        For Each fila As DataRow In obj_matricula.Tabla_Cursos.Rows
+    '            If i = 0 Then
+    '                lb_curso_uno.InnerText = fila("Nombre")
+    '                curso_uno.Value = fila("ID_Cursos")
+    '            ElseIf i = 1 Then
+    '                lb_curso_dos.InnerText = fila("Nombre")
+    '                curso_dos.Value = fila("ID_Cursos")
+    '            ElseIf i = 2 Then
+    '                lb_curso_tres.InnerText = fila("Nombre")
+    '                curso_tres.Value = fila("ID_Cursos")
+    '            End If
+    '            i += 1
 
-            Next
+    '        Next
 
-        Catch ex As Exception
+    '    Catch ex As Exception
 
-        End Try
+    '    End Try
 
 
 
-    End Sub
+    'End Sub
 
     Protected Sub btn_total_Click(sender As Object, e As EventArgs)
         Try
