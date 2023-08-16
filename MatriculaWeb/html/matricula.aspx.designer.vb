@@ -29,7 +29,7 @@ Partial Public Class Formulario_web12
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents select_carrera As Global.System.Web.UI.HtmlControls.HtmlSelect
+    Protected WithEvents select_carrera As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''Control select_cuatrimestre.
@@ -38,7 +38,7 @@ Partial Public Class Formulario_web12
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents select_cuatrimestre As Global.System.Web.UI.HtmlControls.HtmlSelect
+    Protected WithEvents select_cuatrimestre As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''Control btn_mostrar.
