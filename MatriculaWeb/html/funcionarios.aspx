@@ -70,7 +70,7 @@
         <section id="datos_estudiante_uno" class="seccion-uno">
             <h1>Ingresa el ID del Funcionario</h1>
             <input type="text" id="input_buscar" runat="server" />
-            <asp:Button ID="btn_buscar" class="btn_matricular btn_funcionario" runat="server" Text="Buscar" />
+            <asp:Button ID="btn_buscar" class="btn_matricular btn_funcionario" runat="server" Text="Buscar" OnClick="btn_buscar_Click" />
         </section>
 
         <section class="funcionarios_uno">
@@ -124,13 +124,13 @@
             <div>
                 <!--Cambios realizados-->
                 <label for="input_Id_Borrar">Boton para eliminar fila </label>
-                <asp:Button ID="btn_Borrar" class="btn_matricular btn_funcionario btn_Borrar" runat="server" Text="Borrar" />
+                <asp:Button ID="btn_Borrar" class="btn_matricular btn_funcionario btn_Borrar" runat="server" Text="Borrar" OnClick="btn_Borrar_Click" />
             </div>
 
             <div>
                 <!--Cambios realizados-->
                 <label for="input_Id_Modificar">Boton para modifcar fila </label>
-                <asp:Button ID="btn_Modificar" class="btn_matricular btn_funcionario" runat="server" Text="Modifcar" />
+                <asp:Button ID="btn_Modificar" class="btn_matricular btn_funcionario" runat="server" Text="Modifcar" OnClick="btn_Modificar_Click" />
             </div>
 
         </section>

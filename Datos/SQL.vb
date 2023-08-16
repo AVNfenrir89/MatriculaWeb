@@ -82,7 +82,6 @@ Public Class SQL
         End Try
     End Sub
 
-
     'creacion de regiones respectivas
 
 #Region "Procedimientos cursos"

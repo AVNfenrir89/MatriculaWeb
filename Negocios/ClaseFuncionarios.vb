@@ -118,6 +118,10 @@ Public Class ClaseFuncionarios
 #End Region
 
 #Region "metodos "
+
+    Sub SelecionarFuncionario()
+        obj_FuncionariosBD.SelecionarFuncionario(_identificacion)
+    End Sub
     Sub LoginFuncionarios()
         obj_FuncionariosBD.LoginFuncionario(_usuario)
     End Sub
