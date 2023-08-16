@@ -106,4 +106,7 @@ Public Class ClaseMatrticula
         obj_MatriculaBD.InsertarCursosxMatricula(_idCursos, _idMatricula)
     End Sub
 
+    Sub leeTablaMatricula()
+        obj_MatriculaBD.LeerTablaMatriculaBD()
+    End Sub
 End Class
