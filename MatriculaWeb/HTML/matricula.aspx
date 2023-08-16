@@ -16,18 +16,26 @@
 
             <div>
                 <label for="select_carrera">Selecionar carrera</label>
-                <select id="select_carrera" runat="server">
-                </select>
+                <%--<select id="select_carrera" runat="server">
+                </select>--%>
+                <asp:DropDownList ID="select_carrera" runat="server" AutoPostBack="True"></asp:DropDownList>
             </div>
 
             <div>
                 <label for="select_cuatrimestre">Selecionar cuatrimestre</label>
-                <select id="select_cuatrimestre" runat="server">
+                <%--<select id="select_cuatrimestre" runat="server">
                     <option value="I">I</option>
                     <option value="II">II</option>
                     <option value="II">II</option>
                     <option value="IV">IV</option>
-                </select>
+                </select>--%>
+                <asp:DropDownList ID="select_cuatrimestre" runat="server" AutoPostBack="True">
+                    <asp:ListItem>I</asp:ListItem>
+                    <asp:ListItem>II</asp:ListItem>
+                    <asp:ListItem>III</asp:ListItem>
+                    <asp:ListItem>IV</asp:ListItem>
+                </asp:DropDownList>
+
             </div>
 
             <asp:Button ID="btn_mostrar" class="btn_mostrar" runat="server" Text="Mostrar Cursos" OnClick="btn_mostrar_Click" />

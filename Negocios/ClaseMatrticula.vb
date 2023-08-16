@@ -94,9 +94,8 @@ Public Class ClaseMatrticula
 
 #End Region
 
-
     Sub AgregarMatricula()
-        obj_MatriculaBD.InsertarMatricula(_idMatricula, _idEstudiante, _idCarrera, _costo, _cuatrimestre, _periodo)
+        obj_MatriculaBD.InsertarMatricula(_idMatricula, _idEstudiante, _idCarrera, _costo, _cuatrimestre, "1")
     End Sub
 
     Sub RecibirTablaID()
@@ -105,10 +104,6 @@ Public Class ClaseMatrticula
 
     Sub GuardarCursosporMatricula()
         obj_MatriculaBD.InsertarCursosxMatricula(_idCursos, _idMatricula)
-    End Sub
-
-    Sub SelecionarCursosPorCarreraCuatrimestre()
-        obj_MatriculaBD.SelecionarCursoPorCarreraCuatrimestrse(_idCarrera, _cuatrimestre)
     End Sub
 
 End Class

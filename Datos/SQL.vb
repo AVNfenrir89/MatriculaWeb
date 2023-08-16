@@ -228,30 +228,6 @@ Public Class SQL
         End Try
         CerrarConexion()
     End Sub
-
-    Sub SelecionarCursoPorCarreraCuatrimestrse(idCarrera, cuatri)
-
-        Dim instruccionSQL As SqlClient.SqlCommand
-        Dim DataAdapter As SqlClient.SqlDataAdapter
-        AbrirConexion()
-        'instrucción select
-        instruccionSQL = New SqlClient.SqlCommand("SELECT Nombre, ID_Cursos FROM Cursos WHERE ID_Carrera = @ID_Carrera AND Cuatrimestre = @Cuatrimestre", conexion)
-        instruccionSQL.Parameters.AddWithValue("@ID_Carrera", idCarrera)
-        instruccionSQL.Parameters.AddWithValue("@Cuatrimestre", cuatri)
-        If dsCursos.Tables().Count > 0 Then
-            If dsCursos.Tables(0).Rows.Count > 1 Then
-                dsCursos.Tables(0).Clear()
-            End If
-        End If
-        Try
-            DataAdapter = New SqlClient.SqlDataAdapter(instruccionSQL)
-            DataAdapter.Fill(dsCursos)
-        Catch ex As Exception
-            Throw New System.Exception(ex.Message)
-        End Try
-        CerrarConexion()
-    End Sub
-
 #End Region
 
 #Region "Procedimientos Estudiantes"
@@ -628,8 +604,8 @@ Public Class SQL
     Sub InsertarMatricula(idMatricula As Integer, idEstudiante As Integer, idCarrera As String, costo As Integer, cuatrimestre As String, periodo As String)
         Dim sqlInstruccion As SqlClient.SqlCommand
         AbrirConexion()
-        sqlInstruccion = New SqlClient.SqlCommand("insert into Matricula(ID_Matricula, ID_Estudiante, ID_Carrera, Costo, Cuatrimestre, Periodo) values (@ID_Matricula, @ID_Estudiante, @ID_Carrera, @Costo, @Cuatrimestre, @Periodo)", conexion)
-        sqlInstruccion.Parameters.AddWithValue("@ID_Matricula", idMatricula)
+        sqlInstruccion = New SqlClient.SqlCommand("insert into Matricula( ID_Estudiante, ID_Carrera, Costo, Cuatrimestre, Periodo) values (@ID_Estudiante, @ID_Carrera, @Costo, @Cuatrimestre, @Periodo)", conexion)
+
         sqlInstruccion.Parameters.AddWithValue("@ID_Estudiante", idEstudiante)
         sqlInstruccion.Parameters.AddWithValue("@ID_Carrera", idCarrera)
         sqlInstruccion.Parameters.AddWithValue("@Costo", costo)
@@ -643,13 +619,13 @@ Public Class SQL
         CerrarConexion()
     End Sub
 
-    Sub ConsultarIdMatricula(idCarrera As String, idEstudiante As String, cuatrimestre As String)
+    Sub ConsultarIdMatricula(idEstudiante As String, idCarrera As String, cuatrimestre As String)
         Dim instruccionSQL As SqlClient.SqlCommand
         Dim DataAdapter As SqlClient.SqlDataAdapter
         AbrirConexion()
         'instrucción select
-        instruccionSQL = New SqlClient.SqlCommand("SELECT * FROM Matricula WHERE ID_Estudiantes =" & idEstudiante & " AND ID_Carrera= " & idCarrera & " AND Cuatrimestre =" & cuatrimestre, conexion)
-
+        ' instruccionSQL = New SqlClient.SqlCommand("SELECT * FROM Matricula WHERE ID_Estudiante = ' " & idEstudiante & " ' AND ID_Carrera= ' " & idCarrera & " ' AND Cuatrimestre = ' " & cuatrimestre & " ' ", conexion)
+        instruccionSQL = New SqlClient.SqlCommand("select max (ID_Matricula) as ID FROM Matricula", conexion)
         If dsMatricula.Tables().Count > 0 Then
             If dsMatricula.Tables(0).Rows.Count > 1 Then
                 dsMatricula.Tables(0).Clear()
@@ -724,11 +700,10 @@ Public Class SQL
         End Try
         CerrarConexion()
     End Sub
-    Sub InsertarCursosxMatricula(idCurso As String, idMatricula As Integer)
+    Sub InsertarCursosxMatricula(idCurso As String, idMatricula As Integer) ' quitar id cursoxmatricula
         Dim sqlInstruccion As SqlClient.SqlCommand
         AbrirConexion()
-        sqlInstruccion = New SqlClient.SqlCommand("insert into CursoPorMatricula(idCursoPorMatricula, idCurso, idMatricula) values (@idCursoPorMatricula, @idCurso, @idMatricula)", conexion)
-        sqlInstruccion.Parameters.AddWithValue("@idCursoPorMatricula", 0)
+        sqlInstruccion = New SqlClient.SqlCommand("insert into CursoPorMatricula(idCurso, idMatricula) values (@idCurso, @idMatricula)", conexion)
         sqlInstruccion.Parameters.AddWithValue("@idCurso", idCurso)
         sqlInstruccion.Parameters.AddWithValue("@idMatricula", idMatricula)
         Try
@@ -778,6 +753,7 @@ Public Class SQL
 #End Region
 
 #End Region
+
 
 #End Region
 

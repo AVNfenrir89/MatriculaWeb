@@ -131,6 +131,9 @@ Public Class ClaseCursos
 #End Region
 
 #Region "Métodos"
+
+
+    'agruegue metodo para leer la info de la tabla BD al dgv
     Function Costo_curso(creditos)
         Dim Resultado As Integer
         _creditos = Int(creditos)
