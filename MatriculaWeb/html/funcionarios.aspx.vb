@@ -1,7 +1,13 @@
 ﻿Public Class Formulario_web13
     Inherits System.Web.UI.Page
     Dim obj_Funcionarios As New Negocios.ClaseFuncionarios
+
+    Sub Mensaje(mensaje)
+        Dim script As String = "alert('" + mensaje + "');"
+        ClientScript.RegisterStartupScript(Me.GetType(), "MensajeEmergente", script, True)
+    End Sub
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+
         'If Not User.Identity.IsAuthenticated Then
         '    Response.Redirect("login.aspx") ' Redirigir al inicio de sesión si no está autenticado
         'End If
@@ -11,17 +17,29 @@
     Protected Sub btn_agregar_Click(sender As Object, e As EventArgs) Handles btn_agregar.Click
 
         Try
-            obj_Funcionarios.Identificacion = id_funcionario.Value
-            obj_Funcionarios.Nombre = nombre_funcionario.Value
-            obj_Funcionarios.pApellido = pApellido_funcionario.Value
-            obj_Funcionarios.sApellido = sApellido_funcionario.Value
-            obj_Funcionarios.Correo = correo_funcionario.Value
-            obj_Funcionarios.Usuario = usuario_funcionario.Value
-            obj_Funcionarios.Clave = pass_funcionario.Value
-            obj_Funcionarios.Estado = estado_funcionario.Value
-            obj_Funcionarios.AgregarFuncionarios()
-            cargarInfo()
-            limpiar()
+
+            If obj_Funcionarios.ValidaContasena(pass_funcionario.Value) Then
+                If obj_Funcionarios.ValidaCorreo(correo_funcionario.Value) Then
+
+                    obj_Funcionarios.Identificacion = id_funcionario.Value
+                    obj_Funcionarios.Nombre = nombre_funcionario.Value
+                    obj_Funcionarios.pApellido = pApellido_funcionario.Value
+                    obj_Funcionarios.sApellido = sApellido_funcionario.Value
+                    obj_Funcionarios.Correo = correo_funcionario.Value
+                    obj_Funcionarios.Usuario = usuario_funcionario.Value
+                    obj_Funcionarios.Clave = pass_funcionario.Value
+                    obj_Funcionarios.Estado = estado_funcionario.Value
+                    obj_Funcionarios.AgregarFuncionarios()
+                    cargarInfo()
+                    limpiar()
+
+                Else
+                    Mensaje("El correo es incorrecto")
+                End If
+            Else
+                Mensaje("El contraseña no es válida")
+            End If
+
 
 
         Catch ex As Exception

@@ -81,6 +81,8 @@ Public Class SQL
             Throw New System.Exception("Error al cerrar la conexion a BD:" + ex.Message)
         End Try
     End Sub
+
+
     'creacion de regiones respectivas
 
 #Region "Procedimientos cursos"
@@ -339,6 +341,8 @@ Public Class SQL
 #End Region
 
 #Region "Procedimientos carreras"
+
+    'Metodo para leer toda la tabla carreras
     Sub leerTablaCarreras()
         Dim instruccionSQL As SqlClient.SqlCommand
         Dim DataAdapter As SqlClient.SqlDataAdapter
@@ -359,7 +363,8 @@ Public Class SQL
         End Try
         CerrarConexion()
     End Sub
-    'metodo de insertar
+
+    'metodo de insertar una nueva carrera en la base de datos
     Sub InsertarCarrerasBD(idCarrera As String, Nombre As String, Grado As String, Estado As String)
 
         Dim sqlInstruccion As SqlClient.SqlCommand
@@ -401,7 +406,6 @@ Public Class SQL
         ' Cerramos la conexión
         CerrarConexion()
     End Sub
-
 
     ' Método para modificar una carrera en la base de datos
     Sub ModificarCarreraBD(idCarrera As String, Nombre As String, Grado As String, Estado As String)
@@ -450,6 +454,7 @@ Public Class SQL
 
 #Region "Procedimientos funcionarios"
 
+    'Metodo para leer toda la tabla funcionarios
     Sub LeerTablaFuncionarios()
         Dim sqlInstruccion As SqlClient.SqlCommand
         Dim DataAdapter As SqlClient.SqlDataAdapter
@@ -469,10 +474,11 @@ Public Class SQL
         End Try
     End Sub
 
+    'Metodo para insertar un nuevo funcionario en la base de datos
     Sub InsertarFuncionarios(idFuncionarios As String, nombre As String, apellido1 As String, apellido2 As String, correo As String, usuario As String, contraseña As String, estado As String)
         Dim sqlInstruccion As SqlClient.SqlCommand
         AbrirConexion()
-        sqlInstruccion = New SqlClient.SqlCommand("insert into Funcionarios(ID_Funcionarios, Nombre, P_Apellido, S_Apellido, Correo, Usuario, Contrasena, Estado)", conexion)
+        sqlInstruccion = New SqlClient.SqlCommand("insert into Funcionarios (ID_Funcionarios, Nombre, P_Apellido, S_Apellido, Correo, Usuario, Contrasena, Estado) values (@ID_Funcionarios,@Nombre,@P_Apellido,@S_Apellido,@Correo,@Usuario,@Contrasena,@Estado)", conexion)
         sqlInstruccion.Parameters.AddWithValue("@ID_Funcionarios", idFuncionarios)
         sqlInstruccion.Parameters.AddWithValue("@Nombre", nombre)
         sqlInstruccion.Parameters.AddWithValue("@P_Apellido", apellido1)
@@ -490,6 +496,7 @@ Public Class SQL
         CerrarConexion()
     End Sub
 
+    'Método para borrar un funcionario en la base de datos
     Sub BorrarFuncionarioBD(idFuncionario As String)
         Dim sqlInstruccion As SqlClient.SqlCommand
 
@@ -507,6 +514,7 @@ Public Class SQL
         CerrarConexion()
     End Sub
 
+    'Método para modificar uno o varios datos del funcionario en la base de datos
     Sub ModificarFuncionarioBD(idFuncionarios As String, nombre As String, apellido1 As String, apellido2 As String, correo As String, usuario As String, contraseña As String, estado As String)
         Dim sqlInstruccion As SqlClient.SqlCommand
 
@@ -528,6 +536,7 @@ Public Class SQL
         CerrarConexion()
     End Sub
 
+    'Método para obtener todos los datos del funcionario
     Sub SelecionarFuncionario(idFuncionario)
         Dim instruccionSQL As SqlClient.SqlCommand
         Dim DataAdapter As SqlClient.SqlDataAdapter
@@ -549,6 +558,7 @@ Public Class SQL
         CerrarConexion()
     End Sub
 
+    'Método para obtener el estado y la contarseña del usuario o funcionario
     Sub LoginFuncionario(usuario)
         Dim instruccionSQL As SqlClient.SqlCommand
         Dim DataAdapter As SqlClient.SqlDataAdapter
@@ -746,6 +756,7 @@ Public Class SQL
 #End Region
 
 #End Region
+
 #End Region
 
 End Class

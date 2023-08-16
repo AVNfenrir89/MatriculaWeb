@@ -26,10 +26,11 @@
         </ul>
        
     </nav>
-    <form id="formPincipal" runat="server">
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
-    </form>
-   
+
+            <form id="formPincipal" runat="server">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </form>
+  
 </body>
 </html>

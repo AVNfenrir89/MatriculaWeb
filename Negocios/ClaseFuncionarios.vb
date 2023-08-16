@@ -1,5 +1,6 @@
 
 Imports System.Security.AccessControl
+Imports System.Text.RegularExpressions
 Imports Datos
 
 Public Class ClaseFuncionarios
@@ -15,6 +16,7 @@ Public Class ClaseFuncionarios
     Public _clave As String
     Public _estado As String
     Private _mensaje As String
+
 #Region "propiedades"
     Sub New()
         Estado = "inactivo"
@@ -150,5 +152,16 @@ Public Class ClaseFuncionarios
         Next
     End Sub
 
+    Public Function ValidaContasena(_clave) As Boolean
+        Dim exprecion As String = "^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040])(?=.*[A-Z])(?=.*[a-z])\S{8,16}$"
+        Dim regex As New Regex(exprecion)
+        Return regex.IsMatch(_clave)
+    End Function
+
+    Public Function ValidaCorreo(correo) As Boolean
+        Dim exprecion As String = "^(([^<>()\[\]\\.,;:\s@"” " & "]+(\.[^<>()\[\]\\.,;:\s@"” " & "]+)*)|("“" & ".+" & "”"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$"
+        Dim regex As New Regex(exprecion)
+        Return regex.IsMatch(correo)
+    End Function
 #End Region
 End Class
