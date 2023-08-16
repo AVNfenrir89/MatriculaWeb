@@ -32,13 +32,13 @@ Partial Public Class Formulario_web12
     Protected WithEvents select_carrera As Global.System.Web.UI.HtmlControls.HtmlSelect
 
     '''<summary>
-    '''Control label_cuatrimestre.
+    '''Control select_cuatrimestre.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents label_cuatrimestre As Global.System.Web.UI.HtmlControls.HtmlSelect
+    Protected WithEvents select_cuatrimestre As Global.System.Web.UI.HtmlControls.HtmlSelect
 
     '''<summary>
     '''Control btn_mostrar.
