@@ -229,6 +229,29 @@ Public Class SQL
         CerrarConexion()
     End Sub
 
+    Sub SelecionarCursoPorCarreraCuatrimestrse(idCarrera, cuatri)
+
+        Dim instruccionSQL As SqlClient.SqlCommand
+        Dim DataAdapter As SqlClient.SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlClient.SqlCommand("SELECT Nombre, ID_Cursos FROM Cursos WHERE ID_Carrera = @ID_Carrera AND Cuatrimestre = @Cuatrimestre", conexion)
+        instruccionSQL.Parameters.AddWithValue("@ID_Carrera", idCarrera)
+        instruccionSQL.Parameters.AddWithValue("@Cuatrimestre", cuatri)
+        If dsCursos.Tables().Count > 0 Then
+            If dsCursos.Tables(0).Rows.Count > 1 Then
+                dsCursos.Tables(0).Clear()
+            End If
+        End If
+        Try
+            DataAdapter = New SqlClient.SqlDataAdapter(instruccionSQL)
+            DataAdapter.Fill(dsCursos)
+        Catch ex As Exception
+            Throw New System.Exception(ex.Message)
+        End Try
+        CerrarConexion()
+    End Sub
+
 #End Region
 
 #Region "Procedimientos Estudiantes"

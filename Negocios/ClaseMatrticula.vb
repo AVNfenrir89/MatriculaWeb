@@ -1,6 +1,7 @@
 ﻿Imports Datos
-Public Class ClaseMatrticula
 
+Public Class ClaseMatrticula
+    Inherits ClaseCursos
     Dim _idMatricula As Integer
     Dim _idEstudiante As Integer
     Dim _idCarrera As String
@@ -14,6 +15,15 @@ Public Class ClaseMatrticula
     Public Property TablaMatricula As DataTable
         Get
             Return obj_MatriculaBD.TablaMatricula
+        End Get
+        Set(value As DataTable)
+
+        End Set
+    End Property
+
+    Public Property Tabla_Cursos As DataTable
+        Get
+            Return obj_MatriculaBD.TablaCursos
         End Get
         Set(value As DataTable)
 
@@ -95,6 +105,10 @@ Public Class ClaseMatrticula
 
     Sub GuardarCursosporMatricula()
         obj_MatriculaBD.InsertarCursosxMatricula(_idCursos, _idMatricula)
+    End Sub
+
+    Sub SelecionarCursosPorCarreraCuatrimestre()
+        obj_MatriculaBD.SelecionarCursoPorCarreraCuatrimestrse(_idCarrera, _cuatrimestre)
     End Sub
 
 End Class

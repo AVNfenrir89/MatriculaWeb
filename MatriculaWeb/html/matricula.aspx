@@ -21,8 +21,8 @@
             </div>
 
             <div>
-                <label for="label_cuatrimestre">Selecionar cuatrimestre</label>
-                <select id="label_cuatrimestre" runat="server">
+                <label for="select_cuatrimestre">Selecionar cuatrimestre</label>
+                <select id="select_cuatrimestre" runat="server">
                     <option value="I">I</option>
                     <option value="II">II</option>
                     <option value="II">II</option>
