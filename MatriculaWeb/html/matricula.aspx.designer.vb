@@ -41,15 +41,6 @@ Partial Public Class Formulario_web12
     Protected WithEvents select_cuatrimestre As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''Control btn_mostrar.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents btn_mostrar As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
     '''Control curso_uno.
     '''</summary>
     '''<remarks>
