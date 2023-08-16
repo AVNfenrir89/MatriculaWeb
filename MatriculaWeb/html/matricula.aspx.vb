@@ -35,8 +35,11 @@ Public Class Formulario_web12
                 Next
                 CargarCursos()
             End If
-        Catch ex As Exception
 
+
+
+        Catch ex As Exception
+            Throw ex
         End Try
 
 
@@ -112,6 +115,7 @@ Public Class Formulario_web12
             obj_matricula.Costo = lb_total.InnerText
             'falta el periodo
             obj_matricula.AgregarMatricula() 'usar el id de la matricula y el id del curso para guardar en cursos por matricula
+
             obj_matricula.RecibirTablaID()
             Dim idMatricula As String = obj_matricula.TablaMatricula.Rows(0)(0) 'traer id de matricula. 
             obj_matricula.IdMatricula = idMatricula
@@ -133,6 +137,7 @@ Public Class Formulario_web12
                 obj_matricula.IdCursos = curso_tres.Value
                 obj_matricula.GuardarCursosporMatricula()
             End If
+
         Catch ex As Exception
             Throw ex
         End Try
@@ -168,5 +173,15 @@ Public Class Formulario_web12
 
     Protected Sub label_cuatrimestre_SelectedIndexChanged(sender As Object, e As EventArgs) Handles select_cuatrimestre.SelectedIndexChanged
         CargarCursos()
+    End Sub
+    Sub cargarInfo()
+        Try
+            obj_matricula.leeTablaMatricula()
+            gv_matricular.DataSource = obj_matricula.TablaMatricula
+            gv_matricular.DataBind()
+        Catch ex As Exception
+            Throw ex
+        End Try
+
     End Sub
 End Class
