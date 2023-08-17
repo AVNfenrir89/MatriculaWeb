@@ -228,6 +228,8 @@ Public Class Formulario_web12
     End Sub
     Sub CargarCursos()
         Try
+            btn_total.Visible = True
+            btn_matricular.Visible = True
             obj_curso.LeeDatosCursos()
             Dim listaIDCurso As New List(Of String)
             Dim listaNombre As New List(Of String)
@@ -237,6 +239,20 @@ Public Class Formulario_web12
                     listaNombre.Add(fila(2))
                 End If
             Next
+            'valida si hay cursos en el cuatrimestre selecionado
+            If listaIDCurso.Count = 0 Then
+                lb_curso_uno.InnerText = String.Empty
+                lb_curso_dos.InnerText = String.Empty
+                lb_curso_tres.InnerText = String.Empty
+                curso_uno.Value = String.Empty
+                curso_dos.Value = String.Empty
+                curso_tres.Value = String.Empty
+                btn_total.Visible = False
+                btn_matricular.Visible = False
+                Throw New System.Exception("No hay cursos registrados en el cuatrimestre selecionado")
+
+            End If
+
             lb_curso_uno.InnerText = listaNombre(0) 'input y label son dos elementos diferentes
             lb_curso_dos.InnerText = listaNombre(1)
             lb_curso_tres.InnerText = listaNombre(2)
@@ -244,7 +260,8 @@ Public Class Formulario_web12
             curso_dos.Value = listaIDCurso(1)
             curso_tres.Value = listaIDCurso(2)
         Catch ex As Exception
-            Throw ex
+            Mensaje("Error. " & ex.Message)
+
         End Try
 
 
