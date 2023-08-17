@@ -2,4 +2,33 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    
+    <main class="main-acercade">
+        <h2 class ="titulo">Elaborado por:</h2>
+        <section class ="seccion_foto_perfil">
+
+            <div class ="divicion_foto_perfil">
+               <img class="fotoPerfil" src="../images/tamara.jpg"/>
+            </div>
+
+            <div class ="seccion_info">
+                <h3 class ="titulo">Tamara Chávez Monje</h3>
+                 <h4 class ="titulo">Contacto: tamara33chavez@gmail.com </h4>
+            </div>
+        </section>
+
+        <section class ="seccion_foto_perfil">
+            <div class ="divicion_foto_perfil">
+                 <img class="fotoPerfil" src="../images/andrey.jpg"/>
+            </div>
+            <div class ="seccion_info">
+                <h3 class ="titulo">Andrey Villalobos Navarro</h3>
+                <h4 class ="titulo">Contacto: anvillalobosna@hotmail.com </h4>
+            </div>
+
+        </section>
+
+
+    </main>
+
 </asp:Content>

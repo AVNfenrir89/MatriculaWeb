@@ -414,3 +414,40 @@ h1 {
         position: relative;
     left: 25%;
 }
+.main-acercade {
+    margin-top:50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+    .titulo {
+        color: #8db594;
+    }
+.seccion_foto_perfil {
+    display: flex;
+    margin-top: 50px;
+}
+.divicion_foto_perfil {
+    height: 150px;
+    width: 150px;
+    background: #8db594;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.fotoPerfil{
+    position:relative;
+    border-radius:50%;
+   margin-top:16%;
+   margin-left:16%;
+}
+.seccion_info {
+    border: 1px solid #8db594;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 25px;
+    display:flex;
+    flex-direction:column;
+   align-items:center;
+   justify-content:center;
+}

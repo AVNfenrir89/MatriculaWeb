@@ -103,6 +103,7 @@
     <Content Include="HTML\matricula.aspx" />
     <Content Include="HTML\matricula_cursos.aspx" />
     <Content Include="HTML\matricula_estudiante.aspx" />
+    <Content Include="images\andrey.jpg" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
