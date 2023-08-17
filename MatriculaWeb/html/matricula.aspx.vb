@@ -157,7 +157,7 @@ Public Class Formulario_web12
 
 
             For Each fila As DataRow In obj_matricula.TablaMatricula.Rows
-                'verifica la cantidad máxima del curso seleccionados
+                'verifica la cantidad máxima del curso seleccionado
                 If curso_uno.Checked Then
                     obj_curso.IdCurso = curso_uno.Value
                     obj_curso.SelecionarCantMax()
@@ -166,7 +166,7 @@ Public Class Formulario_web12
                     If obj_curso.TablaCursosPorMatricula(0)(0) = 1 And CantMaxCursoUno < obj_curso.CantMax Then
                         CantMaxCursoUno += 1
                     Else
-                        Throw New System.Exception("Se alcanso el número máximo de estudiantes en " & lb_curso_uno.InnerText)
+                        Throw New System.Exception("Se alcanzó el número máximo de estudiantes en " & lb_curso_uno.InnerText)
                     End If
                 End If
 
@@ -178,7 +178,7 @@ Public Class Formulario_web12
                     If obj_curso.TablaCursosPorMatricula(0)(0) And CantMaxCursoDos < obj_curso.CantMax Then
                         CantMaxCursoDos += 1
                     Else
-                        Throw New System.Exception("Se alcanso el número máximo de estudiantes en " & lb_curso_dos.InnerText)
+                        Throw New System.Exception("Se alcanzó el número máximo de estudiantes en " & lb_curso_dos.InnerText)
                     End If
                 End If
 
@@ -190,7 +190,7 @@ Public Class Formulario_web12
                     If obj_curso.TablaCursosPorMatricula(0)(0) And CantMaxCursoTres < obj_curso.CantMax Then
                         CantMaxCursoTres += 1
                     Else
-                        Throw New System.Exception("Se alcanso el número máximo de estudiantes en " & lb_curso_tres.InnerText)
+                        Throw New System.Exception("Se alcanzó el número máximo de estudiantes en " & lb_curso_tres.InnerText)
                     End If
                 End If
             Next
