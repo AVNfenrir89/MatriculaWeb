@@ -116,6 +116,15 @@ Public Class ClaseCursos
         End Set
     End Property
 
+    Public Property TablaCursosPorMatricula As DataTable
+        Get
+            Return obj_CursosBD.TablaCursoPorMatricula
+        End Get
+        Set(value As DataTable)
+
+        End Set
+    End Property
+
     Public Property Cuatri As String
         Get
             Return _cuatri
@@ -166,8 +175,13 @@ Public Class ClaseCursos
     End Sub
 
     Sub consultarCursosPormatricula(idMatricula)
-        obj_CursosBD.consultarCursosPormatricula(idMatricula)
+        obj_CursosBD.consultarCursosPormatricula(idMatricula, _idCurso)
     End Sub
+
+    Sub SelecionarCantMax()
+        obj_CursosBD.SelecionarCantMax(_idCurso)
+    End Sub
+
 #End Region
 
 End Class

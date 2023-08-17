@@ -10,6 +10,7 @@ Public Class SQL
     Dim dsCarreras As New DataSet
     Dim dsMatricula As New DataSet
     Dim dsCursos As New DataSet
+    Dim dsCursoporMatricula As New DataSet
     Dim _mensaje As String
 
 #Region "Propiedades"
@@ -54,6 +55,15 @@ Public Class SQL
         End Set
     End Property
 
+
+    Public Property TablaCursoPorMatricula As DataTable
+        Get
+            Return dsCursoporMatricula.Tables(0)
+        End Get
+        Set(value As DataTable)
+
+        End Set
+    End Property
     Public Property Mensaje As String
         Get
             Return _mensaje
@@ -208,6 +218,29 @@ Public Class SQL
         End Try
         CerrarConexion()
     End Sub
+
+    Sub SelecionarCantMax(idCurso)
+
+        Dim instruccionSQL As SqlClient.SqlCommand
+        Dim DataAdapter As SqlClient.SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlClient.SqlCommand("SELECT Max_Estudiantes FROM Cursos WHERE ID_Cursos = @ID_Cursos", conexion)
+        instruccionSQL.Parameters.AddWithValue("@ID_Cursos", idCurso)
+        If dsCursos.Tables().Count > 0 Then
+            If dsCursos.Tables(0).Rows.Count > 0 Then
+                dsCursos.Tables(0).Clear()
+            End If
+        End If
+        Try
+            DataAdapter = New SqlClient.SqlDataAdapter(instruccionSQL)
+            DataAdapter.Fill(dsCursos)
+        Catch ex As Exception
+            Throw New System.Exception(ex.Message)
+        End Try
+        CerrarConexion()
+    End Sub
+
     Sub ConsultaIdPorNombre(nombre As String)
 
         Dim instruccionSQL As SqlClient.SqlCommand
@@ -228,6 +261,7 @@ Public Class SQL
         End Try
         CerrarConexion()
     End Sub
+
 #End Region
 
 #Region "Procedimientos Estudiantes"
@@ -688,7 +722,9 @@ Public Class SQL
         Dim instruccionSQL As SqlClient.SqlCommand
         Dim DataAdapter As SqlClient.SqlDataAdapter
         AbrirConexion()
-        instruccionSQL = New SqlClient.SqlCommand("SELECT @ID_Matricula FROM Matricula WHERE ID_Carrera =" & idcarrera & "AND Cuatrimestre =" & cuatrimestre, conexion)
+        instruccionSQL = New SqlClient.SqlCommand("SELECT ID_Matricula FROM Matricula WHERE ID_Carrera = @ID_Carrera AND Cuatrimestre = @Cuatrimestre", conexion)
+        instruccionSQL.Parameters.AddWithValue("@ID_Carrera", idcarrera)
+        instruccionSQL.Parameters.AddWithValue("@Cuatrimestre", cuatrimestre)
 
         If dsMatricula.Tables().Count > 0 Then
             If dsMatricula.Tables(0).Rows.Count > 1 Then
@@ -762,22 +798,24 @@ Public Class SQL
 
     End Sub
 
-    Sub consultarCursosPormatricula(idMatricula As Integer)
+    Sub consultarCursosPormatricula(idMatricula As Integer, idCurso As String)
 
         Dim instruccionSQL As SqlClient.SqlCommand
         Dim DataAdapter As SqlClient.SqlDataAdapter
         AbrirConexion()
         instruccionSQL = New SqlClient.SqlCommand()
-        instruccionSQL = New SqlClient.SqlCommand("SELECT idCurso FROM CursosPorMatricula WHERE idMatricula =" & idMatricula, conexion)
-        If dsCursos.Tables().Count > 0 Then
-            If dsCursos.Tables(0).Rows.Count > 1 Then
-                dsCursos.Tables(0).Clear()
+        instruccionSQL = New SqlClient.SqlCommand("SELECT COUNT(idCursoporMatricula) FROM CursoPorMatricula WHERE idMatricula = @idMatricula AND idCurso = @idCurso", conexion)
+        instruccionSQL.Parameters.AddWithValue("@idMatricula", idMatricula)
+        instruccionSQL.Parameters.AddWithValue("@idCurso", idCurso)
+        If dsCursoporMatricula.Tables().Count > 0 Then
+            If dsCursoporMatricula.Tables(0).Rows.Count > 0 Then
+                dsCursoporMatricula.Tables(0).Clear()
             End If
         End If
 
         Try
             DataAdapter = New SqlClient.SqlDataAdapter(instruccionSQL)
-            DataAdapter.Fill(dsCursos)
+            DataAdapter.Fill(dsCursoporMatricula)
         Catch ex As Exception
             Throw New System.Exception(ex.Message)
         End Try
