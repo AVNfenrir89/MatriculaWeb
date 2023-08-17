@@ -129,7 +129,8 @@ Public Class Formulario_web12
                     mensajeBeca = "Se aplica al estudiante beca del 75 %. Total con beca aplicada: "
                 End If
             Next
-            lb_total.InnerText = mensajeBeca & total
+            lb_beca.InnerText = mensajeBeca
+            lb_total.InnerText = total
         Catch ex As Exception
             Throw ex
         End Try
