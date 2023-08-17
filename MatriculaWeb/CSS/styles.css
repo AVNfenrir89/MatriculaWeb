@@ -7,7 +7,8 @@
 }
 
 body {
-
+    background: #eeeeee;
+    height:100%;
 }
 
 
@@ -420,13 +421,14 @@ h1 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 55px;
 }
     .titulo {
         color: #8db594;
     }
 .seccion_foto_perfil {
     display: flex;
-    margin-top: 50px;
+  
 }
 .divicion_foto_perfil {
     height: 150px;
@@ -450,4 +452,13 @@ h1 {
     flex-direction:column;
    align-items:center;
    justify-content:center;
+}
+.seccion_cuc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.seccion_cuc img{
+    margin-bottom:20px;
 }

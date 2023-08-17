@@ -28,6 +28,13 @@
 
         </section>
 
+        <section class=" seccion_cuc">
+            <img class="foto_cuc" src="../images/cuc.png"/>
+            <p class ="titulo">Tecnologías de Informacíon</p>
+            <p class ="titulo">Programación II</p>
+            <p class ="titulo">II Cuatrimestre 2023</p>
+        </section>
+
 
     </main>
 
