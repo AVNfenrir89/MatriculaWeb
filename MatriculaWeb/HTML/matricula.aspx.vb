@@ -139,6 +139,12 @@ Public Class Formulario_web12
     Protected Sub btn_matricular_Click(sender As Object, e As EventArgs) Handles btn_matricular.Click
         Try
 
+            If Not curso_uno.Checked And Not curso_dos.Checked And Not curso_tres.Checked Then
+                Throw New System.Exception("No se puede matricular sin haber seleccionado al menos un curso")
+            ElseIf lb_total.InnerText = String.Empty Then
+                Throw New System.Exception("No se puede matricular sin haber hecho antes click en el botón total")
+            End If
+
             obj_matricula.IdCarrera = select_carrera.SelectedValue
             obj_matricula.IdEstudiante = select_estudiante.Value
             obj_matricula.Cuatrimestre = select_cuatrimestre.SelectedValue
@@ -151,55 +157,46 @@ Public Class Formulario_web12
 
 
             For Each fila As DataRow In obj_matricula.TablaMatricula.Rows
-
                 'verifica la cantidad máxima del curso seleccionados
                 If curso_uno.Checked Then
                     obj_curso.IdCurso = curso_uno.Value
                     obj_curso.SelecionarCantMax()
                     obj_curso.CantMax = obj_curso.TablaCursos(0)(0)
                     obj_curso.consultarCursosPormatricula(fila("ID_Matricula"))
-
                     If obj_curso.TablaCursosPorMatricula(0)(0) = 1 And CantMaxCursoUno < obj_curso.CantMax Then
                         CantMaxCursoUno += 1
                     Else
-
+                        Throw New System.Exception("Se alcanso el número máximo de estudiantes en " & lb_curso_uno.InnerText)
                     End If
-
                 End If
 
                 If curso_dos.Checked Then
-                    obj_curso.IdCurso = curso_uno.Value
+                    obj_curso.IdCurso = curso_dos.Value
                     obj_curso.SelecionarCantMax()
                     obj_curso.CantMax = obj_curso.TablaCursos(0)(0)
                     obj_curso.consultarCursosPormatricula(fila("ID_Matricula"))
-
                     If obj_curso.TablaCursosPorMatricula(0)(0) And CantMaxCursoDos < obj_curso.CantMax Then
                         CantMaxCursoDos += 1
                     Else
-
+                        Throw New System.Exception("Se alcanso el número máximo de estudiantes en " & lb_curso_dos.InnerText)
                     End If
-
                 End If
 
                 If curso_tres.Checked Then
-                    obj_curso.IdCurso = curso_uno.Value
+                    obj_curso.IdCurso = curso_tres.Value
                     obj_curso.SelecionarCantMax()
                     obj_curso.CantMax = obj_curso.TablaCursos(0)(0)
                     obj_curso.consultarCursosPormatricula(fila("ID_Matricula"))
-
                     If obj_curso.TablaCursosPorMatricula(0)(0) And CantMaxCursoTres < obj_curso.CantMax Then
                         CantMaxCursoTres += 1
                     Else
-
+                        Throw New System.Exception("Se alcanso el número máximo de estudiantes en " & lb_curso_tres.InnerText)
                     End If
-
                 End If
-
             Next
 
             'falta el periodo
             obj_matricula.AgregarMatricula() 'usar el id de la matricula y el id del curso para guardar en cursos por matricula
-
             obj_matricula.RecibirTablaID()
             Dim idMatricula As String = obj_matricula.TablaMatricula.Rows(0)(1) 'traer id de matricula. 
             obj_matricula.IdMatricula = idMatricula
@@ -209,12 +206,14 @@ Public Class Formulario_web12
                 obj_matricula.IdCursos = curso_uno.Value
                 obj_matricula.GuardarCursosporMatricula()
             End If
+
             If curso_dos.Checked Then
                 obj_curso.IdCurso = curso_dos.Value
                 'obj_curso.SeleccionarPorIDcurso()
                 obj_matricula.IdCursos = curso_dos.Value
                 obj_matricula.GuardarCursosporMatricula()
             End If
+
             If curso_tres.Checked Then
                 obj_curso.IdCurso = curso_tres.Value
                 'obj_curso.SeleccionarPorIDcurso()
@@ -223,7 +222,7 @@ Public Class Formulario_web12
             End If
 
         Catch ex As Exception
-            Throw ex
+            Mensaje("Error. " & ex.Message)
         End Try
 
     End Sub
@@ -267,6 +266,14 @@ Public Class Formulario_web12
             Throw ex
         End Try
 
+    End Sub
+
+
+    Sub Mensaje(mensaje)
+
+        Dim script As String = "alert('" + mensaje + "');"
+
+        ClientScript.RegisterStartupScript(Me.GetType(), "MensajeEmergente", script, True)
     End Sub
 
 End Class
