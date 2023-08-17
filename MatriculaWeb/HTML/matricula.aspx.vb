@@ -13,7 +13,6 @@ Public Class Formulario_web12
             'If Not User.Identity.IsAuthenticated Then
             '    Response.Redirect("login.aspx") ' Redirigir al inicio de sesión si no está autenticado
             'End If
-
             If Not IsPostBack Then
 
                 Dim nombre As String
@@ -131,6 +130,7 @@ Public Class Formulario_web12
             Next
             lb_beca.InnerText = mensajeBeca
             lb_total.InnerText = total
+
         Catch ex As Exception
             Throw ex
         End Try
