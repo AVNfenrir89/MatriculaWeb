@@ -15,7 +15,7 @@ Public Class ClaseFuncionarios
     Public _usuario As String
     Public _clave As String
     Public _estado As String
-    Private _mensaje As String
+
 
 #Region "propiedades"
     Sub New()
@@ -104,17 +104,6 @@ Public Class ClaseFuncionarios
         End Set
     End Property
 
-
-    Public Property Mensaje As String
-        Get
-            Return _mensaje
-        End Get
-        Set(value As String)
-            _mensaje = value
-        End Set
-    End Property
-
-
 #End Region
 
 #Region "metodos "
@@ -139,19 +128,19 @@ Public Class ClaseFuncionarios
     End Sub
     Sub ValidaDatosFuncionario()
         If TablaFuncionarios.Rows.Count = 0 Then
-            Mensaje = "El Usuario o contraseña incorrecto no exite"
+            Throw New System.Exception("El Usuario o contraseña incorrecto o no exite")
         End If
         For Each fila As DataRow In TablaFuncionarios.Rows
 
             If Not _clave = fila("Contrasena").trim Then
-                Mensaje = "El Usuario o contraseña incorrecto o no exite"
-                Exit For
+                Throw New System.Exception("El Usuario o contraseña incorrecto o no exite")
             End If
 
             If "inactivo" = fila("Estado").trim Then
-                Mensaje = "El Usuario está inactivo"
-                Exit For
+                Throw New System.Exception("El Usuario o contraseña incorrecto o no exite")
             End If
+
+            _nombre = fila("Nombre")
             Estado = fila("Estado").trim
         Next
     End Sub

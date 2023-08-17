@@ -3,9 +3,7 @@
     Dim obj_Funcionario As New Negocios.ClaseFuncionarios
 
     Sub Mensaje(mensaje)
-
         Dim script As String = "alert('" + mensaje + "');"
-
         ClientScript.RegisterStartupScript(Me.GetType(), "MensajeEmergente", script, True)
     End Sub
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
@@ -26,13 +24,11 @@
                 FormsAuthentication.RedirectFromLoginPage(obj_Funcionario.Usuario, False)
                 Response.Redirect("Carreras.aspx")
                 Return
-            Else
-                Mensaje(obj_Funcionario.Mensaje)
             End If
 
 
         Catch ex As Exception
-            Mensaje("Error" + ex.Message)
+            Mensaje("Error. " & ex.Message)
         End Try
 
 

@@ -617,7 +617,7 @@ Public Class SQL
         Dim instruccionSQL As SqlClient.SqlCommand
         Dim DataAdapter As SqlClient.SqlDataAdapter
         AbrirConexion()
-        instruccionSQL = New SqlClient.SqlCommand("SELECT Contrasena, Estado FROM Funcionarios WHERE Usuario =@Usuario", conexion)
+        instruccionSQL = New SqlClient.SqlCommand("SELECT Contrasena, Estado, Nombre FROM Funcionarios WHERE Usuario =@Usuario", conexion)
         instruccionSQL.Parameters.AddWithValue("@Usuario", usuario)
         If dsFuncionarios.Tables().Count > 0 Then
             If dsFuncionarios.Tables(0).Rows.Count > 1 Then
