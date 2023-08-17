@@ -335,6 +335,28 @@ Public Class SQL
         CerrarConexion()
     End Sub
 
+    Sub SelecionarBeca(idEstudiante)
+
+        Dim instruccionSQL As SqlClient.SqlCommand
+        Dim DataAdapter As SqlClient.SqlDataAdapter
+        AbrirConexion()
+        'instrucción select
+        instruccionSQL = New SqlClient.SqlCommand("SELECT Beca FROM Estudiantes WHERE ID_Estudiantes =" & idEstudiante, conexion)
+
+        If dsEstudiantes.Tables().Count > 0 Then
+            If dsEstudiantes.Tables(0).Rows.Count > 1 Then
+                dsEstudiantes.Tables(0).Clear()
+            End If
+        End If
+
+        Try
+            DataAdapter = New SqlClient.SqlDataAdapter(instruccionSQL)
+            DataAdapter.Fill(dsEstudiantes)
+        Catch ex As Exception
+            Throw New System.Exception(ex.Message)
+        End Try
+        CerrarConexion()
+    End Sub
 
 #End Region
 

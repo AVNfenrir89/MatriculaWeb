@@ -131,5 +131,8 @@ Public Class ClaseEstudiantes
         obj_EstudiantesBD.ModificarEstudiante(_idEstudiantes, _idCarrera, _nombre, _apellidos, _beca, _telefono, _fechaNacimiento, _correo, _direccion)
     End Sub
 
+    Sub SelecionarBeca()
+        obj_EstudiantesBD.SelecionarBeca(_idEstudiantes)
+    End Sub
 #End Region
 End Class

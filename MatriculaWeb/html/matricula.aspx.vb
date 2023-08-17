@@ -1,4 +1,5 @@
-﻿Imports Negocios
+﻿Imports System.Security.Cryptography
+Imports Negocios
 Public Class Formulario_web12
 
     Inherits System.Web.UI.Page
@@ -76,16 +77,20 @@ Public Class Formulario_web12
     Protected Sub btn_total_Click(sender As Object, e As EventArgs)
         Try
             ' Dim minEstudiantes As Integer
+            ' minEstudiantes = fila("Min_Estudiantes")
+            'total = total + obj_curso.Costo_curso(fila(3)) 'parametro de creditos
             Dim total As Integer = 0
+
+            'costo del curso uno
             If curso_uno.Checked Then
                 obj_curso.IdCurso = curso_uno.Value
                 obj_curso.SeleccionarPorIDcurso()
                 For Each fila As DataRow In obj_curso.TablaCursos.Rows
-                    ' minEstudiantes = fila("Min_Estudiantes")
-                    'total = total + obj_curso.Costo_curso(fila(3)) 'parametro de creditos
                     total = total + fila(9)
                 Next
             End If
+
+            'costo del curso dos
             If curso_dos.Checked Then
                 obj_curso.IdCurso = curso_uno.Value
                 obj_curso.SeleccionarPorIDcurso()
@@ -93,6 +98,8 @@ Public Class Formulario_web12
                     total = total + fila(9)
                 Next
             End If
+
+            'costo del curso tres
             If curso_tres.Checked Then
                 obj_curso.IdCurso = curso_uno.Value
                 obj_curso.SeleccionarPorIDcurso()
@@ -101,7 +108,28 @@ Public Class Formulario_web12
                 Next
             End If
 
-            lb_total.InnerText = total
+            'Verificación si elestudiante tiene beca
+            obj_Estudiantes.IdEstudiantes = select_estudiante.Value
+            obj_Estudiantes.SelecionarBeca()
+            Dim beca As Integer
+            Dim mensajeBeca As String = "Total a pagar: "
+            For Each fila As DataRow In obj_Estudiantes.TablaEstudiantes.Rows
+                beca = fila("Beca")
+                If beca = 25 Then
+                    total = (total / 100) * beca
+                    mensajeBeca = String.Empty
+                    mensajeBeca = "Se aplica al estudiante beca del 25 %. Total con beca aplicada: "
+                ElseIf beca = 50 Then
+                    total = (total / 100) * beca
+                    mensajeBeca = String.Empty
+                    mensajeBeca = "Se aplica al estudiante beca del 50 %. Total con beca aplicada: "
+                ElseIf beca = 75 Then
+                    total = (total / 100) * beca
+                    mensajeBeca = String.Empty
+                    mensajeBeca = "Se aplica al estudiante beca del 75 %. Total con beca aplicada: "
+                End If
+            Next
+            lb_total.InnerText = mensajeBeca & total
         Catch ex As Exception
             Throw ex
         End Try
