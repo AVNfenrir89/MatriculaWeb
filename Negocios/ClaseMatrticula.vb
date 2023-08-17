@@ -1,7 +1,7 @@
 ﻿Imports Datos
 
 Public Class ClaseMatrticula
-    Inherits ClaseCursos
+
     Dim _idMatricula As Integer
     Dim _idEstudiante As Integer
     Dim _idCarrera As String
@@ -109,4 +109,10 @@ Public Class ClaseMatrticula
     Sub leeTablaMatricula()
         obj_MatriculaBD.LeerTablaMatriculaBD()
     End Sub
+
+    Sub SeleccionaIDMatricula()
+        obj_MatriculaBD.SelecionarIDMatriculas(_idCarrera, _cuatrimestre)
+    End Sub
+
+
 End Class

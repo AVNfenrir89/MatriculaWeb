@@ -142,6 +142,22 @@ Public Class Formulario_web12
             obj_matricula.IdEstudiante = select_estudiante.Value
             obj_matricula.Cuatrimestre = select_cuatrimestre.SelectedValue
             obj_matricula.Costo = lb_total.InnerText
+            obj_matricula.SeleccionaIDMatricula()
+            'Dim i As Integer = 0
+            'For Each fila As DataRow In obj_matricula.TablaMatricula.Rows
+            '    obj_curso.consultarCursosPormatricula(fila(i))
+            '    For Each FilaCursos As DataRow In obj_curso.TablaCursos.Rows
+            '        If curso_uno.Checked And curso_uno.Value = FilaCursos(i) Then
+
+            '        ElseIf curso_dos.Checked And curso_dos.Value = FilaCursos(i) Then
+
+            '        ElseIf curso_tres.Checked And curso_tres.Value = FilaCursos(i) Then
+
+            '        End If
+            '    Next
+
+            '    i += 1
+            'Next
             'falta el periodo
             obj_matricula.AgregarMatricula() 'usar el id de la matricula y el id del curso para guardar en cursos por matricula
 
@@ -213,4 +229,5 @@ Public Class Formulario_web12
         End Try
 
     End Sub
+
 End Class

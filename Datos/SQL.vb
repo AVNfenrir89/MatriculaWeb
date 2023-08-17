@@ -662,27 +662,48 @@ Public Class SQL
         CerrarConexion()
     End Sub
     ''hiciste esto, no entiendo
-    Sub SelecionarIDestudisntes(idcarrera As String, cuatrimestre As String)
+    Sub SelecionarIDestudiantes(idcarrera As String, cuatrimestre As String)
         Dim instruccionSQL As SqlClient.SqlCommand
         Dim DataAdapter As SqlClient.SqlDataAdapter
         AbrirConexion()
         instruccionSQL = New SqlClient.SqlCommand("SELECT @ID_Estudiante FROM Matricula WHERE ID_Carrera =" & idcarrera & "  ", conexion)
 
-        If dsFuncionarios.Tables().Count > 0 Then
-            If dsFuncionarios.Tables(0).Rows.Count > 1 Then
-                dsFuncionarios.Tables(0).Clear()
+        If dsMatricula.Tables().Count > 0 Then
+            If dsMatricula.Tables(0).Rows.Count > 1 Then
+                dsMatricula.Tables(0).Clear()
             End If
         End If
 
         Try
             DataAdapter = New SqlClient.SqlDataAdapter(instruccionSQL)
-            DataAdapter.Fill(dsFuncionarios)
+            DataAdapter.Fill(dsMatricula)
         Catch ex As Exception
             Throw New System.Exception(ex.Message)
         End Try
         CerrarConexion()
     End Sub '''''''''''''
 
+
+    Sub SelecionarIDMatriculas(idcarrera As String, cuatrimestre As String)
+        Dim instruccionSQL As SqlClient.SqlCommand
+        Dim DataAdapter As SqlClient.SqlDataAdapter
+        AbrirConexion()
+        instruccionSQL = New SqlClient.SqlCommand("SELECT @ID_Matricula FROM Matricula WHERE ID_Carrera =" & idcarrera & "AND Cuatrimestre =" & cuatrimestre, conexion)
+
+        If dsMatricula.Tables().Count > 0 Then
+            If dsMatricula.Tables(0).Rows.Count > 1 Then
+                dsMatricula.Tables(0).Clear()
+            End If
+        End If
+
+        Try
+            DataAdapter = New SqlClient.SqlDataAdapter(instruccionSQL)
+            DataAdapter.Fill(dsMatricula)
+        Catch ex As Exception
+            Throw New System.Exception(ex.Message)
+        End Try
+        CerrarConexion()
+    End Sub
     Sub UpdateBD(idMatricula As Integer, idEstudiante As Integer, idCarrera As String, Costo As Integer, cuatrimestre As String, periodo As String)
         Dim sqlInstruccion As SqlClient.SqlCommand
 
@@ -747,16 +768,16 @@ Public Class SQL
         Dim DataAdapter As SqlClient.SqlDataAdapter
         AbrirConexion()
         instruccionSQL = New SqlClient.SqlCommand()
-        instruccionSQL = New SqlClient.SqlCommand("SELECT * FROM CursosPorMatricula WHERE idMatricula =" & idMatricula, conexion)
-        If dsMatricula.Tables().Count > 0 Then
-            If dsMatricula.Tables(0).Rows.Count > 1 Then
-                dsMatricula.Tables(0).Clear()
+        instruccionSQL = New SqlClient.SqlCommand("SELECT idCurso FROM CursosPorMatricula WHERE idMatricula =" & idMatricula, conexion)
+        If dsCursos.Tables().Count > 0 Then
+            If dsCursos.Tables(0).Rows.Count > 1 Then
+                dsCursos.Tables(0).Clear()
             End If
         End If
 
         Try
             DataAdapter = New SqlClient.SqlDataAdapter(instruccionSQL)
-            DataAdapter.Fill(dsFuncionarios)
+            DataAdapter.Fill(dsCursos)
         Catch ex As Exception
             Throw New System.Exception(ex.Message)
         End Try

@@ -10,6 +10,7 @@ Public Class ClaseEstudiantes
     Dim _fechaNacimiento As Date
     Dim _correo As String
     Dim _direccion As String
+    Dim mensajeBeca As String = "Total a pagar: "
     'objeto
     Dim obj_EstudiantesBD As New SQL
 #Region "propiedades"
@@ -134,5 +135,7 @@ Public Class ClaseEstudiantes
     Sub SelecionarBeca()
         obj_EstudiantesBD.SelecionarBeca(_idEstudiantes)
     End Sub
+
+
 #End Region
 End Class

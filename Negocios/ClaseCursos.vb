@@ -164,6 +164,10 @@ Public Class ClaseCursos
     Sub BuscarIDPorNombre()
         obj_CursosBD.ConsultaIdPorNombre(_nombre)
     End Sub
+
+    Sub consultarCursosPormatricula(idMatricula)
+        obj_CursosBD.consultarCursosPormatricula(idMatricula)
+    End Sub
 #End Region
 
 End Class
