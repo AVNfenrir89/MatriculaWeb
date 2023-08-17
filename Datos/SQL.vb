@@ -702,6 +702,10 @@ Public Class SQL
         CerrarConexion()
     End Sub
 
+
+
+#End Region
+
 #Region "Procedimiento tabla Intermedia"
     Sub LeerTablaCursosxMatricula()
         Dim instruccionSQL As SqlClient.SqlCommand
@@ -773,9 +777,6 @@ Public Class SQL
         CerrarConexion()
     End Sub
 #End Region
-
-#End Region
-
 
 #End Region
 
