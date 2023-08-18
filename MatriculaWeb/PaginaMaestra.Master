@@ -31,6 +31,8 @@
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                 </asp:ContentPlaceHolder>
             </form>
-  
+  <footer>
+      <p class ="pie_pagina">Proyecto final ------------------- II Cuatrimestre ------------------- 2023</p></footer>
 </body>
+
 </html>

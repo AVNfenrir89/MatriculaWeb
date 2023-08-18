@@ -141,7 +141,7 @@ Public Class Formulario_web12
 
             If Not curso_uno.Checked And Not curso_dos.Checked And Not curso_tres.Checked Then
                 Throw New System.Exception("No se puede matricular sin haber seleccionado al menos un curso")
-            ElseIf lb_total.InnerText = String.Empty Then
+            ElseIf lb_total.InnerText = String.Empty Or Not IsNumeric(lb_total.InnerText) Then
                 Throw New System.Exception("No se puede matricular sin haber hecho antes click en el botón total")
             End If
 
