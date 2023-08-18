@@ -21,4 +21,13 @@ Partial Public Class Formulario_web17
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents gv_matricula As Global.System.Web.UI.WebControls.GridView
+
+    '''<summary>
+    '''Control gv_matricula1.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents gv_matricula1 As Global.System.Web.UI.WebControls.GridView
 End Class
