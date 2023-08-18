@@ -657,6 +657,7 @@ Public Class SQL
         End Try
         CerrarConexion()
     End Sub
+
     Sub InsertarMatricula(idMatricula As Integer, idEstudiante As Integer, idCarrera As String, costo As Integer, cuatrimestre As String, periodo As String)
         Dim sqlInstruccion As SqlClient.SqlCommand
         AbrirConexion()
@@ -759,12 +760,38 @@ Public Class SQL
         CerrarConexion()
     End Sub
 
-
+    Sub mostrarMatriculasql()
+        Dim sqlInstruccion As SqlClient.SqlCommand
+        Dim DataAdapter As SqlClient.SqlDataAdapter
+        AbrirConexion()
+        sqlInstruccion = New SqlClient.SqlCommand("SELECT
+    m.*,
+    STRING_AGG(c.Nombre, '-') AS Cursos
+FROM
+    CursoPorMatricula mp
+INNER JOIN
+    Matricula m ON m.ID_Matricula = mp.idMatricula
+INNER JOIN
+    Cursos c ON c.ID_Cursos = mp.idCurso
+GROUP BY
+    m.ID_Matricula, m.ID_Estudiante,  m.ID_Carrera, m.Costo, m.Cuatrimestre, m.Periodo", conexion)
+        If dsMatricula.Tables().Count > 0 Then
+            If dsMatricula.Tables(0).Rows.Count > 1 Then
+                dsMatricula.Tables(0).Clear()
+            End If
+        End If
+        Try
+            DataAdapter = New SqlClient.SqlDataAdapter(sqlInstruccion)
+            DataAdapter.Fill(dsMatricula)
+        Catch ex As Exception
+            Throw New System.Exception(ex.Message)
+        End Try
+    End Sub
 
 #End Region
 
 #Region "Procedimiento tabla Intermedia"
-    Sub LeerTablaCursosxMatricula()
+    Sub LeerTablaCursosxMatriculaBD()
         Dim instruccionSQL As SqlClient.SqlCommand
         Dim DataAdapter As SqlClient.SqlDataAdapter
         AbrirConexion()

@@ -20,6 +20,14 @@ Public Class ClaseMatrticula
 
         End Set
     End Property
+    Public Property TablaCursosMatricula As DataTable
+        Get
+            Return obj_MatriculaBD.TablaCursoPorMatricula
+        End Get
+        Set(value As DataTable)
+
+        End Set
+    End Property
 
     Public Property Tabla_Cursos As DataTable
         Get
@@ -109,10 +117,15 @@ Public Class ClaseMatrticula
     Sub leeTablaMatricula()
         obj_MatriculaBD.LeerTablaMatriculaBD()
     End Sub
+    Sub leeTablaMatriculaCursoPMatricula()
+        obj_MatriculaBD.LeerTablaCursosxMatriculaBD()
+    End Sub
 
     Sub SeleccionaIDMatricula()
         obj_MatriculaBD.SelecionarIDMatriculas(_idCarrera, _cuatrimestre)
     End Sub
 
-
+    Sub MostrarMatriculas()
+        obj_MatriculaBD.mostrarMatriculasql()
+    End Sub
 End Class

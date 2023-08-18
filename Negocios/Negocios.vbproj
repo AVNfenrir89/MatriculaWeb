@@ -66,6 +66,7 @@
   <ItemGroup>
     <Compile Include="ClaseCarreras.vb" />
     <Compile Include="ClaseCursos.vb" />
+    <Compile Include="ClaseCursosPorMatricula.vb" />
     <Compile Include="ClaseEstudiantes.vb" />
     <Compile Include="ClaseFuncionarios.vb" />
     <Compile Include="ClaseMatrticula.vb" />
