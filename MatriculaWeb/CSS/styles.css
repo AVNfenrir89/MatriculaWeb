@@ -88,7 +88,11 @@ h1 {
     right: 9%;
 }
 
-#datos_estudiante_uno label {
+#datos_estudiante_uno select {
+    border-radius: 5px;
+    height: 23px;
+    border: 1px;
+    outline: none;
 }
 
 #datos_estudiante_dos {
@@ -224,6 +228,11 @@ h1 {
     margin-left: auto;
     margin-right: auto;
     color: #8db594;
+}
+
+.gvtab th {
+        background: #8db594;
+        color: white;
 }
 .bodyLogin {
     font-family: arial,sans-serif;
@@ -391,9 +400,14 @@ h1 {
     margin-left: 25px;
 
 }
+.btn_matricula_cursos{
+    display:flex;
+    align-items:center;
+    justify-content:center
+}
 .seccion-uno {
     align-items: center;
-    align-content:center;
+    align-content: center;
 }
 .select-carrera {
     outline: none;
@@ -437,11 +451,16 @@ h1 {
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
 }
-.fotoPerfil{
-    position:relative;
-    border-radius:50%;
-   margin-top:16%;
-   margin-left:16%;
+
+.divicion_foto_perfil img {
+    
+}
+.fotoPerfil {
+    border: 3px solid white;
+    position: relative;
+    border-radius: 50%;
+    margin-top: 16%;
+    margin-left: 16%;
 }
 .seccion_info {
     border: 1px solid #8db594;
@@ -466,9 +485,11 @@ footer {
     /*  border-top: 1px solid #8db594;*/
     background: #8db594;
 }
-.pie_pagina {  
-    position: relative;
-    left: 15px;
+.pie_pagina {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+
     font-size: 9px;
     color: white;
     padding-left: 20px:

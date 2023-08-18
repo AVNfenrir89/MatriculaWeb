@@ -115,6 +115,10 @@
     Sub cargarInfo()
         Try
             obj_Funcionarios.leerTablaFuncionarios()
+            obj_Funcionarios.TablaFuncionarios.Columns("ID_Funcionarios").ColumnName = "ID Funcionario"
+            obj_Funcionarios.TablaFuncionarios.Columns("P_Apellido").ColumnName = "Primer Apellido"
+            obj_Funcionarios.TablaFuncionarios.Columns("S_Apellido").ColumnName = "Segundo Apellido"
+            obj_Funcionarios.TablaFuncionarios.Columns("Contrasena").ColumnName = "Contraseña"
             gv_funcionario.DataSource = obj_Funcionarios.TablaFuncionarios
             gv_funcionario.DataBind()
         Catch ex As Exception

@@ -12,7 +12,12 @@ Public Class Formulario_web17
     End Sub
     Sub cargarInfo()
         Try
+
+
             obj_Matricula.MostrarMatriculas()
+            obj_Matricula.TablaMatricula.Columns("ID_Matricula").ColumnName = "ID Matrícula"
+            obj_Matricula.TablaMatricula.Columns("ID_Estudiante").ColumnName = "ID Estudiante"
+            obj_Matricula.TablaMatricula.Columns("ID_Carrera").ColumnName = "ID Carrera"
             gv_matricula.DataSource = obj_Matricula.TablaMatricula
             gv_matricula.DataBind()
 

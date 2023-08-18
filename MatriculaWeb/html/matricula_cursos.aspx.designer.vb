@@ -95,15 +95,6 @@ Partial Public Class Formulario_web1
     Protected WithEvents input_cant_max As Global.System.Web.UI.HtmlControls.HtmlInputText
 
     '''<summary>
-    '''Control input_costo.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents input_costo As Global.System.Web.UI.HtmlControls.HtmlInputText
-
-    '''<summary>
     '''Control select_grado.
     '''</summary>
     '''<remarks>

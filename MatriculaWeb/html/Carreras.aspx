@@ -87,13 +87,13 @@
 
                     <div>
                         <!--Cambios realizados-->
-                        <label for="input_Id_Borrar">Boton para eliminar fila </label>
+                        <label for="input_Id_Borrar">Botón para eliminar fila </label>
                         <asp:Button ID="btn_Borrar" class="btn_matricular btn_funcionario btn_Borrar" runat="server" Text="Borrar" />
                     </div>
 
                     <div>
                         <!--Cambios realizados-->
-                        <label for="input_Id_Modificar">Boton para modifcar fila </label>
+                        <label for="input_Id_Modificar">Botón para modifcar fila </label>
                         <asp:Button ID="btn_Modificar" class="btn_matricular btn_funcionario" runat="server" Text="Modifcar" />
                     </div>
                 </section>

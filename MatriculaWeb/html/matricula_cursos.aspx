@@ -55,12 +55,7 @@
                         <label for="input_cant_max">Cantidad máxima</label>
                         <input type="text" runat="server" id="input_cant_max" />
                     </div>
-
-                    <div>
-                        <label for="input_costo">Costo</label>
-                        <input type="text" runat="server" placeholder="10000 colones por crédito" id="input_costo" enableviewstate="False" />
-                    </div>
-
+                                
                 </section>
 
                 <section id="datos_cursos_tres">
@@ -90,34 +85,30 @@
 
                     </div>
 
-                    <asp:Button ID="agrega_curso" class="btn_matricular btn_funcionario" runat="server" Text="Agregar" />
+                  
 
                 </section>
 
+               <section class="btn_matricula_cursos">
+                   <asp:Button ID="agrega_curso" class="btn_matricular btn_funcionario btn_matricula_cursos" runat="server" Text="Agregar" />
+               </section>
+                    
+
+               
+                  
             </section>
 
             <section id="taba_cursos">
+                <section>
+                    <h3 class="titulo_dos">Nota</h3>
+                    <p class="titulo_dos">El costo de cada curso varia de la cantidad de créditos multiplicado por  ₡ 10 000</p>
+                </section>
 
-                <%--            <asp:Literal ID="LiteralTabla" runat="server"></asp:Literal>--%>
-                <%--             <table id ="datos_tabla_cursos" runat="server">       
-                    <tr>
-                        <th>ID del curso</th>
-                        <th>Nombre</th>
-                        <th>Créditos</th>
-                        <th>Nota mínima</th>
-                        <th>Cantidad mínima</th>
-                        <th>Cantidad máxima</th>
-                        <th>Costo</th>
-                        <th>Grado</th>
-                        <th>Carrera</th>
-                        <th>Estado</th>
-                    </tr>
-            </table>--%>
                 <asp:GridView ID="gv_matricula_cursos" class="gvtab" runat="server" AutoGenerateColumns="True" Enabled="True">
                 </asp:GridView>
             </section>
 
-            <h1 class="titulo_dos">Sección para editar o modificar un Curso</h1>
+            <h1 class="titulo_dos">Sección para modificar  o borrar un Curso</h1>
 
             <section id="datos_estudiante">
 
@@ -204,14 +195,14 @@
                     <%-- botón eliminar--%>
                     <div>
                         <!--Cambios realizados-->
-                        <label for="input_Id_Borrar">Boton para eliminar fila </label>
+                        <label for="input_Id_Borrar">Botón para eliminar fila </label>
                         <asp:Button ID="btn_Borrar" class="btn_matricular btn_funcionario btn_Borrar" runat="server" Text="Borrar" />
                     </div>
 
                     <%-- botón modificar--%>
                     <div>
                         <!--Cambios realizados-->
-                        <label for="input_Id_Modificar">Boton para modifcar fila </label>
+                        <label for="input_Id_Modificar">Botón para modifcar fila </label>
                         <asp:Button ID="btn_Modificar" class="btn_matricular btn_funcionario" runat="server" Text="Modifcar" />
                     </div>
 

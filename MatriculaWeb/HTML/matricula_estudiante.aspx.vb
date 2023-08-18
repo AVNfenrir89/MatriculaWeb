@@ -9,7 +9,7 @@ Public Class Formulario_web11
         '    Response.Redirect("login.aspx") ' Redirigir al inicio de sesión si no está autenticado
         'End If
 
-        cargarInfo()
+
         If Not IsPostBack Then
             beca_no.Checked = True
             select_beca.Disabled = True
@@ -58,6 +58,12 @@ Public Class Formulario_web11
     Sub cargarInfo()
         Try
             obj_Estudiantes.LeeDatosEstudiantes()
+            gv_matricula_estudiantes.DataSource = obj_Estudiantes.TablaEstudiantes
+            obj_Estudiantes.TablaEstudiantes.Columns("ID_Estudiantes").ColumnName = "ID Estudiante"
+            obj_Estudiantes.TablaEstudiantes.Columns("ID_Carrera").ColumnName = "ID Carrera"
+            obj_Estudiantes.TablaEstudiantes.Columns("Fecha_Nacimiento").ColumnName = "Fecha de Nacimiento"
+            obj_Estudiantes.TablaEstudiantes.Columns("Telefono").ColumnName = "Teléfono"
+            obj_Estudiantes.TablaEstudiantes.Columns("Direccion").ColumnName = "Dirección"
             gv_matricula_estudiantes.DataSource = obj_Estudiantes.TablaEstudiantes
             gv_matricula_estudiantes.DataBind()
         Catch ex As Exception

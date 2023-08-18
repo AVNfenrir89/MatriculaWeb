@@ -15,7 +15,7 @@ Public Class Formulario_web1
         'End If
         If Not IsPostBack Then
             'cargar el dgv cuando se levante la pantalla
-            cargarInfo()
+            'cargarInfo()
             Dim nombre_carrera As String
             Dim idCarrera As String
             obj_Carreras.LeeDatosCarrera()
@@ -47,7 +47,7 @@ Public Class Formulario_web1
             obj_Cursos.Cuatri = select_cuatrimestre.Value
             'agregar y cargar en tiempo real
             obj_Cursos.AgregarDatosCursos()
-            cargarInfo()
+            'cargarInfo()
             limpiar()
         Catch ex As Exception
 
@@ -55,17 +55,17 @@ Public Class Formulario_web1
             'ScriptManager.RegisterStartupScript(Me, Me.GetType(), "showErrorAlert", $"alert('{errorMessage}');", True)
         End Try
     End Sub
-    Sub cargarInfo()
-        Try
-            obj_Cursos.LeeDatosCursos()
-            gv_matricula_cursos.DataSource = obj_Cursos.TablaCursos
-            gv_matricula_cursos.DataBind()
-        Catch ex As Exception
-            Throw ex
-        End Try
+    'Sub cargarInfo()
+    '    Try
+    '        obj_Cursos.LeeDatosCursos()
+    '        gv_matricula_cursos.DataSource = obj_Cursos.TablaCursos
+    '        gv_matricula_cursos.DataBind()
+    '    Catch ex As Exception
+    '        Throw ex
+    '    End Try
 
 
-    End Sub
+    'End Sub
 
 
     Sub limpiar()
@@ -100,7 +100,7 @@ Public Class Formulario_web1
             obj_Cursos.Estado = select_estado2.Value
             obj_Cursos.Cuatri = select_cuatrimestre_2.Value
             obj_Cursos.modificarCurso()
-            cargarInfo()
+            'cargarInfo()
             LimpiarModificarBorar()
 
         Catch ex As Exception

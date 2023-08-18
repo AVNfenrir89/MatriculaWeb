@@ -29,6 +29,7 @@ Public Class Formulario_web15
     Sub cargarInfo()
         Try
             obj_Carrera.LeeDatosCarrera()
+            obj_Carrera.TablaCarreras.Columns("ID_Carrera").ColumnName = "ID Carrera"
             gv_carreras.DataSource = obj_Carrera.TablaCarreras
             gv_carreras.DataBind()
         Catch ex As Exception
@@ -44,16 +45,6 @@ Public Class Formulario_web15
         input_id_carrera2.Value = ""
         input_nombre_carrera2.Value = ""
     End Sub
-
-    ' Protected Sub btn_buscar_Click(sender As Object, e As EventArgs) Handles btn_buscar.Click
-    'obj_Carrera.IdCarrera = input_id_carrera2.Value
-    'obj_Carrera.SeleccionarCarrera()
-    'For Each fila As DataRow In obj_Carrera.TablaCarreras.Rows
-    'input_nombre_carrera2 = fila("Nombre")
-    'select1 = fila("Grado")
-    'select2 = fila("Estado")
-    'Next
-    ' End Sub
 
     Protected Sub btn_Borrar_Click(sender As Object, e As EventArgs) Handles btn_Borrar.Click
         obj_Carrera.IdCarrera = input_id_carrera2.Value
