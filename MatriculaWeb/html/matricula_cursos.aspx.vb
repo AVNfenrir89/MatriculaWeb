@@ -10,9 +10,9 @@ Public Class Formulario_web1
         ClientScript.RegisterStartupScript(Me.GetType(), "MensajeEmergente", script, True)
     End Sub
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        'If Not User.Identity.IsAuthenticated Then
-        '    Response.Redirect("login.aspx") ' Redirigir al inicio de sesión si no está autenticado
-        'End If
+        If Not User.Identity.IsAuthenticated Then
+            Response.Redirect("login.aspx") ' Redirigir al inicio de sesión si no está autenticado
+        End If
         If Not IsPostBack Then
             'cargar el dgv cuando se levante la pantalla
             'cargarInfo()

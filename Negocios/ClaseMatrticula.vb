@@ -102,6 +102,7 @@ Public Class ClaseMatrticula
 
 #End Region
 
+#Region "consultas SQL"
     Sub AgregarMatricula()
         obj_MatriculaBD.InsertarMatricula(_idMatricula, _idEstudiante, _idCarrera, _costo, _cuatrimestre, "1")
     End Sub
@@ -128,4 +129,7 @@ Public Class ClaseMatrticula
     Sub MostrarMatriculas()
         obj_MatriculaBD.mostrarMatriculasql()
     End Sub
+
+#End Region
+
 End Class

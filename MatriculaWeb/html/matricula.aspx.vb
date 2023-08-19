@@ -10,9 +10,9 @@ Public Class Formulario_web12
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Try
-            'If Not User.Identity.IsAuthenticated Then
-            '    Response.Redirect("login.aspx") ' Redirigir al inicio de sesión si no está autenticado
-            'End If
+            If Not User.Identity.IsAuthenticated Then
+                Response.Redirect("login.aspx") ' Redirigir al inicio de sesión si no está autenticado
+            End If
             If Not IsPostBack Then
 
                 Dim nombre As String
