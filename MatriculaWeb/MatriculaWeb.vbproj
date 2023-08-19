@@ -92,6 +92,7 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CSS\error.css" />
     <Content Include="CSS\styles.css" />
     <Content Include="HTML\cerrar.aspx" />
     <Content Include="HTML\acerca_de.aspx" />

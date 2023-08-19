@@ -13,15 +13,17 @@ Public Class Formulario_web15
 
     Protected Sub agregar_Click(sender As Object, e As EventArgs) Handles agregar.Click
         Try
+
             obj_Carrera.IdCarrera = input_id_carrera.Value
             obj_Carrera.Nombre = input_nombre_carrera.Value
+            obj_Carrera.Validaciones()
             obj_Carrera.Estado = select_estado.Value
             obj_Carrera.Grados = select_grado.Value
             obj_Carrera.AgregarDatosCarrera()
             cargarInfo()
             limpiar()
         Catch ex As Exception
-            Throw ex
+            Mensaje("Error. " & ex.Message)
         End Try
 
     End Sub
@@ -54,13 +56,21 @@ Public Class Formulario_web15
     End Sub
 
     Protected Sub btn_Modificar_Click(sender As Object, e As EventArgs) Handles btn_Modificar.Click
-        obj_Carrera.IdCarrera = input_id_carrera2.Value
-        obj_Carrera.Nombre = input_nombre_carrera2.Value
-        obj_Carrera.Estado = select_estado2.Value
-        obj_Carrera.Grados = select_grado2.Value
-        obj_Carrera.ModificarCarrera()
-        cargarInfo()
-        limpiarBorrarModifcar()
+
+        Try
+
+            obj_Carrera.IdCarrera = input_id_carrera2.Value
+            obj_Carrera.Nombre = input_nombre_carrera2.Value
+            obj_Carrera.Validaciones()
+            obj_Carrera.Estado = select_estado2.Value
+            obj_Carrera.Grados = select_grado2.Value
+            obj_Carrera.ModificarCarrera()
+            cargarInfo()
+            limpiarBorrarModifcar()
+        Catch ex As Exception
+            Mensaje("Error. " & ex.Message)
+        End Try
+
 
     End Sub
 
@@ -83,6 +93,14 @@ Public Class Formulario_web15
                 select_grado2.SelectedIndex = 1
             End If
         Next
+
+    End Sub
+
+    Sub Mensaje(mensaje)
+
+        Dim script As String = "alert('" + mensaje + "');"
+        ClientScript.RegisterStartupScript(Me.GetType(), "MensajeEmergente", script, True)
+
 
     End Sub
 

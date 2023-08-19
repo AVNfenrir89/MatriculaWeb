@@ -6,6 +6,7 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" href="~/CSS/styles.css" />
+    <link rel="stylesheet" href="~/CSS/error.css" />
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -27,10 +28,18 @@
        
     </nav>
 
-            <form id="formPincipal" runat="server">
-                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                </asp:ContentPlaceHolder>
-            </form>
+    <form id="formPincipal" runat="server">
+ <%--       <asp:scriptmanager id="scriptmanager1" runat="server"></asp:scriptmanager>
+        <asp:updatepanel id="updatepanel1" runat="server">
+            <contenttemplate>--%>
+                <asp:contentplaceholder id="contentplaceholder1" runat="server">
+    
+                </asp:contentplaceholder>
+<%--            </contenttemplate>
+
+        </asp:updatepanel>--%>
+    </form>
+         
   <footer>
       <p class ="pie_pagina">Proyecto final ------------------- II Cuatrimestre ------------------- 2023</p></footer>
 </body>

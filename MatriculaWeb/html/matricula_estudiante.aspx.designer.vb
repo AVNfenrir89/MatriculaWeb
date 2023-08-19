@@ -14,24 +14,6 @@ Option Explicit On
 Partial Public Class Formulario_web11
 
     '''<summary>
-    '''Control ScriptManager1.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents ScriptManager1 As Global.System.Web.UI.ScriptManager
-
-    '''<summary>
-    '''Control UpdatePanel1.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents UpdatePanel1 As Global.System.Web.UI.UpdatePanel
-
-    '''<summary>
     '''Control input_id_estudiante.
     '''</summary>
     '''<remarks>

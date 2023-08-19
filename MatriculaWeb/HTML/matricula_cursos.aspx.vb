@@ -34,14 +34,33 @@ Public Class Formulario_web1
     Protected Sub agrega_curso_Click(sender As Object, e As EventArgs) Handles agrega_curso.Click
         'cargar los valores respectivos
         Try
+
             obj_Cursos.IdCurso = input_id_curso.Value
             obj_Cursos.IdCarrera = select_carrera.Value
             obj_Cursos.Nombre = input_nombre.Value
+            obj_Cursos.Validaciones()
+            If Not IsNumeric(input_creditos.Value) Or input_creditos.Value.ToString.Length = 0 Then
+                Throw New System.Exception("El valor de créditos no debe estar en letras o quedar vacio")
+            End If
             obj_Cursos.Creditos = input_creditos.Value
-            obj_Cursos.NotaMinima = input_nota.Value
-            obj_Cursos.CantMax = input_cant_max.Value
-            obj_Cursos.CantMin = input_cant_min.Value
             obj_Cursos.Costo = obj_Cursos.Costo_curso(input_creditos.Value)
+
+            If Not IsNumeric(input_nota.Value) Or input_nota.Value.ToString.Length = 0 Then
+                Throw New System.Exception("El valor de nota mínima no debe estar en letras o quedar vacio")
+            End If
+            obj_Cursos.NotaMinima = input_nota.Value
+
+            If Not IsNumeric(input_cant_max.Value) Or input_cant_max.Value.ToString.Length = 0 Then
+                Throw New System.Exception("El valor de cantidad máxima de estudiantes no debe estar en letras o quedar vacio")
+            End If
+            obj_Cursos.CantMax = input_cant_max.Value
+
+            If Not IsNumeric(input_cant_min.Value) Or input_cant_min.Value.ToString.Length = 0 Then
+                Throw New System.Exception("El valor de cantidad mínima de estudiantes no debe estar en letras o quedar vacio")
+            End If
+            obj_Cursos.CantMin = input_cant_min.Value
+
+
             obj_Cursos.Grado = select_grado.Value
             obj_Cursos.Estado = select_estado.Value
             obj_Cursos.Cuatri = select_cuatrimestre.Value
@@ -51,21 +70,11 @@ Public Class Formulario_web1
             limpiar()
         Catch ex As Exception
 
-            'Dim errorMessage As String = "Ha ocurrido un error: " + ex.Message.Replace("'", "\'")
-            'ScriptManager.RegisterStartupScript(Me, Me.GetType(), "showErrorAlert", $"alert('{errorMessage}');", True)
+            Mensaje("Error. " & ex.Message)
+
         End Try
     End Sub
-    'Sub cargarInfo()
-    '    Try
-    '        obj_Cursos.LeeDatosCursos()
-    '        gv_matricula_cursos.DataSource = obj_Cursos.TablaCursos
-    '        gv_matricula_cursos.DataBind()
-    '    Catch ex As Exception
-    '        Throw ex
-    '    End Try
 
-
-    'End Sub
 
 
     Sub limpiar()
@@ -91,11 +100,29 @@ Public Class Formulario_web1
             obj_Cursos.IdCurso = input_buscar.Value
             obj_Cursos.IdCarrera = select_carrera2.Value
             obj_Cursos.Nombre = input_nombre2.Value
+            obj_Carreras.Validaciones()
+
+            If Not IsNumeric(input_creditos2.Value) Or input_creditos2.Value.ToString.Length = 0 Then
+                Throw New System.Exception("El valor de créditos no debe estar en letras o quedar vacio")
+            End If
             obj_Cursos.Creditos = input_creditos2.Value
-            obj_Cursos.NotaMinima = input_nota2.Value
-            obj_Cursos.CantMax = input_cant_max2.Value
-            obj_Cursos.CantMin = input_cant_min2.Value
             obj_Cursos.Costo = obj_Cursos.Costo_curso(input_creditos2.Value)
+
+            If Not IsNumeric(input_nota2.Value) Or input_nota2.Value.ToString.Length = 0 Then
+                Throw New System.Exception("El valor de nota mínima no debe estar en letras o quedar vacio")
+            End If
+            obj_Cursos.NotaMinima = input_nota2.Value
+
+            If Not IsNumeric(input_cant_max2.Value) Or input_cant_max2.Value.ToString.Length = 0 Then
+                Throw New System.Exception("El valor de cantida máxima de estudiantes  no debe estar en letras o quedar vacio")
+            End If
+            obj_Cursos.CantMax = input_cant_max2.Value
+
+            If Not IsNumeric(input_cant_min2.Value) Or input_cant_min2.Value.ToString.Length = 0 Then
+                Throw New System.Exception("El valor de cantida mínima de estudiantes  no debe estar en letras o quedar vacio")
+            End If
+            obj_Cursos.CantMin = input_cant_min2.Value
+
             obj_Cursos.Grado = select_grado2.Value
             obj_Cursos.Estado = select_estado2.Value
             obj_Cursos.Cuatri = select_cuatrimestre_2.Value
@@ -104,7 +131,7 @@ Public Class Formulario_web1
             LimpiarModificarBorar()
 
         Catch ex As Exception
-            Throw ex
+            Mensaje("Error. " & ex.Message)
         End Try
     End Sub
 

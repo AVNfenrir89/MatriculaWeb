@@ -1,4 +1,5 @@
-﻿Imports Datos 'mportar
+﻿Imports System.Text.RegularExpressions
+Imports Datos 'mportar
 Public Class ClaseEstudiantes
 
     Dim _idEstudiantes As Integer
@@ -106,9 +107,8 @@ Public Class ClaseEstudiantes
 #End Region
 
 #Region "Metodos"
-    Sub validar()
 
-    End Sub
+#Region "Consultas SQL"
 
     'agruegue metodo para leer la info de la tabla BD al dgv
     Sub LeeDatosEstudiantes()
@@ -135,7 +135,36 @@ Public Class ClaseEstudiantes
     Sub SelecionarBeca()
         obj_EstudiantesBD.SelecionarBeca(_idEstudiantes)
     End Sub
+#End Region
 
+#Region "Validaciones"
+
+    Sub validaciones()
+
+        If IsNumeric(_nombre) Or _nombre.Length = 0 Then
+            Throw New System.Exception("EL nombre no pude estar en números o quedar vacio")
+        End If
+
+        If IsNumeric(_apellidos) Or _nombre.Length = 0 Then
+            Throw New System.Exception("Los apellidos no pude estar en números o quedar vacio")
+        End If
+
+        If Not IsNumeric(_telefono) Or _telefono.Length = 0 Then
+            Throw New System.Exception("El teléfono no pude estar en letras o quedar vacio")
+        End If
+
+        If IsNumeric(_direccion) Or _direccion.Length = 0 Then
+            Throw New System.Exception("La dirección no pude estar en números o quedar vacio")
+        End If
+    End Sub
+
+    Public Function ValidaCorreo(correo) As Boolean
+        Dim exprecion As String = "^(([^<>()\[\]\\.,;:\s@"” " & "]+(\.[^<>()\[\]\\.,;:\s@"” " & "]+)*)|("“" & ".+" & "”"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$"
+        Dim regex As New Regex(exprecion)
+        Return regex.IsMatch(correo)
+    End Function
+
+#End Region
 
 #End Region
 End Class

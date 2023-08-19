@@ -52,6 +52,9 @@ Public Class ClaseCarreras
     End Property
 #End Region
 
+#Region "Métodos"
+
+#Region "Consultas SQL"
     Sub LeeDatosCarrera()
         obj_CarrerasBD.leerTablaCarreras()
     End Sub
@@ -67,5 +70,30 @@ Public Class ClaseCarreras
     Sub SeleccionarCarrera()
         obj_CarrerasBD.SelecionarCarrera(_idCarrera)
     End Sub
+#End Region
+
+
+#Region "Validaciones"
+
+    Sub Validaciones()
+
+        If IsNumeric(_idCarrera) Or _idCarrera.Length = 0 Then
+            Throw New System.Exception("El ID de la carrera no puede estar vacio o en números")
+        End If
+
+
+        If IsNumeric(_idCarrera) Or _idCarrera.Length = 0 Then
+            Throw New System.Exception("El ID de la carrera no puede estar vacio o en números")
+        End If
+
+        If IsNumeric(_nombre) Or _nombre.Length = 0 Then
+            Throw New System.Exception("El nombre de la carrera no puede estar vacio o en números")
+        End If
+    End Sub
+
+#End Region
+
+#End Region
+
 
 End Class

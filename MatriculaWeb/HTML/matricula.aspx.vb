@@ -44,34 +44,7 @@ Public Class Formulario_web12
 
 
     End Sub
-    'Protected Sub btn_mostrar_Click(sender As Object, e As EventArgs)
-    '    Try
-    '        Dim i As Integer = 0
-    '        obj_matricula.IdCarrera = select_carrera.SelectedValue
-    '        obj_matricula.Cuatrimestre = select_cuatrimestre.SelectedValue
-    '        obj_matricula.SelecionarCursosPorCarreraCuatrimestre()
-    '        For Each fila As DataRow In obj_matricula.Tabla_Cursos.Rows
-    '            If i = 0 Then
-    '                lb_curso_uno.InnerText = fila("Nombre")
-    '                curso_uno.Value = fila("ID_Cursos")
-    '            ElseIf i = 1 Then
-    '                lb_curso_dos.InnerText = fila("Nombre")
-    '                curso_dos.Value = fila("ID_Cursos")
-    '            ElseIf i = 2 Then
-    '                lb_curso_tres.InnerText = fila("Nombre")
-    '                curso_tres.Value = fila("ID_Cursos")
-    '            End If
-    '            i += 1
 
-    '        Next
-
-    '    Catch ex As Exception
-
-    '    End Try
-
-
-
-    'End Sub
 
     Protected Sub btn_total_Click(sender As Object, e As EventArgs)
         Try
@@ -280,17 +253,32 @@ Public Class Formulario_web12
             gv_matricular.DataSource = obj_matricula.TablaMatricula
             gv_matricular.DataBind()
         Catch ex As Exception
-            Throw ex
+            Mensaje("Error. " & ex.Message)
         End Try
 
     End Sub
 
+    Protected Sub btn_buscar_Click(sender As Object, e As EventArgs) Handles btn_buscar.Click
+        Try
+
+            If Not IsNumeric(input_buscar) Or input_buscar.ToString.Length = 0 Then
+                Throw New System.Exception("El ID de buscar no puedeestar en letras o quedar vacio")
+            End If
+            obj_matricula.IdMatricula = input_buscar.Value
+
+
+        Catch ex As Exception
+            Mensaje("Error. " & ex.Message)
+        End Try
+
+    End Sub
 
     Sub Mensaje(mensaje)
 
         Dim script As String = "alert('" + mensaje + "');"
-
         ClientScript.RegisterStartupScript(Me.GetType(), "MensajeEmergente", script, True)
+
+
     End Sub
 
 End Class

@@ -15,7 +15,7 @@ Public Class ClaseCursos
     Dim _cuatri As String
     'obj para referenciar de que tipo es el objeto
     Dim obj_CursosBD As New SQL
-    Dim mensaje As String = obj_CursosBD.Mensaje
+
 #Region "Propiedades"
     Public Property IdCurso As String
         Get
@@ -141,18 +141,7 @@ Public Class ClaseCursos
 
 #Region "Métodos"
 
-
-    'agruegue metodo para leer la info de la tabla BD al dgv
-    Function Costo_curso(creditos)
-        Dim Resultado As Integer
-        _creditos = Int(creditos)
-        Resultado = 10000 * _creditos
-        Return Str(Resultado)
-    End Function
-    Sub validar()
-        'validar cantidad de estudiantes minima y maxima ?
-    End Sub
-
+#Region "Consultas SQL"
     'agruegue metodo para leer la info de la tabla BD al dgv
     Sub LeeDatosCursos()
         obj_CursosBD.leerTablaCursos()
@@ -181,6 +170,36 @@ Public Class ClaseCursos
     Sub SelecionarCantMax()
         obj_CursosBD.SelecionarCantMax(_idCurso)
     End Sub
+#End Region
+
+    'agruegue metodo para leer la info de la tabla BD al dgv
+    Function Costo_curso(creditos)
+
+        Dim Resultado As Integer
+        _creditos = Int(creditos)
+        Resultado = 10000 * _creditos
+        Return Str(Resultado)
+    End Function
+
+#Region "Validaciones"
+    Sub Validaciones()
+        If IsNumeric(_idCurso) Or _idCurso.Length = 0 Then
+            Throw New System.Exception("El valor de ID Curso no debe estar en números o quedar vacio")
+        End If
+
+        If IsNumeric(_idCarrera) Or _idCarrera.Length = 0 Then
+            Throw New System.Exception("El valor de ID Carrera no debe estar en números o quedar vacio")
+        End If
+
+        If IsNumeric(_nombre) Or _nombre.Length = 0 Then
+            Throw New System.Exception("El valor del nombre no debe estar en números o quedar vacio")
+        End If
+
+    End Sub
+#End Region
+
+
+
 
 #End Region
 

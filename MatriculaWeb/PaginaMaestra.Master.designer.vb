@@ -41,11 +41,11 @@ Partial Public Class Site1
     Protected WithEvents formPincipal As Global.System.Web.UI.HtmlControls.HtmlForm
 
     '''<summary>
-    '''Control ContentPlaceHolder1.
+    '''Control contentplaceholder1.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents ContentPlaceHolder1 As Global.System.Web.UI.WebControls.ContentPlaceHolder
+    Protected WithEvents contentplaceholder1 As Global.System.Web.UI.WebControls.ContentPlaceHolder
 End Class
