@@ -117,7 +117,9 @@ Public Class Formulario_web12
             ElseIf lb_total.InnerText = String.Empty Or Not IsNumeric(lb_total.InnerText) Then
                 Throw New System.Exception("No se puede matricular sin haber hecho antes click en el botón total")
             End If
+
             Dim valor As Boolean = True
+
             If curso_uno.Checked Then
 
                 obj_curso.IdCurso = curso_uno.Value
@@ -134,14 +136,8 @@ Public Class Formulario_web12
                 If obj_curso.CantMax < CantMaxCursoUno Then
                     Throw New System.Exception("Se alcanzó el número máximo de estudiantes en " & lb_curso_uno.InnerText)
                 End If
-
                 Matricular(valor)
                 valor = False
-                'obj_matricula.IdCarrera = select_carrera.SelectedValue
-                'obj_matricula.IdEstudiante = select_estudiante.Value
-                'obj_matricula.Cuatrimestre = select_cuatrimestre.SelectedValue
-                'obj_matricula.Costo = lb_total.InnerText
-                'obj_matricula.AgregarMatricula() 'usar el id de la matricula y el id del curso para guardar en cursos por matricula
                 obj_matricula.RecibirTablaID()
                 obj_idCursosPorMatricula.IdMatricula = obj_matricula.TablaMatricula.Rows(0)(0) 'traer id de matricula. 
                 obj_idCursosPorMatricula.GuardarCursosporMatricula()
@@ -149,9 +145,11 @@ Public Class Formulario_web12
             End If
 
             If curso_dos.Checked Then
+
                 obj_curso.IdCurso = curso_dos.Value
                 obj_curso.SelecionarCantMax()
                 obj_curso.CantMax = obj_curso.TablaCursos(0)(0)
+
                 obj_idCursosPorMatricula.IdCursos = curso_dos.Value
                 obj_idCursosPorMatricula.idCarrera = select_carrera.SelectedValue
                 obj_idCursosPorMatricula.Cuatrimestre = select_cuatrimestre.SelectedValue
@@ -165,11 +163,6 @@ Public Class Formulario_web12
 
                 Matricular(valor)
                 valor = False
-                'obj_matricula.IdCarrera = select_carrera.SelectedValue
-                'obj_matricula.IdEstudiante = select_estudiante.Value
-                'obj_matricula.Cuatrimestre = select_cuatrimestre.SelectedValue
-                'obj_matricula.Costo = lb_total.InnerText
-                'obj_matricula.AgregarMatricula() 'usar el id de la matricula y el id del curso para guardar en cursos por matricula
                 obj_matricula.RecibirTablaID()
                 obj_idCursosPorMatricula.IdMatricula = obj_matricula.TablaMatricula.Rows(0)(0) 'traer id de matricula. 
                 obj_idCursosPorMatricula.GuardarCursosporMatricula()
@@ -177,9 +170,11 @@ Public Class Formulario_web12
             End If
 
             If curso_tres.Checked Then
+
                 obj_curso.IdCurso = curso_tres.Value
                 obj_curso.SelecionarCantMax()
                 obj_curso.CantMax = obj_curso.TablaCursos(0)(0)
+
                 obj_idCursosPorMatricula.IdCursos = curso_tres.Value
                 obj_idCursosPorMatricula.idCarrera = select_carrera.SelectedValue
                 obj_idCursosPorMatricula.Cuatrimestre = select_cuatrimestre.SelectedValue
@@ -190,14 +185,14 @@ Public Class Formulario_web12
                 If obj_curso.CantMax < CantMaxCursoTres Then
                     Throw New System.Exception("Se alcanzó el número máximo de estudiantes en " & lb_curso_tres.InnerText)
                 End If
-
                 Matricular(valor)
                 valor = False
-
                 obj_matricula.RecibirTablaID()
                 obj_idCursosPorMatricula.IdMatricula = obj_matricula.TablaMatricula.Rows(0)(0) 'traer id de matricula. 
                 obj_idCursosPorMatricula.GuardarCursosporMatricula()
+
             End If
+
 
             curso_uno.Checked = False
             curso_dos.Checked = False
@@ -379,23 +374,95 @@ Public Class Formulario_web12
             obj_idCursosPorMatricula.EliminarCursosPorMatricula()
             If curso_uno2.Checked Then
 
+                obj_curso.IdCurso = curso_uno2.Value
+                obj_curso.SelecionarCantMax()
+                obj_curso.CantMax = obj_curso.TablaCursos(0)(0)
+
+                obj_idCursosPorMatricula.IdMatricula = input_buscar.Value
+
                 obj_idCursosPorMatricula.IdCursos = curso_uno2.Value
                 obj_idCursosPorMatricula.idCarrera = select_carrera2.SelectedValue
                 obj_idCursosPorMatricula.Cuatrimestre = select_cuatrimestre2.SelectedValue
+
                 obj_idCursosPorMatricula.crearIDCursosPorMatricula()
+                obj_idCursosPorMatricula.consultarCursosPormatricula()
+                Dim CantMaxCursoUno As Integer = obj_idCursosPorMatricula.TablaidCursosPorMatricula(0)(0)
+                'Valida si se pasa de la cantidad máxima de estudiantes por curso
+                If obj_curso.CantMax < CantMaxCursoUno Then
+                    Throw New System.Exception("Se alcanzó el número máximo de estudiantes en " & lb_curso_uno2.InnerText)
+                End If
+
+
                 obj_idCursosPorMatricula.GuardarCursosporMatricula()
 
 
             End If
 
             If curso_dos2.Checked Then
-                obj_matricula.IdCursos = curso_dos2.Value
-                'obj_matricula.InsertarCursosxMatricula()
+
+                obj_curso.IdCurso = curso_dos2.Value
+                obj_curso.SelecionarCantMax()
+                obj_curso.CantMax = obj_curso.TablaCursos(0)(0)
+
+                obj_idCursosPorMatricula.IdMatricula = input_buscar.Value
+
+                obj_idCursosPorMatricula.IdCursos = curso_dos2.Value
+                obj_idCursosPorMatricula.idCarrera = select_carrera2.SelectedValue
+                obj_idCursosPorMatricula.Cuatrimestre = select_cuatrimestre2.SelectedValue
+
+                obj_idCursosPorMatricula.crearIDCursosPorMatricula()
+                obj_idCursosPorMatricula.consultarCursosPormatricula()
+                Dim CantMaxCursoUno As Integer = obj_idCursosPorMatricula.TablaidCursosPorMatricula(0)(0)
+                'Valida si se pasa de la cantidad máxima de estudiantes por curso
+                If obj_curso.CantMax < CantMaxCursoUno Then
+                    Throw New System.Exception("Se alcanzó el número máximo de estudiantes en " & lb_curso_dos2.InnerText)
+                End If
+
+
+                obj_idCursosPorMatricula.GuardarCursosporMatricula()
+
+
+                'obj_idCursosPorMatricula.IdCursos = curso_dos2.Value
+                'obj_idCursosPorMatricula.idCarrera = select_carrera2.SelectedValue
+                'obj_idCursosPorMatricula.Cuatrimestre = select_cuatrimestre2.SelectedValue
+                'obj_idCursosPorMatricula.crearIDCursosPorMatricula()
+                'obj_idCursosPorMatricula.GuardarCursosporMatricula()
+
             End If
 
             If curso_tres2.Checked Then
-                obj_matricula.IdCursos = curso_tres2.Value
-                'obj_matricula.InsertarCursosxMatricula()
+
+
+                obj_curso.IdCurso = curso_tres2.Value
+                obj_curso.SelecionarCantMax()
+                obj_curso.CantMax = obj_curso.TablaCursos(0)(0)
+
+                obj_idCursosPorMatricula.IdMatricula = input_buscar.Value
+
+                obj_idCursosPorMatricula.IdCursos = curso_tres2.Value
+                obj_idCursosPorMatricula.idCarrera = select_carrera2.SelectedValue
+                obj_idCursosPorMatricula.Cuatrimestre = select_cuatrimestre2.SelectedValue
+
+                obj_idCursosPorMatricula.crearIDCursosPorMatricula()
+                obj_idCursosPorMatricula.consultarCursosPormatricula()
+                Dim CantMaxCursoUno As Integer = obj_idCursosPorMatricula.TablaidCursosPorMatricula(0)(0)
+                'Valida si se pasa de la cantidad máxima de estudiantes por curso
+                If obj_curso.CantMax < CantMaxCursoUno Then
+                    Throw New System.Exception("Se alcanzó el número máximo de estudiantes en " & lb_curso_tres2.InnerText)
+                End If
+
+
+                obj_idCursosPorMatricula.GuardarCursosporMatricula()
+
+
+
+
+
+                'obj_idCursosPorMatricula.IdCursos = curso_tres2.Value
+                'obj_idCursosPorMatricula.idCarrera = select_carrera2.SelectedValue
+                'obj_idCursosPorMatricula.Cuatrimestre = select_cuatrimestre2.SelectedValue
+                'obj_idCursosPorMatricula.crearIDCursosPorMatricula()
+                'obj_idCursosPorMatricula.GuardarCursosporMatricula()
             End If
 
             obj_matricula.IdMatricula = input_buscar.Value
