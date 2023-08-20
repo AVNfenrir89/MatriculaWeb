@@ -99,9 +99,10 @@
             </section>
 
             <section id="taba_cursos">
-                <section>
-                    <h3 class="titulo_dos">Nota</h3>
-                    <p class="titulo_dos">El costo de cada curso varia de la cantidad de créditos multiplicado por  ₡ 10 000</p>
+                 
+                <section  class="nota">
+                    <h3 class="titulo">Nota:  </h3>
+                    <p class="titulo">El costo de cada curso varia de la cantidad de créditos multiplicado por  ₡ 10 000</p>
                 </section>
 
                 <asp:GridView ID="gv_matricula_cursos" class="gvtab" runat="server" AutoGenerateColumns="True" Enabled="True">

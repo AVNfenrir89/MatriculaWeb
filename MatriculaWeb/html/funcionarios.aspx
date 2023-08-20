@@ -60,6 +60,20 @@
 
     </section>
 
+    <section class ="nota_funcionarios" >
+        <div>
+            <h3 class="titulo">Nota:  </h3>
+            <p>Para la contraseña se debe de cumplir:</p>
+            <p>La contraseña debe tener al entre 8 y 16 caracteres.</p>
+            <p>Al menos un dígito.</p>
+            <p>Al menos una minúscula.</p>
+            <p>Al menos una mayúscula.</p>
+            <p>Al menos un caracter no alfanumérico.</p>
+            <p>Ejemplo: gbswq78410$Az</p>
+        </div>
+
+    </section>
+
     <section>
         <asp:GridView ID="gv_funcionario" class="gvtab" runat="server" AutoGenerateColumns="True" >
         </asp:GridView>

@@ -108,6 +108,7 @@ Public Class ClaseFuncionarios
 
 #Region "metodos "
 
+#Region "Consultas SQL"
     Sub SelecionarFuncionario()
         obj_FuncionariosBD.SelecionarFuncionario(_identificacion)
     End Sub
@@ -126,6 +127,9 @@ Public Class ClaseFuncionarios
     Sub ModificarFuncionario()
         obj_FuncionariosBD.ModificarFuncionarioBD(_identificacion, _nombre, _pApellido, sApellido, _correo, _usuario, _clave, _estado)
     End Sub
+
+#End Region
+
     Sub ValidaDatosFuncionario()
         If TablaFuncionarios.Rows.Count = 0 Then
             Throw New System.Exception("El Usuario o contraseña incorrecto o no exite")
@@ -145,6 +149,36 @@ Public Class ClaseFuncionarios
         Next
     End Sub
 
+
+#Region "Validaciones "
+
+
+    Sub validaciones()
+
+        If Not IsNumeric(_identificacion) Or _identificacion.Length = 0 Then
+            Throw New System.Exception("El valor de identificación no puede ser en letras o quedar vacio")
+        End If
+
+        If IsNumeric(_nombre) Or _nombre.Length = 0 Then
+            Throw New System.Exception("El valor de nombre no puede ser en números o quedar vacio")
+        End If
+
+        If IsNumeric(_pApellido) Or _pApellido.Length = 0 Then
+            Throw New System.Exception("El valor del primer apellido no puede ser en números o quedar vacio")
+        End If
+
+        If IsNumeric(_sApellido) Or _sApellido.Length = 0 Then
+            Throw New System.Exception("El valor del segundo apellido no puede ser en números o quedar vacio")
+        End If
+
+        If _clave.Length = 0 Or _correo.Length = 0 Then
+            Throw New System.Exception("La contraseña o el correo no pueden quedar vacios")
+        End If
+
+        If _usuario.Length = 0 Then
+            Throw New System.Exception("El usuario no puede quedar vacio")
+        End If
+    End Sub
     Public Function ValidaContasena(_clave) As Boolean
         Dim exprecion As String = "^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040])(?=.*[A-Z])(?=.*[a-z])\S{8,16}$"
         Dim regex As New Regex(exprecion)
@@ -156,5 +190,10 @@ Public Class ClaseFuncionarios
         Dim regex As New Regex(exprecion)
         Return regex.IsMatch(correo)
     End Function
+
+
+
+#End Region
+
 #End Region
 End Class

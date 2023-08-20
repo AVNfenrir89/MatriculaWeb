@@ -25,16 +25,17 @@
                     obj_Funcionarios.Correo = correo_funcionario.Value
                     obj_Funcionarios.Usuario = usuario_funcionario.Value
                     obj_Funcionarios.Clave = pass_funcionario.Value
+                    obj_Funcionarios.validaciones()
                     obj_Funcionarios.Estado = estado_funcionario.Value
                     obj_Funcionarios.AgregarFuncionarios()
                     cargarInfo()
                     limpiar()
 
                 Else
-                    Mensaje("El correo es incorrecto")
+                        Mensaje("El correo es incorrecto")
                 End If
             Else
-                Mensaje("El contraseña no es válida")
+                Mensaje("La contraseña no es válida")
             End If
 
         Catch ex As Exception
@@ -47,7 +48,14 @@
         Try
 
             obj_Funcionarios.Identificacion = input_buscar.Value
+            If input_buscar.Value = String.Empty Or Not IsNumeric(input_buscar.Value) Then
+                Throw New System.Exception("El ID de usuario no puede estar en letras o quedar vacio")
+            End If
             obj_Funcionarios.SelecionarFuncionario()
+            If obj_Funcionarios.TablaFuncionarios.Rows.Count = 0 Then
+                Throw New System.Exception("El ID de usuario no existe")
+            End If
+
             For Each Fila As DataRow In obj_Funcionarios.TablaFuncionarios.Rows
                 nombre_funcionario2.Value = Fila("Nombre")
                 pApellido_funcionario2.Value = Fila("P_Apellido")
@@ -80,6 +88,7 @@
                     obj_Funcionarios.Correo = correo_funcionario2.Value
                     obj_Funcionarios.Usuario = usuario_funcionario2.Value
                     obj_Funcionarios.Clave = pass_funcionario2.Value
+                    obj_Funcionarios.validaciones()
                     obj_Funcionarios.Estado = estado_funcionario2.Value
                     obj_Funcionarios.ModificarFuncionario()
                     cargarInfo()
@@ -93,7 +102,7 @@
             End If
 
         Catch ex As Exception
-            Mensaje("Error " & ex.Message)
+            Mensaje("Error. " & ex.Message)
         End Try
     End Sub
 
