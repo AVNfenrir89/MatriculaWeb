@@ -111,9 +111,9 @@ Public Class ClaseMatrticula
         obj_MatriculaBD.ConsultarIdMatricula(_idEstudiante, _idCarrera, _cuatrimestre)
     End Sub
 
-    Sub GuardarCursosporMatricula()
-        obj_MatriculaBD.InsertarCursosxMatricula(_idCursos, _idMatricula)
-    End Sub
+    'Sub GuardarCursosporMatricula()
+    '    obj_MatriculaBD.InsertarCursosxMatricula(_idCursos, _idMatricula)
+    'End Sub
 
     Sub leeTablaMatricula()
         obj_MatriculaBD.LeerTablaMatriculaBD()
@@ -134,9 +134,9 @@ Public Class ClaseMatrticula
         obj_MatriculaBD.SelecionarIDcarreraCuatrimestre(IdMatricula)
     End Sub
 
-    Sub InsertarCursosxMatricula()
-        obj_MatriculaBD.InsertarCursosxMatricula(_idMatricula, _idCursos)
-    End Sub
+    'Sub InsertarCursosxMatricula()
+    '    obj_MatriculaBD.InsertarCursosxMatricula(_idMatricula, _idCursos)
+    'End Sub
 
     Sub SelecionarIDestudiantePorIDmatricula()
         obj_MatriculaBD.SelecionarIDestudiantePorIDmatricula(_idMatricula)

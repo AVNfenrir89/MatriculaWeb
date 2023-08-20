@@ -11,7 +11,7 @@ Public Class SQL
     Dim dsMatricula As New DataSet
     Dim dsCursos As New DataSet
     Dim dsCursoporMatricula As New DataSet
-    Dim _mensaje As String
+    
 
 #Region "Propiedades"
     Public Property TablaEstudiantes As DataTable
@@ -64,14 +64,7 @@ Public Class SQL
 
         End Set
     End Property
-    Public Property Mensaje As String
-        Get
-            Return _mensaje
-        End Get
-        Set(value As String)
-            _mensaje = value
-        End Set
-    End Property
+
 #End Region
 
 #Region "Metodos"
@@ -865,12 +858,13 @@ GROUP BY
         End Try
         CerrarConexion()
     End Sub
-    Sub InsertarCursosxMatricula(idCurso, idMatricula) ' quitar id cursoxmatricula
+    Sub InsertarCursosxMatricula(idCursoPorMatricula, idCurso, idMatricula ) ' quitar id cursoxmatricula
         Dim sqlInstruccion As SqlClient.SqlCommand
         AbrirConexion()
-        sqlInstruccion = New SqlClient.SqlCommand("insert into CursoPorMatricula(idCurso, idMatricula) values (@idCurso, @idMatricula)", conexion)
+        sqlInstruccion = New SqlClient.SqlCommand("insert into CursosPorMatricula( idCursoPorMatricula, idCurso, idMatricula) values (@idCursoPorMatricula, @idCurso, @idMatricula)", conexion)
         sqlInstruccion.Parameters.AddWithValue("@idCurso", idCurso)
         sqlInstruccion.Parameters.AddWithValue("@idMatricula", idMatricula)
+        sqlInstruccion.Parameters.AddWithValue("@idCursoPorMatricula", idCursoPorMatricula)
         Try
             sqlInstruccion.ExecuteNonQuery()
         Catch ex As Exception
@@ -885,7 +879,7 @@ GROUP BY
             Dim sqlInstruccion As SqlClient.SqlCommand
 
             AbrirConexion()
-            sqlInstruccion = New SqlClient.SqlCommand("UPDATE CursoPorMatricula SET idCurso = @ID_Curso WHERE idMatricula = @ID_Matricula", conexion)
+            sqlInstruccion = New SqlClient.SqlCommand("UPDATE CursosPorMatricula SET idCurso = @ID_Curso WHERE idMatricula = @ID_Matricula", conexion)
             sqlInstruccion.Parameters.AddWithValue("@ID_Matricula", idMatricula)
             sqlInstruccion.Parameters.AddWithValue("@ID_Curso", idCurso)
             sqlInstruccion.ExecuteNonQuery()
@@ -894,15 +888,15 @@ GROUP BY
         End Try
         CerrarConexion()
     End Sub
-    Sub consultarCursosPormatricula(idMatricula As Integer, idCurso As String)
+    Sub consultarCursosPormatricula( idCursoPorMatricula )
 
         Dim instruccionSQL As SqlClient.SqlCommand
         Dim DataAdapter As SqlClient.SqlDataAdapter
         AbrirConexion()
         instruccionSQL = New SqlClient.SqlCommand()
-        instruccionSQL = New SqlClient.SqlCommand("SELECT COUNT(idCursoporMatricula) FROM CursoPorMatricula WHERE idMatricula = @idMatricula AND idCurso = @idCurso", conexion)
-        instruccionSQL.Parameters.AddWithValue("@idMatricula", idMatricula)
-        instruccionSQL.Parameters.AddWithValue("@idCurso", idCurso)
+        instruccionSQL = New SqlClient.SqlCommand("SELECT COUNT(idCurso) FROM CursosPorMatricula WHERE idCursoPorMatricula = @idCursoPorMatricula", conexion)
+        instruccionSQL.Parameters.AddWithValue("@idCursoPorMatricula", idCursoPorMatricula)
+     
         If dsCursoporMatricula.Tables().Count > 0 Then
             If dsCursoporMatricula.Tables(0).Rows.Count > 0 Then
                 dsCursoporMatricula.Tables(0).Clear()
@@ -921,7 +915,7 @@ GROUP BY
     Sub EliminarCursosPorMatricula(idMatricula)
         Dim sqlInstruccion As SqlClient.SqlCommand
         AbrirConexion()
-        sqlInstruccion = New SqlClient.SqlCommand("DELETE FROM CursoPorMatricula WHERE  idMatricula = @idMatricula", conexion)
+        sqlInstruccion = New SqlClient.SqlCommand("DELETE FROM CursosPorMatricula WHERE  idMatricula = @idMatricula", conexion)
         sqlInstruccion.Parameters.AddWithValue("@idMatricula", idMatricula)
         Try
             sqlInstruccion.ExecuteNonQuery()

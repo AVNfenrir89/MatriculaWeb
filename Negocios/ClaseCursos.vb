@@ -163,9 +163,9 @@ Public Class ClaseCursos
         obj_CursosBD.ConsultaIdPorNombre(_nombre)
     End Sub
 
-    Sub consultarCursosPormatricula(idMatricula)
-        obj_CursosBD.consultarCursosPormatricula(idMatricula, _idCurso)
-    End Sub
+    'Sub consultarCursosPormatricula(idMatricula)
+    '    obj_CursosBD.consultarCursosPormatricula(idMatricula, _idCurso)
+    'End Sub
 
     Sub SelecionarCantMax()
         obj_CursosBD.SelecionarCantMax(_idCurso)
