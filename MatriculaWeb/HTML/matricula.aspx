@@ -93,18 +93,18 @@
         <section class="matricula-uno">
             <div>
                 <label for="select_carrera2">Selecionar carrera</label>
-                <select id="select_carrera2" runat="server">
-                </select>
+                <asp:DropDownList id="select_carrera2" runat="server"  AutoPostBack="True">
+                </asp:DropDownList>
             </div>
 
             <div>
                 <label for="select_cuatrimestre2">Selecionar cuatrimestre</label>
-                <select id="select_cuatrimestre2" runat="server">
-                    <option value="I">I</option>
-                    <option value="II">II</option>
-                    <option value="II">II</option>
-                    <option value="IV">IV</option>
-                </select>
+               <asp:DropDownList ID="select_cuatrimestre2" runat="server" AutoPostBack="True">
+                    <asp:ListItem>I</asp:ListItem>
+                    <asp:ListItem>II</asp:ListItem>
+                    <asp:ListItem>III</asp:ListItem>
+                    <asp:ListItem>IV</asp:ListItem>
+                </asp:DropDownList>
             </div>
         </section>
 

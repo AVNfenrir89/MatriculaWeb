@@ -739,8 +739,6 @@ Public Class SQL
         CerrarConexion()
     End Sub
 
-
-
     Sub SelecionarIDMatriculas(idcarrera As String, cuatrimestre As String)
         Dim instruccionSQL As SqlClient.SqlCommand
         Dim DataAdapter As SqlClient.SqlDataAdapter
@@ -832,6 +830,19 @@ GROUP BY
         End Try
     End Sub
 
+    Sub EliminarMatricula(idMatricula)
+        Dim sqlInstruccion As SqlClient.SqlCommand
+        AbrirConexion()
+        sqlInstruccion = New SqlClient.SqlCommand("DELETE FROM Matricula WHERE  ID_Matricula = @idMatricula", conexion)
+        sqlInstruccion.Parameters.AddWithValue("@idMatricula", idMatricula)
+        Try
+            sqlInstruccion.ExecuteNonQuery()
+        Catch ex As Exception
+            Throw New System.Exception("Error al ejecutar el DELETE: " + ex.Message)
+        End Try
+        CerrarConexion()
+    End Sub
+
 #End Region
 
 #Region "Procedimiento tabla Intermedia"
@@ -854,7 +865,7 @@ GROUP BY
         End Try
         CerrarConexion()
     End Sub
-    Sub InsertarCursosxMatricula(idCurso As String, idMatricula As Integer) ' quitar id cursoxmatricula
+    Sub InsertarCursosxMatricula(idCurso, idMatricula) ' quitar id cursoxmatricula
         Dim sqlInstruccion As SqlClient.SqlCommand
         AbrirConexion()
         sqlInstruccion = New SqlClient.SqlCommand("insert into CursoPorMatricula(idCurso, idMatricula) values (@idCurso, @idMatricula)", conexion)
@@ -874,10 +885,9 @@ GROUP BY
             Dim sqlInstruccion As SqlClient.SqlCommand
 
             AbrirConexion()
-            sqlInstruccion = New SqlClient.SqlCommand("UPDATE idCursoPorMatricula SET idCurso = @ID_Curso WHERE idMatricula = @ID_Matricula", conexion)
+            sqlInstruccion = New SqlClient.SqlCommand("UPDATE CursoPorMatricula SET idCurso = @ID_Curso WHERE idMatricula = @ID_Matricula", conexion)
             sqlInstruccion.Parameters.AddWithValue("@ID_Matricula", idMatricula)
             sqlInstruccion.Parameters.AddWithValue("@ID_Curso", idCurso)
-
             sqlInstruccion.ExecuteNonQuery()
         Catch ex As Exception
             Throw New System.Exception("Error al ejecutar el UPDATE: " + ex.Message)
@@ -908,11 +918,10 @@ GROUP BY
         CerrarConexion()
     End Sub
 
-    Sub EliminarCursosPorMatricula(idCurso As String, idMatricula As Integer)
+    Sub EliminarCursosPorMatricula(idMatricula)
         Dim sqlInstruccion As SqlClient.SqlCommand
         AbrirConexion()
-        sqlInstruccion = New SqlClient.SqlCommand("DELETE FROM CursoPorMatricula WHERE idCurso= @idCurso AND idMatricula = @idMatricula", conexion)
-        sqlInstruccion.Parameters.AddWithValue("@idCurso", idCurso)
+        sqlInstruccion = New SqlClient.SqlCommand("DELETE FROM CursoPorMatricula WHERE  idMatricula = @idMatricula", conexion)
         sqlInstruccion.Parameters.AddWithValue("@idMatricula", idMatricula)
         Try
             sqlInstruccion.ExecuteNonQuery()
@@ -921,6 +930,8 @@ GROUP BY
         End Try
         CerrarConexion()
     End Sub
+
+
 
 #End Region
 

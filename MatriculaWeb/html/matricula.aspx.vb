@@ -136,7 +136,7 @@ Public Class Formulario_web12
                     obj_curso.SelecionarCantMax()
                     obj_curso.CantMax = obj_curso.TablaCursos(0)(0)
                     obj_curso.consultarCursosPormatricula(fila("ID_Matricula"))
-                    If obj_curso.TablaCursosPorMatricula(0)(0) = 1 And CantMaxCursoUno < obj_curso.CantMax Then
+                    If CantMaxCursoUno < obj_curso.CantMax Then
                         CantMaxCursoUno += 1
                     Else
                         Throw New System.Exception("Se alcanzó el número máximo de estudiantes en " & lb_curso_uno.InnerText)
@@ -148,7 +148,7 @@ Public Class Formulario_web12
                     obj_curso.SelecionarCantMax()
                     obj_curso.CantMax = obj_curso.TablaCursos(0)(0)
                     obj_curso.consultarCursosPormatricula(fila("ID_Matricula"))
-                    If obj_curso.TablaCursosPorMatricula(0)(0) And CantMaxCursoDos < obj_curso.CantMax Then
+                    If CantMaxCursoDos < obj_curso.CantMax Then
                         CantMaxCursoDos += 1
                     Else
                         Throw New System.Exception("Se alcanzó el número máximo de estudiantes en " & lb_curso_dos.InnerText)
@@ -160,7 +160,7 @@ Public Class Formulario_web12
                     obj_curso.SelecionarCantMax()
                     obj_curso.CantMax = obj_curso.TablaCursos(0)(0)
                     obj_curso.consultarCursosPormatricula(fila("ID_Matricula"))
-                    If obj_curso.TablaCursosPorMatricula(0)(0) And CantMaxCursoTres < obj_curso.CantMax Then
+                    If CantMaxCursoTres < obj_curso.CantMax Then
                         CantMaxCursoTres += 1
                     Else
                         Throw New System.Exception("Se alcanzó el número máximo de estudiantes en " & lb_curso_tres.InnerText)
@@ -210,6 +210,8 @@ Public Class Formulario_web12
                 If fila(1).Equals(select_carrera.SelectedValue) And fila(10).trim.Equals(select_cuatrimestre.SelectedValue) Then
                     listaIDCurso.Add(fila(0))
                     listaNombre.Add(fila(2))
+
+
                 End If
             Next
             'valida si hay cursos en el cuatrimestre selecionado
@@ -233,6 +235,34 @@ Public Class Formulario_web12
             curso_dos.Value = listaIDCurso(1)
             curso_tres.Value = listaIDCurso(2)
 
+            listaIDCurso.Clear()
+            listaNombre.Clear()
+            For Each fila As DataRow In obj_curso.TablaCursos.Rows
+
+                If fila(1).Equals(select_carrera2.SelectedValue) And fila(10).trim.Equals(select_cuatrimestre2.SelectedValue) Then
+                    listaIDCurso.Add(fila(0))
+                    listaNombre.Add(fila(2))
+                End If
+            Next
+            'valida si hay cursos en el cuatrimestre selecionado
+            If listaIDCurso.Count = 0 Then
+                lb_curso_uno2.InnerText = String.Empty
+                lb_curso_dos2.InnerText = String.Empty
+                lb_curso_tres2.InnerText = String.Empty
+                curso_uno2.Value = String.Empty
+                curso_dos2.Value = String.Empty
+                curso_tres2.Value = String.Empty
+                Throw New System.Exception("No hay cursos registrados en el cuatrimestre selecionado")
+
+            End If
+
+            lb_curso_uno2.InnerText = listaNombre(0) 'input y label son dos elementos diferentes
+            lb_curso_dos2.InnerText = listaNombre(1)
+            lb_curso_tres2.InnerText = listaNombre(2)
+            curso_uno2.Value = listaIDCurso(0)
+            curso_dos2.Value = listaIDCurso(1)
+            curso_tres2.Value = listaIDCurso(2)
+
         Catch ex As Exception
             Mensaje("Error. " & ex.Message)
 
@@ -241,11 +271,21 @@ Public Class Formulario_web12
 
     End Sub
 
+    
+
     Protected Sub select_carrera_SelectedIndexChanged(sender As Object, e As EventArgs) Handles select_carrera.SelectedIndexChanged
         CargarCursos()
     End Sub
 
     Protected Sub label_cuatrimestre_SelectedIndexChanged(sender As Object, e As EventArgs) Handles select_cuatrimestre.SelectedIndexChanged
+        CargarCursos()
+    End Sub
+
+    Protected Sub select_carrera2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles select_carrera2.SelectedIndexChanged
+        CargarCursos()
+    End Sub
+
+    Protected Sub select_cuatrimestre2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles select_cuatrimestre2.SelectedIndexChanged
         CargarCursos()
     End Sub
     Sub cargarInfo()
@@ -291,33 +331,7 @@ Public Class Formulario_web12
                 i += 1
             Next
 
-            Dim listaIDCurso As New List(Of String)
-            Dim listaNombre As New List(Of String)
-            obj_curso.LeeDatosCursos()
-            For Each fila As DataRow In obj_curso.TablaCursos.Rows
 
-                If fila(1).Equals(select_carrera2.Value) And fila(10).trim.Equals(select_cuatrimestre2.Value) Then
-                    listaIDCurso.Add(fila(0))
-                    listaNombre.Add(fila(2))
-                End If
-            Next
-            'valida si hay cursos en el cuatrimestre selecionado
-            If listaIDCurso.Count = 0 Then
-                lb_curso_uno.InnerText = String.Empty
-                lb_curso_dos.InnerText = String.Empty
-                lb_curso_tres.InnerText = String.Empty
-                curso_uno.Value = String.Empty
-                curso_dos.Value = String.Empty
-                Throw New System.Exception("No hay cursos registrados en el cuatrimestre selecionado")
-
-            End If
-
-            lb_curso_uno2.InnerText = listaNombre(0) 'input y label son dos elementos diferentes
-            lb_curso_dos2.InnerText = listaNombre(1)
-            lb_curso_tres2.InnerText = listaNombre(2)
-            curso_uno2.Value = listaIDCurso(0)
-            curso_dos2.Value = listaIDCurso(1)
-            curso_tres2.Value = listaIDCurso(2)
 
         Catch ex As Exception
             Mensaje("Error. " & ex.Message)
@@ -336,28 +350,38 @@ Public Class Formulario_web12
             End If
 
             obj_matricula.IdMatricula = input_buscar.Value
-
+            obj_matricula.EliminarCursosPorMatricula()
             If curso_uno2.Checked Then
                 obj_matricula.IdCursos = curso_uno2.Value
-                obj_matricula.UpdateCursoPorMatricula()
+                obj_matricula.InsertarCursosxMatricula()
             End If
 
             If curso_dos2.Checked Then
                 obj_matricula.IdCursos = curso_dos2.Value
-                obj_matricula.UpdateCursoPorMatricula()
+                obj_matricula.InsertarCursosxMatricula()
             End If
 
             If curso_tres2.Checked Then
                 obj_matricula.IdCursos = curso_tres2.Value
-                obj_matricula.UpdateCursoPorMatricula()
+                obj_matricula.InsertarCursosxMatricula()
             End If
+
             obj_matricula.IdMatricula = input_buscar.Value
             obj_matricula.SelecionarIDestudiantePorIDmatricula()
             obj_matricula.IdEstudiante = obj_matricula.TablaMatricula(0)(0)
             obj_matricula.Costo = lb_total2.InnerText
-            obj_matricula.IdCarrera = select_carrera2.Value
-            obj_matricula.Cuatrimestre = select_cuatrimestre2.Value
+            obj_matricula.IdCarrera = select_carrera2.SelectedValue
+            obj_matricula.Cuatrimestre = select_cuatrimestre2.SelectedValue
             obj_matricula.UpdateMatricula()
+
+            lb_total2.InnerText = String.Empty
+            lb_beca2.InnerText = String.Empty
+            input_buscar.Value = String.Empty
+            curso_uno2.Checked = False
+            curso_dos2.Checked = False
+            curso_tres2.Checked = False
+
+            Mensaje("Matrícula de estudiante modificada con éxito")
 
         Catch ex As Exception
             Mensaje("Error. " & ex.Message)
@@ -431,5 +455,22 @@ Public Class Formulario_web12
             Mensaje("Error. " & ex.Message)
         End Try
     End Sub
+    Protected Sub btn_borrar_Click(sender As Object, e As EventArgs) Handles btn_Borrar.Click
 
+        Try
+            If input_buscar.Value = String.Empty Then
+                Throw New System.Exception("No se puede eliminar sin una ID Matrícula")
+            End If
+            obj_matricula.IdEstudiante = input_buscar.Value
+            obj_matricula.IdMatricula = input_buscar.Value
+            obj_matricula.EliminarCursosPorMatricula()
+            obj_matricula.EliminarMatricula()
+            Mensaje("Matrícula de estudiante eliminada con éxito")
+            input_buscar.Value = String.Empty
+        Catch ex As Exception
+            Mensaje("Error. " & ex.Message)
+        End Try
+
+
+    End Sub
 End Class

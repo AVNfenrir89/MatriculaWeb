@@ -134,8 +134,8 @@ Public Class ClaseMatrticula
         obj_MatriculaBD.SelecionarIDcarreraCuatrimestre(IdMatricula)
     End Sub
 
-    Sub UpdateCursoPorMatricula()
-        obj_MatriculaBD.UpdateCursoPorMatricula(_idMatricula, _idCursos)
+    Sub InsertarCursosxMatricula()
+        obj_MatriculaBD.InsertarCursosxMatricula(_idMatricula, _idCursos)
     End Sub
 
     Sub SelecionarIDestudiantePorIDmatricula()
@@ -144,6 +144,15 @@ Public Class ClaseMatrticula
 
     Sub UpdateMatricula()
         obj_MatriculaBD.UpdateMatricula(_idMatricula, _idEstudiante, IdCarrera, _costo, _cuatrimestre, "1")
+    End Sub
+
+    Sub EliminarCursosPorMatricula()
+        obj_MatriculaBD.EliminarCursosPorMatricula(_idMatricula)
+    End Sub
+
+    Sub EliminarMatricula()
+        obj_MatriculaBD.EliminarMatricula(_idMatricula)
+
     End Sub
 #End Region
 
