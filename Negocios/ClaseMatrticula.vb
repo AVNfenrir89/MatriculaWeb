@@ -130,6 +130,21 @@ Public Class ClaseMatrticula
         obj_MatriculaBD.mostrarMatriculasql()
     End Sub
 
+    Sub SelecionarIDcarreraCuatrimestre()
+        obj_MatriculaBD.SelecionarIDcarreraCuatrimestre(IdMatricula)
+    End Sub
+
+    Sub UpdateCursoPorMatricula()
+        obj_MatriculaBD.UpdateCursoPorMatricula(_idMatricula, _idCursos)
+    End Sub
+
+    Sub SelecionarIDestudiantePorIDmatricula()
+        obj_MatriculaBD.SelecionarIDestudiantePorIDmatricula(_idMatricula)
+    End Sub
+
+    Sub UpdateMatricula()
+        obj_MatriculaBD.UpdateMatricula(_idMatricula, _idEstudiante, IdCarrera, _costo, _cuatrimestre, "1")
+    End Sub
 #End Region
 
 End Class

@@ -98,8 +98,8 @@
             </div>
 
             <div>
-                <label for="label_cuatrimestre2">Selecionar cuatrimestre</label>
-                <select id="label_cuatrimestre2" runat="server">
+                <label for="select_cuatrimestre2">Selecionar cuatrimestre</label>
+                <select id="select_cuatrimestre2" runat="server">
                     <option value="I">I</option>
                     <option value="II">II</option>
                     <option value="II">II</option>
@@ -135,18 +135,27 @@
 
         <section id="datos_estudiante_cinco" class="botones_borrar_editar">
             <div>
+                 <asp:Button ID="btn_total2" class="btn_matricular" runat="server" Text="Total"  />
+            </div>
+            <div>
                 <!--Cambios realizados-->
-                <label for="input_Id_Borrar">Boton para eliminar fila </label>
+             <%--   <label for="input_Id_Borrar">Boton para eliminar fila </label>--%>
                 <asp:Button ID="btn_Borrar" class="btn_matricular btn_funcionario btn_Borrar" runat="server" Text="Borrar" />
             </div>
 
             <div>
                 <!--Cambios realizados-->
-                <label for="input_Id_Modificar">Boton para modifcar fila </label>
+               <%-- <label for="input_Id_Modificar">Boton para modifcar fila </label>--%>
                 <asp:Button ID="btn_Modificar" class="btn_matricular btn_funcionario" runat="server" Text="Modifcar" />
             </div>
+
+        </section>
+        <section class="matricula-tres">
+            <label id="lb_beca2" runat="server"></label>
+            <label id="lb_total2" runat="server"></label>
         </section>
 
+      
     </section>
 
 </asp:Content>

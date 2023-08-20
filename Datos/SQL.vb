@@ -718,6 +718,28 @@ Public Class SQL
         CerrarConexion()
     End Sub '''''''''''''
 
+    Sub SelecionarIDestudiantePorIDmatricula(idMatricula)
+        Dim instruccionSQL As SqlClient.SqlCommand
+        Dim DataAdapter As SqlClient.SqlDataAdapter
+        AbrirConexion()
+        instruccionSQL = New SqlClient.SqlCommand("SELECT ID_Estudiante FROM Matricula WHERE ID_Matricula = @ID_Matricula", conexion)
+        instruccionSQL.Parameters.AddWithValue("@ID_Matricula", idMatricula)
+        If dsMatricula.Tables().Count > 0 Then
+            If dsMatricula.Tables(0).Rows.Count > 1 Then
+                dsMatricula.Tables(0).Clear()
+            End If
+        End If
+
+        Try
+            DataAdapter = New SqlClient.SqlDataAdapter(instruccionSQL)
+            DataAdapter.Fill(dsMatricula)
+        Catch ex As Exception
+            Throw New System.Exception(ex.Message)
+        End Try
+        CerrarConexion()
+    End Sub
+
+
 
     Sub SelecionarIDMatriculas(idcarrera As String, cuatrimestre As String)
         Dim instruccionSQL As SqlClient.SqlCommand
@@ -741,7 +763,29 @@ Public Class SQL
         End Try
         CerrarConexion()
     End Sub
-    Sub UpdateBD(idMatricula As Integer, idEstudiante As Integer, idCarrera As String, Costo As Integer, cuatrimestre As String, periodo As String)
+
+    Sub SelecionarIDcarreraCuatrimestre(idmatricula)
+        Dim instruccionSQL As SqlClient.SqlCommand
+        Dim DataAdapter As SqlClient.SqlDataAdapter
+        AbrirConexion()
+        instruccionSQL = New SqlClient.SqlCommand("SELECT ID_Carrera, Cuatrimestre FROM Matricula WHERE ID_Matricula = @ID_Matricula", conexion)
+        instruccionSQL.Parameters.AddWithValue("@ID_Matricula", idmatricula)
+
+        If dsMatricula.Tables().Count > 0 Then
+            If dsMatricula.Tables(0).Rows.Count > 0 Then
+                dsMatricula.Tables(0).Clear()
+            End If
+        End If
+
+        Try
+            DataAdapter = New SqlClient.SqlDataAdapter(instruccionSQL)
+            DataAdapter.Fill(dsMatricula)
+        Catch ex As Exception
+            Throw New System.Exception(ex.Message)
+        End Try
+        CerrarConexion()
+    End Sub
+    Sub UpdateMatricula(idMatricula As Integer, idEstudiante As Integer, idCarrera As String, Costo As Integer, cuatrimestre As String, periodo As String)
         Dim sqlInstruccion As SqlClient.SqlCommand
 
         AbrirConexion()
@@ -825,6 +869,21 @@ GROUP BY
 
     End Sub
 
+    Sub UpdateCursoPorMatricula(idMatricula, idCurso)
+        Try
+            Dim sqlInstruccion As SqlClient.SqlCommand
+
+            AbrirConexion()
+            sqlInstruccion = New SqlClient.SqlCommand("UPDATE idCursoPorMatricula SET idCurso = @ID_Curso WHERE idMatricula = @ID_Matricula", conexion)
+            sqlInstruccion.Parameters.AddWithValue("@ID_Matricula", idMatricula)
+            sqlInstruccion.Parameters.AddWithValue("@ID_Curso", idCurso)
+
+            sqlInstruccion.ExecuteNonQuery()
+        Catch ex As Exception
+            Throw New System.Exception("Error al ejecutar el UPDATE: " + ex.Message)
+        End Try
+        CerrarConexion()
+    End Sub
     Sub consultarCursosPormatricula(idMatricula As Integer, idCurso As String)
 
         Dim instruccionSQL As SqlClient.SqlCommand
@@ -862,6 +921,7 @@ GROUP BY
         End Try
         CerrarConexion()
     End Sub
+
 #End Region
 
 #End Region

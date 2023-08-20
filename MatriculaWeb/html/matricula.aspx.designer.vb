@@ -167,13 +167,13 @@ Partial Public Class Formulario_web12
     Protected WithEvents select_carrera2 As Global.System.Web.UI.HtmlControls.HtmlSelect
 
     '''<summary>
-    '''Control label_cuatrimestre2.
+    '''Control select_cuatrimestre2.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents label_cuatrimestre2 As Global.System.Web.UI.HtmlControls.HtmlSelect
+    Protected WithEvents select_cuatrimestre2 As Global.System.Web.UI.HtmlControls.HtmlSelect
 
     '''<summary>
     '''Control curso_uno2.
@@ -230,6 +230,15 @@ Partial Public Class Formulario_web12
     Protected WithEvents lb_curso_tres2 As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
+    '''Control btn_total2.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btn_total2 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
     '''Control btn_Borrar.
     '''</summary>
     '''<remarks>
@@ -246,4 +255,22 @@ Partial Public Class Formulario_web12
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents btn_Modificar As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''Control lb_beca2.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lb_beca2 As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''Control lb_total2.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lb_total2 As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 End Class
