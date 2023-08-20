@@ -803,7 +803,7 @@ Public Class SQL
     m.*,
     STRING_AGG(c.Nombre, '-') AS Cursos
 FROM
-    CursoPorMatricula mp
+    CursosPorMatricula mp
 INNER JOIN
     Matricula m ON m.ID_Matricula = mp.idMatricula
 INNER JOIN

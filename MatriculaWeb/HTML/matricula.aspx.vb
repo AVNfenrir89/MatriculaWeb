@@ -292,8 +292,6 @@ Public Class Formulario_web12
 
     End Sub
 
-    
-
     Protected Sub select_carrera_SelectedIndexChanged(sender As Object, e As EventArgs) Handles select_carrera.SelectedIndexChanged
         CargarCursos()
     End Sub
@@ -372,6 +370,7 @@ Public Class Formulario_web12
 
             obj_idCursosPorMatricula.IdMatricula = input_buscar.Value
             obj_idCursosPorMatricula.EliminarCursosPorMatricula()
+
             If curso_uno2.Checked Then
 
                 obj_curso.IdCurso = curso_uno2.Value
@@ -418,9 +417,7 @@ Public Class Formulario_web12
                     Throw New System.Exception("Se alcanzó el número máximo de estudiantes en " & lb_curso_dos2.InnerText)
                 End If
 
-
                 obj_idCursosPorMatricula.GuardarCursosporMatricula()
-
 
                 'obj_idCursosPorMatricula.IdCursos = curso_dos2.Value
                 'obj_idCursosPorMatricula.idCarrera = select_carrera2.SelectedValue
@@ -431,7 +428,6 @@ Public Class Formulario_web12
             End If
 
             If curso_tres2.Checked Then
-
 
                 obj_curso.IdCurso = curso_tres2.Value
                 obj_curso.SelecionarCantMax()
@@ -451,12 +447,7 @@ Public Class Formulario_web12
                     Throw New System.Exception("Se alcanzó el número máximo de estudiantes en " & lb_curso_tres2.InnerText)
                 End If
 
-
                 obj_idCursosPorMatricula.GuardarCursosporMatricula()
-
-
-
-
 
                 'obj_idCursosPorMatricula.IdCursos = curso_tres2.Value
                 'obj_idCursosPorMatricula.idCarrera = select_carrera2.SelectedValue
