@@ -359,7 +359,7 @@ Public Class Formulario_web12
     End Sub
     Protected Sub btn_Modificar_Click(sender As Object, e As EventArgs) Handles btn_Modificar.Click
         Try
-
+            'validar
             If Not curso_uno2.Checked And Not curso_dos2.Checked And Not curso_tres2.Checked Then
                 Throw New System.Exception("No se puede matricular sin haber seleccionado al menos un curso")
             ElseIf lb_total2.InnerText = String.Empty Or Not IsNumeric(lb_total2.InnerText) Then
@@ -548,8 +548,9 @@ Public Class Formulario_web12
     Protected Sub btn_borrar_Click(sender As Object, e As EventArgs) Handles btn_Borrar.Click
 
         Try
-            If input_buscar.Value = String.Empty Then
-                Throw New System.Exception("No se puede eliminar sin una ID Matrícula")
+            If input_buscar.Value = String.Empty Or Not IsNumeric(input_buscar.Value) Then
+
+                Throw New System.Exception("No se puede eliminar sin una ID Matrícula o si el id está en letras")
             End If
             obj_matricula.IdEstudiante = input_buscar.Value
             obj_matricula.IdMatricula = input_buscar.Value

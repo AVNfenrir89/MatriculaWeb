@@ -15,7 +15,7 @@ Public Class Formulario_web15
 
             obj_Carrera.IdCarrera = input_id_carrera.Value
             obj_Carrera.Nombre = input_nombre_carrera.Value
-            'obj_Carrera.Validaciones()
+            obj_Carrera.Validaciones()
             obj_Carrera.Estado = select_estado.Value
             obj_Carrera.Grados = select_grado.Value
             obj_Carrera.AgregarDatosCarrera()
@@ -60,7 +60,7 @@ Public Class Formulario_web15
 
             obj_Carrera.IdCarrera = input_id_carrera2.Value
             obj_Carrera.Nombre = input_nombre_carrera2.Value
-            'obj_Carrera.Validaciones()
+            obj_Carrera.Validaciones()
             obj_Carrera.Estado = select_estado2.Value
             obj_Carrera.Grados = select_grado2.Value
             obj_Carrera.ModificarCarrera()
