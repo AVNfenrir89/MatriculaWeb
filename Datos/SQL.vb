@@ -673,8 +673,6 @@ Public Class SQL
         Dim instruccionSQL As SqlClient.SqlCommand
         Dim DataAdapter As SqlClient.SqlDataAdapter
         AbrirConexion()
-        'instrucción select
-        ' instruccionSQL = New SqlClient.SqlCommand("SELECT * FROM Matricula WHERE ID_Estudiante = ' " & idEstudiante & " ' AND ID_Carrera= ' " & idCarrera & " ' AND Cuatrimestre = ' " & cuatrimestre & " ' ", conexion)
         instruccionSQL = New SqlClient.SqlCommand("select max (ID_Matricula) as ID FROM Matricula", conexion)
         If dsMatricula.Tables().Count > 0 Then
             If dsMatricula.Tables(0).Rows.Count > 1 Then
@@ -689,7 +687,6 @@ Public Class SQL
         End Try
         CerrarConexion()
     End Sub
-    ''hiciste esto, no entiendo
     Sub SelecionarIDestudiantes(idcarrera As String, cuatrimestre As String)
         Dim instruccionSQL As SqlClient.SqlCommand
         Dim DataAdapter As SqlClient.SqlDataAdapter

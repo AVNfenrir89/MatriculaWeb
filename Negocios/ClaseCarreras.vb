@@ -75,21 +75,21 @@ Public Class ClaseCarreras
 
 #Region "Validaciones"
 
-    Sub Validaciones()
+    'Sub Validaciones()
 
-        If IsNumeric(_idCarrera) Or _idCarrera.Length = 0 Then
-            Throw New System.Exception("El ID de la carrera no puede estar vacio o en números")
-        End If
+    '    If IsNumeric(_idCarrera) Or _idCarrera.Length = 0 Then
+    '        Throw New System.Exception("El ID de la carrera no puede estar vacio o en números")
+    '    End If
 
 
-        If IsNumeric(_idCarrera) Or _idCarrera.Length = 0 Then
-            Throw New System.Exception("El ID de la carrera no puede estar vacio o en números")
-        End If
+    '    If IsNumeric(_idCarrera) Or _idCarrera.Length = 0 Then
+    '        Throw New System.Exception("El ID de la carrera no puede estar vacio o en números")
+    '    End If
 
-        If IsNumeric(_nombre) Or _nombre.Length = 0 Then
-            Throw New System.Exception("El nombre de la carrera no puede estar vacio o en números")
-        End If
-    End Sub
+    '    If IsNumeric(_nombre) Or _nombre.Length = 0 Then
+    '        Throw New System.Exception("El nombre de la carrera no puede estar vacio o en números")
+    '    End If
+    'End Sub
 
 #End Region
 
