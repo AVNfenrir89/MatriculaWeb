@@ -100,7 +100,7 @@ Public Class Formulario_web1
             obj_Cursos.IdCurso = input_buscar.Value
             obj_Cursos.IdCarrera = select_carrera2.Value
             obj_Cursos.Nombre = input_nombre2.Value
-            obj_Carreras.Validaciones()
+            'obj_Carreras.Validaciones()
 
             If Not IsNumeric(input_creditos2.Value) Or input_creditos2.Value.ToString.Length = 0 Then
                 Throw New System.Exception("El valor de créditos no debe estar en letras o quedar vacio")
@@ -152,9 +152,9 @@ Public Class Formulario_web1
                     select_grado2.SelectedIndex = 1
                 End If
                 If fila("Estado") = "activo" Then
-                    select_estado2.SelectedIndex = 0
-                Else
                     select_estado2.SelectedIndex = 1
+                Else
+                    select_estado2.SelectedIndex = 0
                 End If
 
                 Dim i As Integer = 0
